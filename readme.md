@@ -1,6 +1,6 @@
 ## Simple search portal frontend for Elastic Search
 
-This is a an instance of LAravel 5.1 for interfacing with Elastic Search
+This is a an instance of Laravel 5.1 for interfacing with Elastic Search
 
 ## Official Documentation
 
@@ -10,21 +10,21 @@ Documentation for the framework can be found on the [Laravel website](http://lar
 
 Run using php:
 
-php artisan serve
+```php artisan serve```
 
 
 Using vagrant:
  go to the projects root directory
  
  generate ssh key:
- ssh-keygen -t rsa -C "your@email.com"
+ ```ssh-keygen -t rsa -C "your@email.com"```
 
  run vagrant:
- vagrant up
+ ```vagrant up```
  
 Using apache
 
- add a site/vhost and point it to the directory ./search-portal/public 
+ add a site/vhost and point it to the directory ```./search-portal/public``` 
  
 ### License
 
