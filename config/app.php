@@ -38,13 +38,13 @@ return [
     |
     */
 
-    'elastic_search_host' => env('ELASTICH_SEARCH_HOST', 'localhost:9200'),	
+    'elastic_search_host' => env('ELASTICH_SEARCH_HOST'),	
 	
-	/* Aggregations used for filtering in the search */
-	'elastic_search_aggregations' => [
-		'type' => ['terms' => ['field' => '_type']],
-		'repository' => ['terms' => ['field' => 'repository']],
-	],
+    /* Aggregations used for filtering in the search */
+    'elastic_search_aggregations' => [
+            'type' => ['terms' => ['field' => '_type']],
+            'repository' => ['terms' => ['field' => 'repository']],
+    ],
 	
     /*
     |--------------------------------------------------------------------------
