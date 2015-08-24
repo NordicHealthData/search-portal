@@ -94,14 +94,22 @@
                                         <div class="row">
                                             <strong>
                                                 @if(array_key_exists('title', $hit['_source']))
-                                                        <a href="#{{ $hit['_type'] }} {{ $hit['_id'] }}">{{ $hit['_source']['title'] }}</a> 
+                                                    @foreach($hit['_source']['title'] as $title)
+                                                        @if(array_key_exists('en', $title))
+                                                            <a href="#{{ $hit['_type'] }} {{ $hit['_id'] }}">{{ $title['en'] }}</a>
+                                                        @endif
+                                                    @endforeach
                                                 @else
                                                     <a href="#{{ $hit['_type'] }} {{ $hit['_id'] }}">[Title missing]</a>                                  
                                                 @endif 
                                             </strong>
                                         
-                                            @if(array_key_exists('description', $hit['_source']))
-                                                <p>{{ str_limit($hit['_source']['description'], 290) }}</p>
+                                            @if(array_key_exists('abstract', $hit['_source']))
+                                                @foreach($hit['_source']['abstract'] as $abstract)
+                                                    @if(array_key_exists('en', $abstract))
+                                                        <p>{{ str_limit($abstract['en'], 290) }}</p>
+                                                    @endif
+                                                @endforeach
                                             @endif
                                         </div>
                                     </div>

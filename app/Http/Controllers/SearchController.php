@@ -51,8 +51,8 @@ class SearchController extends Controller {
             }
         }
 
-        $hits = ElasticSearch::search($query, 'resource');
-        
+        $hits = ElasticSearch::search($query, 'study');
+        //dd($hits);
         return view('search.simpleSearch')
                         ->with('type', null)
                         ->with('aggregations', $query['aggregations'])

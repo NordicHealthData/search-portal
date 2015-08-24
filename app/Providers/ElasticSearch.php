@@ -185,4 +185,17 @@ class ElasticSearch extends ServiceProvider{
        
         return $paginator;
     }
+    
+    public static function indexDocument($id, $index, $type, $body){
+        $client = self::getClient();
+
+        $params = [
+            'id' => $id,
+            'index' => $index,
+            'type' => $type,
+            'body' => $body
+        ];
+        
+        $ret = $client->index($params);        
+    }
 }
