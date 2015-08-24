@@ -1,14 +1,36 @@
 <?php
-namespace App\Services;
+
+namespace App\Providers;
 
 use Config;
 use Request;
+use Illuminate\Support\ServiceProvider;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Pagination\LengthAwarePaginator;
 
-class ElasticSearch {
+class ElasticSearch extends ServiceProvider{
 
     private static $client = NULL;
+
+    /**
+     * Bootstrap application service.
+     *
+     * @return void
+     */
+    public function boot()
+    {
+        //
+    }
+
+    /**
+     * Register application service.
+     *
+     * @return void
+     */
+    public function register()
+    {
+        //
+    }    
     
     /**
      * Get a client to perform rest request to Elastic Search

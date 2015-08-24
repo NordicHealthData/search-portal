@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Config;
-use App\Services\ElasticSearch;
-use App\Services\Utils;
+use App\Providers\ElasticSearch;
+use Illuminate\Support\Facades\Input;
+
+Use Utils;
 use Request;
 
 class SearchController extends Controller {

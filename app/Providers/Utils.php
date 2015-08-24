@@ -1,10 +1,22 @@
-<?php namespace App\Services;
-use App\Services\Provider;
+<?php 
+namespace App\Providers;
+
+use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Input;
-use App\Services\ElasticSearch;
+use App\Providers\ElasticSearch;
 
-class Utils {
+class Utils extends ServiceProvider{
 
+    /**
+     * Register application service.
+     *
+     * @return void
+     */
+    public function register()
+    {
+        //
+    }    
+    
     public static function contains($string, array $array){
         foreach($array as $item) {
             if (stripos($string, $item) !== false) return true;
