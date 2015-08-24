@@ -1,46 +1,24 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Nordic Health Data</title>
-
-        <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
-
-        <style>
-            html, body {
-                height: 100%;
-            }
-
-            body {
-                margin: 0;
-                padding: 0;
-                width: 100%;
-                display: table;
-                font-weight: 100;
-                font-family: 'Lato';
-            }
-
-            .container {
-                text-align: center;
-                display: table-cell;
-                vertical-align: middle;
-            }
-
-            .content {
-                text-align: center;
-                display: inline-block;
-            }
-
-            .title {
-                font-size: 96px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="container">
-            <div class="content">
-                <div class="title">Nordic health data search portal</div>
-				
+@extends('app')
+@section('content')
+    <div class="container jumbotron">
+        <div class="content">
+            <div class="title">
+                <div class="media">
+                    <div class="media-left">
+                        <img class="media-object" src="favicon.ico" alt="Nordic health data">
+                    </div>
+                    <div class="media-body">
+                        <h1>Nordic health data search portal</h1>
+                    </div>
+                </div>     
             </div>
+
+            {!! Form::open(array("action" => "SearchController@search", "method" => "GET", "class" => "form-inline")) !!}            
+
+                {!! Form::text("q", Request::input("q"), array("id" => "q", "class" => "form-control", "style" => "width:85%", "placeholder" => "Search for studies...")) !!}
+
+                {!! Form::submit("Search", array("class" => "btn btn-primary")) !!}
+            {!! Form::close() !!}
         </div>
-    </body>
-</html>
+    </div>
+@endsection
