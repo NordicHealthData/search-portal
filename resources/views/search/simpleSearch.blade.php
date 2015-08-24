@@ -37,8 +37,7 @@
                               {{ $bucket['key'] }}
                         </a>
                     @endif
-                  @endforeach                  
-                  
+                  @endforeach
                 </div>
                 @endif
             @endforeach
@@ -79,14 +78,15 @@
 
                 </div>                
                 <div class="row">
-                    <p><strong>Total:</strong> <span class="badge">{{ $hits->total() }}</span></p>
+                    <p>
+                        <strong>Total:</strong> <span class="badge">{{ $hits->total() }}</span>
+                    </p>
                     {!! $hits->appends(Input::all())->render() !!}
                 </div>              
                 <div class="row"><div class="col-md-8"><hr/></div></div>
                 <div class="row">
                 @foreach($hits as $hit)
-
-                    <div class="col-md-12">
+                    <div class="col-md-12 panel panel-default">
                         <div class="box box-primary" id="dataresource_item" item_id="{{ $hit['_id'] }}">
                             <div class="box-body">
                                 <div class="row">
@@ -108,14 +108,14 @@
                                 </div>
                             </div>
                         </div>
-                    </div>						
-
+                    </div>
                 @endforeach
                 </div>
                 <div class="row">
                     {!! $hits->appends(Input::all())->render() !!}
                 </div>
             </div>
+        </div>
    </section>             
 </aside>
 @endsection

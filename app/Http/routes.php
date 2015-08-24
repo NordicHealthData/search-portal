@@ -15,6 +15,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
 Route::get('search', 'SearchController@index');
 Route::get('search', ['as'=> 'search', 'uses' => 'SearchController@search']);
