@@ -25,7 +25,7 @@ class StudyController extends Controller {
     }
 
     public function view($type, $id) {
-        $study = ElasticSearch::get($id, 'study', $type);
+        $study = ElasticSearch::get($id, env('ES_STUDY_UNIT_INDEX'), $type);
         //dd($study);
         return view('study.view')
                 ->with('study', $study);
