@@ -12,14 +12,14 @@ class ElasticSearchIndexDocument extends Command
      *
      * @var string
      */
-    protected $signature = 'es:index-document {path}';
+    protected $signature = 'es:ingest-documents {path}';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Post json document to Elastic Search for indexing';
+    protected $description = 'Ingest json documents to Elastic Search for indexing';
 
     /**
      * Create a new command instance.
@@ -38,19 +38,34 @@ class ElasticSearchIndexDocument extends Command
     public function handle()
     {
         $path = $this->argument('path');
+        if(!file_exists($path)) {
+            $path = env('XSLT_OUT_PATH');
+        }
 
-        if(file_exists($path)){
-            $text = file_get_contents($path);
+        $errors = array();
+        $files = array_diff(scandir($path), array('..', '.'));
+        foreach($files as $file) {
+            $text = file_get_contents($path.$file);
             $body = json_decode($text, true);
 
             $id = $body['id'];
-            $index = Config::get("app.elastic_search_index");
-            $type = $body['kindofdata'];
+            $index = env('ES_STUDY_UNIT_INDEX');
+            $type = env('ES_STUDY_INDEX_TYPE');
 
-            $this->comment(PHP_EOL.'importing '.$path.PHP_EOL);
-            ElasticSearch::indexDocument($id, $index, $type, $body);
-        }else{
-            $this->comment(PHP_EOL.$path.' does not exist'.PHP_EOL);
+            $this->comment('Importing: '.$path.$file);
+            $result = ElasticSearch::indexDocument($id, $index, $type, $body);
+
+            if(!$result['created']) {
+                array_push($errors, $path.$file);
+            }
+        }
+
+        $this->info(PHP_EOL.'Result: ');
+        $this->info('File to ingest: '.sizeof($files));
+        $this->info('Failed: '.sizeof($errors));
+        $this->comment(PHP_EOL.'Error files:');
+        foreach($errors as $error) {
+            $this->comment('File: '.$error);
         }
     }
 }

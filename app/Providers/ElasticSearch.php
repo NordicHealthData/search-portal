@@ -195,7 +195,8 @@ class ElasticSearch extends ServiceProvider{
             'type' => $type,
             'body' => $body
         ];
-
+        
         $ret = $client->index($params);
+        return $ret;
     }
 }
