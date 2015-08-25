@@ -48,6 +48,10 @@ class ElasticSearchIndexDocument extends Command
         foreach($files as $file) {
             $text = file_get_contents($path.$file);
             $body = json_decode($text, true);
+            if(!isset($body)) { // not conform json!
+                array_push($errors, $path.$file);
+                continue;
+            }
 
             $id = $body['id'];
             $index = env('ES_STUDY_UNIT_INDEX');

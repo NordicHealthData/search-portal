@@ -6,7 +6,7 @@ namespace App\Helpers;
  * @package App\Helpers
  */
 class XsltHelper{
-    const DDI3_1_TO_JSON = 'ddi-xslt/ddi-json/ddi3_1/xsl/ddi3_1.xsl';
+    const DDI3_1_TO_JSON = 'ddi-json/ddi3_1/xsl/ddi3_1.xsl';
 
     /**
      * @var \SaxonProcessor
