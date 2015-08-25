@@ -7,10 +7,23 @@
     @endif
 @endforeach
 
+<p>
+    @if(array_key_exists('startdate', $study['_source']))
+    <strong>ID:</strong> <span>{{ $study['_id'] }}</span><br />
+    @endif    
+</p>
+
 <h3>Abstract</h3>
 @foreach($study['_source']['abstract'] as $abstract)
     @if(array_key_exists('en', $abstract))
-        <p>{{ $title['en'] }}</p>
+        <p>{{ $abstract['en'] }}</p>
+    @endif
+@endforeach
+
+<h3>Purpose</h3>
+@foreach($study['_source']['purpose'] as $purpose)
+    @if(array_key_exists('en', $purpose))
+        <p>{{ $purpose['en'] }}</p>
     @endif
 @endforeach
 
