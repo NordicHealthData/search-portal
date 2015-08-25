@@ -14,6 +14,24 @@
     @endif
 @endforeach
 
+<h3>Subjects</h3>
+<ul>
+@foreach($study['_source']['subject'] as $subject)
+    @if(array_key_exists('en', $subject))
+        <li><a href="/search?subject={{ $subject['en'] }}">{{ $subject['en'] }}</a></li>
+    @endif
+@endforeach
+</ul>
+
+<h3>Keywords</h3>
+<ul>
+@foreach($study['_source']['keyword'] as $keyword)
+    @if(array_key_exists('en', $keyword))
+        <li>{{ $keyword['en'] }}</li>
+    @endif
+@endforeach
+</ul>
+
 <p>
     @if(array_key_exists('startdate', $study['_source']))
     <strong>Start date:</strong> <span>{{ $study['_source']['startdate'] }}</span><br />

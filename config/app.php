@@ -42,8 +42,10 @@ return [
 	
     /* Aggregations used for filtering in the search */
     'elastic_search_aggregations' => [
-            'type' => ['terms' => ['field' => '_type']],
-            'repository' => ['terms' => ['field' => 'repository']],
+        'type' => ['terms' => ['field' => '_type']],
+        'subject' => ['terms' => ['field' => 'subject.en']],
+        'keyword' => ['terms' => ['field' => 'keyword.en']],
+        'repository' => ['terms' => ['field' => 'repository']],
     ],
 	
     /*
