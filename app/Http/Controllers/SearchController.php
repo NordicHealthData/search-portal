@@ -26,7 +26,7 @@ class SearchController extends Controller {
 
     /**
      * Performs a faceted search depending on the GET-values
-     * 
+     *
      * @return View rendered pagination for search results
      */
     public function search() {
@@ -51,7 +51,7 @@ class SearchController extends Controller {
             }
         }
 
-        $hits = ElasticSearch::search($query, 'study');
+        $hits = ElasticSearch::search($query, Config::get("app.elastic_search_index"));
         //dd($hits);
         return view('search.simpleSearch')
                         ->with('type', null)

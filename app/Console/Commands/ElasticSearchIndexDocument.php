@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Config;
 use App\Providers\ElasticSearch;
 
 class ElasticSearchIndexDocument extends Command
@@ -25,10 +26,10 @@ class ElasticSearchIndexDocument extends Command
      *
      * @return void
      */
-    public function __construct() { 
+    public function __construct() {
         parent::__construct();
     }
-    
+
     /**
      * Execute the console command.
      *
@@ -37,15 +38,15 @@ class ElasticSearchIndexDocument extends Command
     public function handle()
     {
         $path = $this->argument('path');
-        
+
         if(file_exists($path)){
             $text = file_get_contents($path);
             $body = json_decode($text, true);
-            
+
             $id = $body['id'];
-            $index = 'study';
+            $index = Config::get("app.elastic_search_index");
             $type = $body['kindofdata'];
-            
+
             $this->comment(PHP_EOL.'importing '.$path.PHP_EOL);
             ElasticSearch::indexDocument($id, $index, $type, $body);
         }else{
