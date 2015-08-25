@@ -12,14 +12,14 @@ class ElasticSearchIndexDocument extends Command
      *
      * @var string
      */
-    protected $signature = 'es:ingest-documents {path}';
+    protected $signature = 'es:ingest-documents {path=null}';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Ingest json documents to Elastic Search for indexing';
+    protected $description = 'Ingest json documents to Elasticsearch for indexing';
 
     /**
      * Create a new command instance.
@@ -38,9 +38,10 @@ class ElasticSearchIndexDocument extends Command
     public function handle()
     {
         $path = $this->argument('path');
-        if(!file_exists($path)) {
+        if(!isset($path) || !file_exists($path)) {
             $path = env('XSLT_OUT_PATH');
         }
+        $this->info(PHP_EOL.'Using directory path for ingest: '.$path.PHP_EOL);
 
         $errors = array();
         $files = array_diff(scandir($path), array('..', '.'));
@@ -61,7 +62,7 @@ class ElasticSearchIndexDocument extends Command
         }
 
         $this->info(PHP_EOL.'Result: ');
-        $this->info('File to ingest: '.sizeof($files));
+        $this->info('Files to ingest: '.sizeof($files));
         $this->info('Failed: '.sizeof($errors));
         $this->comment(PHP_EOL.'Error files:');
         foreach($errors as $error) {

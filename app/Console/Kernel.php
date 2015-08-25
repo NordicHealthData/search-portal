@@ -14,7 +14,8 @@ class Kernel extends ConsoleKernel
      */
     protected $commands = [
         \App\Console\Commands\Inspire::class,
-        \App\Console\Commands\ElasticSearchIndexDocument::class
+        \App\Console\Commands\ElasticSearchIndexDocument::class,
+        \App\Console\Commands\DdiXsltTransform::class,
     ];
 
     /**
