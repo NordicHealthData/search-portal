@@ -24,9 +24,10 @@ class StudyController extends Controller {
         return view('study.index');
     }
 
-    public function view($id) {
-        //dd($id);
-        $document = ElasticSearch::get($id, 'study');
-        dd($document);
+    public function view($type, $id) {
+        $study = ElasticSearch::get($id, 'study', $type);
+        //dd($study);
+        return view('study.view')
+                ->with('study', $study);
     }
 }
