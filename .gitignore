@@ -9,3 +9,4 @@ id_rsa
 id_rsa.pub
 /nbproject/*
 /nbproject/private/
+.idea
