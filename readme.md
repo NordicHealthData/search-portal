@@ -14,8 +14,8 @@ Documentation for the framework can be found on the [Laravel website](http://lar
 ## Setup
 
 1. Clone this repository
-2. Update packages using composer
-   ```composer update```
+2. Install packages using composer
+   ```composer install```
 3. Copy ```.env.exmaple``` to a new file named ```.env```
 4. Edit the config (database curerntly not used)
 
