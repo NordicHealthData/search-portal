@@ -40,7 +40,7 @@
 <ul>
 @foreach($study['_source']['keyword'] as $keyword)
     @if(array_key_exists('en', $keyword))
-        <li>{{ $keyword['en'] }}</li>
+        <li><a href="/search?subject={{ $keyword['en'] }}">{{ $keyword['en'] }}</a></li>
     @endif
 @endforeach
 </ul>
