@@ -40,6 +40,11 @@ Using apache:
 
  add a site/vhost and point it to the directory ```./search-portal/public``` 
  
+### Import json document to the index
+
+```php artisan es:index-document path\to\document.json```
+
+ 
 ### License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
