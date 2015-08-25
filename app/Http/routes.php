@@ -17,3 +17,5 @@ Route::get('/', function () {
 
 Route::get('search', 'SearchController@index');
 Route::get('search', ['as' => 'search', 'uses' => 'SearchController@search']);
+
+Route::get('study/{id}', 'StudyController@view');
