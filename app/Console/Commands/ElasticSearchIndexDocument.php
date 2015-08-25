@@ -4,21 +4,21 @@ namespace App\Console\Commands;
 use Illuminate\Console\Command;
 use App\Providers\ElasticSearch;
 
-class ElasticSearchPostDocument extends Command
+class ElasticSearchIndexDocument extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'ea:post {path}';
+    protected $signature = 'es:index-document {path}';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Post json document to Elastic Search';
+    protected $description = 'Post json document to Elastic Search for indexing';
 
     /**
      * Create a new command instance.
