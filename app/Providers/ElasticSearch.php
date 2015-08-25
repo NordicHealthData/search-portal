@@ -7,9 +7,14 @@ use Illuminate\Support\Facades\Config;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Pagination\LengthAwarePaginator;
+use Elasticsearch\ClientBuilder;
+use Elasticsearch\Client;
 
 class ElasticSearch extends ServiceProvider{
 
+    /**
+     * @var \Elasticsearch\Client
+     */
     private static $client = NULL;
 
     /**
@@ -40,9 +45,12 @@ class ElasticSearch extends ServiceProvider{
     private static function getClient() {
         if ( is_null( self::$client ) ){
             $params = array();
-            $params['hosts'] = array (Config::get('app.elastic_search_host'));
+            $params['hosts'] = array (env('app.elastic_search_host'));
 
-            self::$client = new \Elasticsearch\Client($params);
+            //self::$client = new \Elasticsearch\Client($params);
+            self::$client = ClientBuilder::create()
+                ->setHosts(array (env('ELASTICH_SEARCH_HOST')))
+                ->build();
         }
         return self::$client;
     }
