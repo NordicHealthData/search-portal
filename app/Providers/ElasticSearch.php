@@ -82,6 +82,17 @@ class ElasticSearch extends ServiceProvider{
         }
     }
 
+    public static function suggest($text, $params=null, $index = null) {
+        $searchParams = array();
+
+        $searchParams['body'] = '{"mysuggest":{"text":"'.$text.'","term":{"field":"_all","size":6,"prefix_length":4,"min_word_length":3,"suggest_mode":"always","sort":"frequency"}}}';
+
+        // do suggest
+        $client = self::getClient();
+        $queryResponse = $client->suggest($searchParams);
+        return $queryResponse;
+    }
+
     /**
      * Performs a paginated search against Elastic Search
      *

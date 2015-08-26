@@ -58,4 +58,18 @@ class SearchController extends Controller {
                         ->with('aggregations', $query['aggregations'])
                         ->with('hits', $hits);
     }
+
+    /**
+     * Performs an auto completion request
+     * @return mixed
+     */
+    public function suggest() {
+        $text = '';
+        if (Request::has('text')) {
+            $text = Request::get('text');
+        }
+
+        $result = ElasticSearch::suggest($text);
+        return $result;
+    }
 }
