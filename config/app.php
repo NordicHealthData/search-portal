@@ -42,10 +42,13 @@ return [
 	
     /* Aggregations used for filtering in the search */
     'elastic_search_aggregations' => [
-        'type' => ['terms' => ['field' => '_type']],
+        'repository' => ['terms' => ['field' => 'repository']],
         'subject' => ['terms' => ['field' => 'subject.en']],
         'keyword' => ['terms' => ['field' => 'keyword.en']],
-        'repository' => ['terms' => ['field' => 'repository']],
+        'kindofdata' => ['terms' => ['field' => 'kindofdata']],
+        'analysisunit' => ['terms' => ['field' => 'analysis unit']],
+        'collection' => ['terms' => ['field' => 'collection']],
+        'group' => ['terms' => ['field' => 'group']],
     ],
 	
     /*
