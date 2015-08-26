@@ -14,10 +14,16 @@ Documentation for the framework can be found on the [Laravel website](http://lar
 ## Setup
 
 1. Clone this repository
+
 2. Install packages using composer
+
    ```composer install```
+
 3. Copy ```.env.exmaple``` to a new file named ```.env```
+
 4. Edit the config (database curerntly not used)
+    
+    change ``ELASTICH_SEARCH_HOST`` to your elastic search host
 
 ## Run
 
@@ -39,6 +45,16 @@ Using vagrant:
 Using apache:
 
  add a site/vhost and point it to the directory ```./search-portal/public``` 
+
+### Transform DDI-XML to json
+
+  Clone the DDI-XSLT project: https://github.com/MetadataTransform/ddi-xslt
+
+  Edit our ``.env`` file so ``XSLT_BASE_LOCATION`` points to your directory for ddi-xslt
+
+  Run the transformation
+
+  ```php artisan xslt:ddi-to-json {version=ddi31} {path=null} {outpath=null}```
  
 ### Import json document to the index
 
