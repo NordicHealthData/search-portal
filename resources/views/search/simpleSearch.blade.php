@@ -96,11 +96,11 @@
                                                 @if(array_key_exists('title', $hit['_source']))
                                                     @foreach($hit['_source']['title'] as $title)
                                                         @if(array_key_exists('en', $title))
-                                                            <a href="/study/{{ $hit['_type'] }}/{{ $hit['_id'] }}">{{ $title['en'] }}</a>
+                                                            <a href="/study/{{ $hit['_id'] }}">{{ $title['en'] }}</a>
                                                         @endif
                                                     @endforeach
                                                 @else
-                                                    <a href="/study/{{ $hit['_type'] }}/{{ $hit['_id'] }}">[Title missing]</a>                                  
+                                                   <a href="/study/{{ $hit['_id'] }}">[Title missing]</a>                                  
                                                 @endif 
                                             </strong>
                                         
