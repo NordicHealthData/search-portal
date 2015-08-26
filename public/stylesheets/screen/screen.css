@@ -1,0 +1,10 @@
+/*
+-------------------------------------------------------------------------------
+Nordic Health Data Portal screen styles
+---------------------------------------------------------------------------- */
+
+/* Import stylesheets */
+@import url("../shared/normalize.css");
+@import url("../shared/foundation.css");
+@import url("../shared/typography.css");
+@import url("master.css");

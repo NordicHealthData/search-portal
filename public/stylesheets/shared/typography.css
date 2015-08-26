@@ -1,0 +1,167 @@
+/*
+-------------------------------------------------------------------------------
+Nordic Health Data Portal typography styles
+---------------------------------------------------------------------------- */
+
+/* Typeface definitions
+---------------------------------------------------------------------------- */
+
+@font-face {
+    font-family: "Work Sans"; /* Regular */
+    src: url(/fonts/work-sans-regular-webfont.eot);
+    src: url(/fonts/work-sans-regular-webfont.eot?#iefix) format("embedded-opentype"),
+         url(/fonts/work-sans-regular-webfont.woff2) format("woff2"),
+         url(/fonts/work-sans-regular-webfont.woff) format("woff"),
+         url(/fonts/work-sans-regular-webfont.ttf) format("truetype"),
+         url(/fonts/work-sans-regular-webfont.svg#work_sansregular) format("svg");
+    font-style: normal;
+    font-weight: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Work Sans"; /* Thin */
+    src: url(/fonts/work-sans-thin-webfont.eot);
+    src: url(/fonts/work-sans-thin-webfont.eot?#iefix) format("embedded-opentype"),
+         url(/fonts/work-sans-thin-webfont.woff2) format("woff2"),
+         url(/fonts/work-sans-thin-webfont.woff) format("woff"),
+         url(/fonts/work-sans-thin-webfont.ttf) format("truetype"),
+         url(/fonts/work-sans-thin-webfont.svg#work_sansthin) format("svg");
+    font-style: normal;
+    font-weight: normal;
+    font-weight: 100;
+}
+
+@font-face {
+    font-family: "Work Sans"; /* Extra-Light */
+    src: url(/fonts/work-sans-extralight-webfont.eot);
+    src: url(/fonts/work-sans-extralight-webfont.eot?#iefix) format("embedded-opentype"),
+         url(/fonts/work-sans-extralight-webfont.woff2) format("woff2"),
+         url(/fonts/work-sans-extralight-webfont.woff) format("woff"),
+         url(/fonts/work-sans-extralight-webfont.ttf) format("truetype"),
+         url(/fonts/work-sans-extralight-webfont.svg#work_sansextralight) format("svg");
+    font-style: normal;
+    font-weight: normal;
+    font-weight: 200;
+}
+
+@font-face {
+    font-family: "Work Sans"; /* Light */
+    src: url(/fonts/work-sans-light-webfont.eot);
+    src: url(/fonts/work-sans-light-webfont.eot?#iefix) format("embedded-opentype"),
+         url(/fonts/work-sans-light-webfont.woff2) format("woff2"),
+         url(/fonts/work-sans-light-webfont.woff) format("woff"),
+         url(/fonts/work-sans-light-webfont.ttf) format("truetype"),
+         url(/fonts/work-sans-light-webfont.svg#work_sanslight) format("svg");
+    font-style: normal;
+    font-weight: normal;
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: "Work Sans"; /* Medium */
+    src: url(/fonts/work-sans-medium-webfont.eot);
+    src: url(/fonts/work-sans-medium-webfont.eot?#iefix) format("embedded-opentype"),
+         url(/fonts/work-sans-medium-webfont.woff2) format("woff2"),
+         url(/fonts/work-sans-medium-webfont.woff) format("woff"),
+         url(/fonts/work-sans-medium-webfont.ttf) format("truetype"),
+         url(/fonts/work-sans-medium-webfont.svg#work_sansmedium) format("svg");
+    font-style: normal;
+    font-weight: normal;
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Work Sans"; /* Semi-Bold */
+    src: url(/fonts/work-sans-semibold-webfont.eot);
+    src: url(/fonts/work-sans-semibold-webfont.eot?#iefix) format("embedded-opentype"),
+         url(/fonts/work-sans-semibold-webfont.woff2) format("woff2"),
+         url(/fonts/work-sans-semibold-webfont.woff) format("woff"),
+         url(/fonts/work-sans-semibold-webfont.ttf) format("truetype"),
+         url(/fonts/work-sans-semibold-webfont.svg#work_sanssemibold) format("svg");
+    font-style: normal;
+    font-weight: bold;
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "Work Sans"; /* Bold */
+    src: url(/fonts/work-sans-bold-webfont.eot);
+    src: url(/fonts/work-sans-bold-webfont.eot?#iefix) format("embedded-opentype"),
+         url(/fonts/work-sans-bold-webfont.woff2) format("woff2"),
+         url(/fonts/work-sans-bold-webfont.woff) format("woff"),
+         url(/fonts/work-sans-bold-webfont.ttf) format("truetype"),
+         url(/fonts/work-sans-bold-webfont.svg#work_sansbold) format("svg");
+    font-style: normal;
+    font-weight: bold;
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "Work Sans"; /* Extra-Bold */
+    src: url(/fonts/work-sans-extrabold-webfont.eot);
+    src: url(/fonts/work-sans-extrabold-webfont.eot?#iefix) format("embedded-opentype"),
+         url(/fonts/work-sans-extrabold-webfont.woff2) format("woff2"),
+         url(/fonts/work-sans-extrabold-webfont.woff) format("woff"),
+         url(/fonts/work-sans-extrabold-webfont.ttf) format("truetype"),
+         url(/fonts/work-sans-extrabold-webfont.svg#work_sansextrabold) format("svg");
+    font-style: normal;
+    font-weight: bolder;
+    font-weight: 800;
+}
+
+@font-face {
+    font-family: "Work Sans"; /* Ultra-Bold / Black */
+    src: url(/fonts/work-sans-black-webfont.eot);
+    src: url(/fonts/work-sans-black-webfont.eot?#iefix) format("embedded-opentype"),
+         url(/fonts/work-sans-black-webfont.woff2) format("woff2"),
+         url(/fonts/work-sans-black-webfont.woff) format("woff"),
+         url(/fonts/work-sans-black-webfont.ttf) format("truetype"),
+         url(/fonts/work-sans-black-webfont.svg#work_sansblack) format("svg");
+    font-style: normal;
+    font-weight: bolder;
+    font-weight: 900;
+}
+
+/* Headings
+---------------------------------------------------------------------------- */
+
+h1 {
+    color: #50c035;
+    font-family: "Work Sans", "Trebuchet MS", Helvetica, "Helvetica Neue", sans-serif;
+    font-size: 1.6875rem; /* ≈ 27px */
+    font-weight: normal;
+    line-height: 1em;
+    margin: 0 0 0.5em 0;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #50c035;
+    font-family: "Work Sans", "Trebuchet MS", Helvetica, "Helvetica Neue", sans-serif;
+    font-weight: normal;
+}
+
+h2 {
+    font-size: 28px;
+    font-weight: 300; /* Light */
+}
+
+h3 {
+    font-size: 18px;
+}
+
+h4 {
+    font-size: 16px;
+}
+
+h5 {
+    font-size: 14px;
+}
+
+h6 {
+    font-size: 12px;
+}

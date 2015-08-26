@@ -1,0 +1,258 @@
+/*
+-------------------------------------------------------------------------------
+Nordic Health Data Portal master styles
+---------------------------------------------------------------------------- */
+
+/* Global definitions
+---------------------------------------------------------------------------- */
+
+body {
+    background-color: #e8e9f3;
+    color: #262123;
+    font-family: "Work Sans", "Trebuchet MS", Helvetica, "Helvetica Neue", sans-serif;
+    font-size: 100%; /* = 16px */
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    font-weight: 300; /* Light */
+    line-height: 1.5em;
+}
+
+a:link,
+a:visited {
+    color: #50c035;
+    outline: none;
+    text-decoration: none;
+}
+
+a:hover,
+a:visited:hover {
+    color: #81ec62;
+    text-decoration: underline;
+}
+
+/* Structure
+---------------------------------------------------------------------------- */
+
+/* Header
+---------------------------------------------------------------------------- */
+
+#header {
+    background-color: #50c035;
+    border-top: 7px solid #fff;
+    margin-bottom: 30px;
+    padding: 15px 0;
+}
+
+/* Overrides for the Foundation Top Bar */
+
+.contain-to-grid,
+#header .top-bar,
+#header .top-bar.expanded,
+#header .top-bar.expanded .title-area,
+#header .top-bar .top-bar-section ul li,
+#header .top-bar .top-bar-section li:not(.has-form) a:not(.button) {
+    background: none;
+}
+
+#header .top-bar .name {
+    height: auto;
+}
+
+#header .top-bar .name h1 a,
+#header .top-bar .name h2 a,
+#header .top-bar .name h3 a,
+#header .top-bar .name h4 a,
+#header .top-bar .name p a,
+#header .top-bar .name span a,
+#header .top-bar .toggle-topbar.menu-icon a,
+#header .top-bar .top-bar-section ul li > a {
+    color: #fff;
+    font-family: "Work Sans", "Trebuchet MS", Helvetica, "Helvetica Neue", sans-serif;
+    font-size: 14px;
+}
+
+#header .top-bar .has-dropdown .dropdown li {
+    padding: 0;
+}
+
+/* --- Navigation (Foundation Top Bar) --- */
+
+#header .navigation {
+    border-bottom: 1px solid #fff; /* Fallback for the Microsoft Internet Explorer */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.50);
+    border-bottom: none;
+}
+
+#header .navigation #logo a:link,
+#header .navigation #logo a:visited {
+    font-size: 20px;
+    font-weight: 300; /* Light */
+}
+
+/* Content
+---------------------------------------------------------------------------- */
+
+#content p {
+    font-size: 14px;
+    font-weight: 300; /* Light */
+}
+
+#content .block {
+    background-color: #fff;
+    margin-top: 15px;
+    padding: 25px 0;
+}
+
+/* "Cards" */
+
+#content .card {
+    /*background: pink;*/
+}
+
+#content .card .header {
+    background-color: #272635;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    clear: both;
+    color: #fff;
+    line-height: 1.3rem;
+    margin: -5px 5px;
+    padding: 15px;
+}
+
+#content .card .header a:link,
+#content .card .header a:visited {
+    color: #fff;
+}
+
+#content .card .header .label {
+    font-weight: 100; /* Thin */
+}
+
+#content .card .content {
+    background-color: #fff;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    box-shadow: 0 1px 2px rgba(43, 59, 93, 0.29);
+    margin: 5px;
+    padding: 15px;
+}
+
+#content .card .content p {
+    font-size: 13px;
+}
+
+#content .featured {
+    background-color: #50c035;
+    background: url(/images/content/blackboard.jpg) 50% 50% no-repeat transparent;
+    background-size: cover;
+    color: #fff;
+    margin-top: -30px;
+    margin-bottom: 25px;
+    padding: 25px 0;
+}
+
+#content img.featured {
+    background: none;
+    padding: 0;
+}
+
+#content .featured h1 {
+    color: #fff;
+    font-size: 60px;
+    font-weight: 200; /* Extra-Light */
+    line-height: 3rem;
+    margin: 50px 0;
+}
+
+#content .featured h1 small {
+    color: #fff;
+    color: rgba(255, 255, 255, 0.75);
+    display: block;
+    font-size: 26px;
+    margin-top: 15px;
+    line-height: 2rem;
+}
+
+#content .featured form {
+    margin-top: 50px;
+}
+
+#content .featured form input[type="search"],
+#content .featured form input[type="text"] {
+    background: none;
+    border: none;
+    border-bottom: 1px solid #fff;
+    box-shadow: none;
+    color: #fff;
+}
+
+:-ms-input-placeholder {
+   color: #fff;
+}
+
+:-moz-placeholder {
+   color: #fff;
+}
+
+::-moz-placeholder {
+   color: #fff;
+}
+
+::-webkit-input-placeholder {
+   color: #fff;
+}
+
+#content .featured .tag {
+    font-size: 14px;
+    font-weight: 500; /* Medium */
+    padding: 2px 4px;
+    text-align: center;
+    vertical-align: super;
+}
+
+#content .featured .tag.prototype {
+    background-color: #c60f13;
+}
+
+#content .filters {
+    list-style: none;
+    margin: 0
+}
+
+#content .filters li {
+    margin-top: 10px;
+}
+
+#content .filters li:first-child {
+    margin-top: 0;
+}
+
+#content .filters li .label {
+    background-color: #fff;
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: normal;
+    font-weight: 400; /* Regular */
+    padding: 2px 5px;
+    text-align: center;
+}
+
+/* Pagination */
+
+#content .pagination {
+    border-top: 1px solid #50c035;
+    list-style: none;
+    margin: 0 0 25px 0;
+    padding: 25px 0;
+}
+
+#content .pagination li {
+    float: left;
+    margin: 0 0 0 15px;
+}
+
+#content .pagination li:first-child {
+    margin: 0;
+}
