@@ -93,7 +93,7 @@
                                     <div class="col-md-10">
                                         <div class="row">
                                             <strong>
-                                                @if(array_key_exists('title', $hit['_source']))
+                                                @if(array_key_exists('title', $hit['_source']) && is_array($hit['_source']['title']))
                                                     @foreach($hit['_source']['title'] as $title)
                                                         @if(array_key_exists('en', $title))
                                                             <a href="/study/{{ $hit['_id'] }}">{{ $title['en'] }}</a>
