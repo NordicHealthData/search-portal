@@ -49,7 +49,7 @@ class ElasticSearchIndexDocument extends Command
             $text = file_get_contents($path.$file);
             $body = json_decode($text, true);
             if(!isset($body)) { // not conform json!
-                array_push($errors, $path.$file);
+                array_push($errors, $path.$file.' - JSON error');
                 continue;
             }
 
@@ -61,7 +61,7 @@ class ElasticSearchIndexDocument extends Command
             $result = ElasticSearch::indexDocument($id, $index, $type, $body);
 
             if(!$result['created']) {
-                array_push($errors, $path.$file);
+                array_push($errors, $path.$file.' - ES ingest error');
             }
         }
 
