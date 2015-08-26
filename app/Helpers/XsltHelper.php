@@ -14,8 +14,10 @@ class XsltHelper{
     public $proc;
 
     function __construct() {
-        $this->proc = new \SaxonProcessor('');
-        \Log::info('Saxon Processor version: '.$this->proc->version());
+        if(env('XSLT_USE_SAXON_EXTENSION')){
+            $this->proc = new \SaxonProcessor('');
+            \Log::info('Saxon Processor version: '.$this->proc->version());
+        }
     }
 
     /**
@@ -25,6 +27,20 @@ class XsltHelper{
      * @throws \Exception on bad transformation
      */
     public function transform($xslt, $xml, $outPath = null) {
+        if(env('XSLT_USE_SAXON_EXTENSION')){
+            transformUsingSaxonExtension($xslt, $xml, $outhPath);
+        }else{
+             transformUsingSaxonJar($xslt, $xml, $outhPath);
+        }
+    }
+    
+    /**
+     * Transform xml  via saoxon extension to a directory
+     * @param $xslt file of stylesheet to use
+     * @param $xml xml file to transform
+     * @throws \Exception on bad transformation
+     */
+    private function transformUsingSaxonExtension($xslt, $xml, $outhPath = null){
         // clear transformer
         $this->proc->clearParameters();
         $this->proc->clearProperties();
@@ -46,7 +62,22 @@ class XsltHelper{
             \Log::error('XSLT tansformation error', ['Msg'=>$e->getMessage(),
                 'Xslt'=>$xslt, 'Xml'=>$xml]);
             throw $e;
-        }
+        }        
+    }
+    
+     /**
+     * Transform xml  via saoxon jar to a directory
+     * @param $xslt file of stylesheet to use
+     * @param $xml xml file to transform
+     * @throws \Exception on bad transformation
+     */
+    private function transformUsingSaxonJar($xslt, $xml, $outhPath = null){
+        $command = 'java -jar '.env('XSLT_BASE_LOCATION').
+                   ' -xsl:'.env('XSLT_BASE_LOCATION').$xslt.
+                   ' -s:'.$xml.
+                   ' -o:'.$this->getOutFileName($xml).
+                   ' filepath='.$outPath;
+        
     }
 
     /**
