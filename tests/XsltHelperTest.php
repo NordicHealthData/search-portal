@@ -26,15 +26,14 @@ class XsltHelperTest extends TestCase
      */
     public function transform()
     {
-        $this->helper->transform(XsltHelper::DDI3_1_TO_JSON,
-            $this->helper->getBaseXsltLocation().'../testdata/dda-213.xml', '/tmp/');
-        $testFile = '/tmp/dda-213.json';
+        $test = '/tmp/ddi_archive/dda-213.xml';
+        $this->helper->transform(XsltHelper::DDI3_1_TO_JSON, $test, '/tmp/');
+        $testFile = '/tmp/dda-213.xml.json';
         $result = file_exists($testFile);
         $this->assertTrue($result, 'Transformation file not found!, '.$testFile);
 
         unlink($testFile);
-        $this->helper->transform(XsltHelper::DDI3_1_TO_JSON,
-            $this->helper->getBaseXsltLocation().'../testdata/dda-213.xml');
+        $this->helper->transform(XsltHelper::DDI3_1_TO_JSON, $test);
         $this->assertTrue($result, 'Transformation file not found!, '.$testFile);
     }
 
@@ -49,7 +48,8 @@ class XsltHelperTest extends TestCase
      * @test
      */
     public function getOutFileName() {
-        $fileName = $this->helper->getOutFileName('/testdata/dda-213.xml');
-        $this->assertEquals('dda-213.json', $fileName, 'Not the same!');
+        $test = '/testdata/dda-213.xml';
+        $fileName = $this->helper->getOutFileName($test);
+        $this->assertEquals('dda-213.xml.json', $fileName, 'Not the same!');
     }
 }

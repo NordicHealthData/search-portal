@@ -60,8 +60,17 @@ class ElasticSearchIndexDocument extends Command
             $this->comment('Importing: '.$path.$file);
             $result = ElasticSearch::indexDocument($id, $index, $type, $body);
 
-            if(!$result['created']) {
+            if(!isset($result)) { // not conform json!
                 array_push($errors, $path.$file.' - ES ingest error');
+                continue;
+            }
+            \Log::debug(json_encode($result));
+
+            if($result['created']) {
+                $this->comment(' - result: Created');
+            }
+            if(intval($result['_version'])>1) {
+                $this->comment(' - result: Updated to version: '.$result['_version']);
             }
         }
 

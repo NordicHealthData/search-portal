@@ -64,8 +64,7 @@ class XsltHelper{
      */
     public function getOutFileName($xml) {
         $filename = substr(strrchr($xml, "/"), 1);
-        $outFile = substr($filename, 0, strpos($filename, "."));
-        $outFile .= '.json';
-        return $outFile;
+        $filename .=  '.json';
+        return $filename    ;
     }
 }
