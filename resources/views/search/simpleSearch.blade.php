@@ -92,6 +92,7 @@
                                 <div class="row">
                                     <div class="col-md-10">
                                         <div class="row">
+                                            <span class="badge" style="width:13%;">{{ $hit['_id'] }}</span>
                                             <strong>
                                                 @if(array_key_exists('title', $hit['_source']) && is_array($hit['_source']['title']))
                                                     @foreach($hit['_source']['title'] as $title)
@@ -100,9 +101,10 @@
                                                         @endif
                                                     @endforeach
                                                 @else
-                                                   <a href="/study/{{ $hit['_id'] }}">[Title missing]</a>                                  
+                                                <a href="/study/{{ $hit['_id'] }}">[Title missing]</a>                                  
                                                 @endif 
                                             </strong>
+                                            
                                         
                                             @if(array_key_exists('abstract', $hit['_source']))
                                                 @foreach($hit['_source']['abstract'] as $abstract)
