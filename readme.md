@@ -46,6 +46,13 @@ Using apache:
 
  add a site/vhost and point it to the directory ```./search-portal/public``` 
 
+ Using docker:
+
+ cp .env.example .env
+ vim .env
+ docker build -t nordichealthportal .
+ docker run --name portal -p 80:80 -it nordichealthportal
+
 ### Transform DDI-XML to json
 
   Clone the DDI-XSLT project: https://github.com/MetadataTransform/ddi-xslt
