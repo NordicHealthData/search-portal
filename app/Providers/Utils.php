@@ -126,5 +126,24 @@ class Utils extends ServiceProvider{
             $arguments[$key] = $value;
         }
         return $arguments;
-    }    
+    }
+    
+    
+    public static function getLandingPage($agency, $id){
+        $agency = strtolower($agency);
+        switch($agency){
+            case 'fsd':
+                return 'http://www.fsd.uta.fi/en/data/catalogue/FSD'.$id;
+                break;
+            case 'se.snd':
+                return 'http://snd.gu.se/en/catalogue/study/'.str_replace(' ', '', $id);
+                break;
+            case 'dk.dda':
+                return 'http://dda.dk/catalogue/'.$id;
+                break;
+            case 'nsd':
+                return 'http://nsddata.nsd.uib.no/webview/?submode=abstract&mode=documentation&study=http://nsddata.nsd.uib.no/obj/fStudy/NSD'.$id;
+                break;
+        }
+    }
 }

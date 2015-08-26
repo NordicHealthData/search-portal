@@ -8,10 +8,14 @@
 @endforeach
 
 <p>
-    @if(array_key_exists('startdate', $study['_source']))
     <strong>ID:</strong> <span>{{ $study['_id'] }}</span><br />
-    @endif    
 </p>
+
+@if($study['_source']['landingpage'])
+<p>
+    <a href="{{ $study['_source']['landingpage'] }}">{{ $study['_source']['landingpage'] }}</a>
+</p>
+@endif
 
 <h3>Abstract</h3>
 @foreach($study['_source']['abstract'] as $abstract)
