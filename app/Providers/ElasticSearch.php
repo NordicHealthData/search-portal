@@ -194,6 +194,14 @@ class ElasticSearch extends ServiceProvider{
         return $paginator;
     }
 
+    /**
+     * Index a document in Elastic Search
+     * @param type $id identifier of the document
+     * @param type $index index for the document
+     * @param type $type type of the document
+     * @param type $body content of the document
+     * @return mixed
+     */
     public static function indexDocument($id, $index, $type, $body){
         $client = self::getClient();
 
@@ -206,5 +214,13 @@ class ElasticSearch extends ServiceProvider{
         
         $ret = $client->index($params);
         return $ret;
+    }
+    
+    public static function deleteIndex($index){
+        $client = self::getClient();
+        
+        $deleteParams = array();
+        $deleteParams['index'] = $index;
+        $client->indices()->delete($deleteParams);
     }
 }

@@ -16,6 +16,7 @@ class Kernel extends ConsoleKernel
         \App\Console\Commands\Inspire::class,
         \App\Console\Commands\ElasticSearchIndexDocument::class,
         \App\Console\Commands\DdiXsltTransform::class,
+        \App\Console\Commands\ElasticSearchDeleteIndex::class,
     ];
 
     /**

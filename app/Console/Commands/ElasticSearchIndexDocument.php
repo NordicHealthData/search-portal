@@ -5,20 +5,9 @@ use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Config;
 use App\Providers\ElasticSearch;
 
-class ElasticSearchIndexDocument extends Command
-{
-    /**
-     * The name and signature of the console command.
-     *
-     * @var string
-     */
-    protected $signature = 'es:ingest-documents {path=null}';
+class ElasticSearchIndexDocument extends Command {
 
-    /**
-     * The console command description.
-     *
-     * @var string
-     */
+    protected $signature = 'es:ingest-documents {path=null}';
     protected $description = 'Ingest json documents to Elasticsearch for indexing';
 
     /**
@@ -35,8 +24,7 @@ class ElasticSearchIndexDocument extends Command
      *
      * @return mixed
      */
-    public function handle()
-    {
+    public function handle() {
         $path = $this->argument('path');
         if(!isset($path) || !file_exists($path)) {
             $path = env('XSLT_OUT_PATH');
