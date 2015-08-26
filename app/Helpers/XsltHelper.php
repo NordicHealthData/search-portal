@@ -7,6 +7,7 @@ namespace App\Helpers;
  */
 class XsltHelper{
     const DDI3_1_TO_JSON = 'ddi-json/ddi3_1/xsl/ddi3_1.xsl';
+    const DDI1_2_2_TO_JSON = 'ddi-json/ddi1_2_2/xsl/ddi1_2_2.xsl';
 
     /**
      * @var \SaxonProcessor
@@ -27,10 +28,15 @@ class XsltHelper{
      * @throws \Exception on bad transformation
      */
     public function transform($xslt, $xml, $outPath = null) {
+        // define output directory
+        if(!isset($outPath)) {
+            $outPath = env('XSLT_OUT_PATH');
+        }
+
         if(env('XSLT_USE_SAXON_EXTENSION')){
-            transformUsingSaxonExtension($xslt, $xml, $outhPath);
+            $this->transformUsingSaxonExtension($xslt, $xml, $outPath);
         }else{
-             transformUsingSaxonJar($xslt, $xml, $outhPath);
+             $this->transformUsingSaxonJar($xslt, $xml, $outPath);
         }
     }
     
@@ -40,7 +46,7 @@ class XsltHelper{
      * @param $xml xml file to transform
      * @throws \Exception on bad transformation
      */
-    private function transformUsingSaxonExtension($xslt, $xml, $outhPath = null){
+    private function transformUsingSaxonExtension($xslt, $xml, $outPath){
         // clear transformer
         $this->proc->clearParameters();
         $this->proc->clearProperties();
@@ -49,11 +55,6 @@ class XsltHelper{
         $this->proc->setSourceFile($xml);
         $xsltStr = file_get_contents((env('XSLT_BASE_LOCATION').$xslt));
         $this->proc->setStylesheetContent($xsltStr);
-
-        // define output directory
-        if(!isset($outPath)) {
-            $outPath = env('XSLT_OUT_PATH');
-        }
 
         // do transformation
         try {
@@ -71,13 +72,12 @@ class XsltHelper{
      * @param $xml xml file to transform
      * @throws \Exception on bad transformation
      */
-    private function transformUsingSaxonJar($xslt, $xml, $outhPath = null){
+    private function transformUsingSaxonJar($xslt, $xml, $outPath){
         $command = 'java -jar '.env('XSLT_BASE_LOCATION').
                    ' -xsl:'.env('XSLT_BASE_LOCATION').$xslt.
                    ' -s:'.$xml.
                    ' -o:'.$this->getOutFileName($xml).
                    ' filepath='.$outPath;
-        
     }
 
     /**

@@ -20,7 +20,7 @@ class DdiXsltTransform extends Command
      *
      * @var string
      */
-    protected $description = 'Transform DDI to json';
+    protected $description = 'Transform DDI to JSON. Options: [ddi122|ddi31] path outpath';
 
     /**
      * Execute the console command.
@@ -46,8 +46,8 @@ class DdiXsltTransform extends Command
 
         if($ddiVersion=='ddi31') {
             $xslt = XsltHelper::DDI3_1_TO_JSON;
-        } elseif($ddiVersion=='ddi21') {
-            $xslt = null;
+        } elseif($ddiVersion=='ddi122') {
+            $xslt = XsltHelper::DDI1_2_2_TO_JSON;
         } else {
             $this->error('Exiting: DDI version not defined!');
             return;
@@ -56,6 +56,7 @@ class DdiXsltTransform extends Command
         $files = array_diff(scandir($path), array('..', '.'));
         $helper = new XsltHelper();
         foreach($files as $file) {
+            $this->comment('doing: ' . $path . $file);
             if(file_exists($path.$file)) {
                 $this->comment('Transforming: ' . $path . $file);
                 $helper->transform($xslt, $path . $file, $outpath);

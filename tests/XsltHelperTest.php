@@ -24,7 +24,7 @@ class XsltHelperTest extends TestCase
     /**
      * @test
      */
-    public function transform()
+    public function transformDdi31()
     {
         $test = '/tmp/ddi_archive/dda-213.xml';
         $this->helper->transform(XsltHelper::DDI3_1_TO_JSON, $test, '/tmp/');
@@ -35,6 +35,19 @@ class XsltHelperTest extends TestCase
         unlink($testFile);
         $this->helper->transform(XsltHelper::DDI3_1_TO_JSON, $test);
         $this->assertTrue($result, 'Transformation file not found!, '.$testFile);
+    }
+
+    /**
+     * @test
+     */
+    public function transformDdi122()
+    {
+        $test = '/tmp/nsd/NSD1962.xml';
+        $this->helper->transform(XsltHelper::DDI1_2_2_TO_JSON, $test, '/tmp/');
+        $testFile = '/tmp/NSD1962.xml.json';
+        $result = file_exists($testFile);
+        $this->assertTrue($result, 'Transformation file not found!, '.$testFile);
+        //unlink($testFile);
     }
 
     /**
