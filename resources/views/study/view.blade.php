@@ -58,7 +58,7 @@
                   <strong>Start date:</strong> <span>{{ $study["_source"]["startdate"] }}</span><br />
               @endif
               @if (array_key_exists("enddate", $study["_source"]))
-                  <strong>Start date:</strong> <span>{{ $study["_source"]["enddate"] }}</span><br />
+                  <strong>End date:</strong> <span>{{ $study["_source"]["enddate"] }}</span><br />
               @endif
           </p>
 
