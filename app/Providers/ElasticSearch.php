@@ -85,7 +85,7 @@ class ElasticSearch extends ServiceProvider{
     public static function suggest($text, $params=null, $index = null) {
         $searchParams = array();
 
-        $searchParams['body'] = '{"mysuggest":{"text":"'.$text.'","term":{"field":"_all","size":6,"prefix_length":4,"min_word_length":3,"suggest_mode":"always","sort":"frequency"}}}';
+        $searchParams['body'] = '{"mysuggest":{"text":"'.$text.'","term":{"field":"_all","size":6,"prefix_length":3,"min_word_length":3,"suggest_mode":"always","sort":"frequency"}}}';
 
         // do suggest
         $client = self::getClient();
@@ -105,6 +105,7 @@ class ElasticSearch extends ServiceProvider{
         $perPage = Request::input('perPage', 10);
         $from = $perPage * (Request::input('page', 1) - 1);
 
+        $query['highlight'] = array('fields' => array('content' => (object) array()));
         $searchParams = array(
             'body' => $query,
             'size' => $perPage,

@@ -6,17 +6,17 @@
             <h1>Search Health Data</h1>
 
             {!! Form::open(array("action" => "SearchController@search", "method" => "GET")) !!}
-                {!! Form::text("q", Request::input("q"), array("placeholder" => "Search for Studies...")) !!}
+            {!! Form::text("q", Request::input("q"), array("id"=>"q", "autocomplete"=>"off", "placeholder" => "Search for Studies...")) !!}
 
-                @if (isset($hits->aggregations))
-                    @foreach ($hits->aggregations as $key => $aggregation)
-                        @if (Input::get($key))
-                            {!! Form::hidden($key, Input::get($key)) !!}
-                        @endif
-                    @endforeach
-                @endif
+            @if (isset($hits->aggregations))
+                @foreach ($hits->aggregations as $key => $aggregation)
+                    @if (Input::get($key))
+                        {!! Form::hidden($key, Input::get($key)) !!}
+                    @endif
+                @endforeach
+            @endif
 
-                {!! Form::submit("Search", array("class" => "button")) !!}
+            {!! Form::submit("Search", array("class" => "button")) !!}
             {!! Form::close() !!}
 
             @foreach ($aggregations as $key => $aggregation)
@@ -47,7 +47,7 @@
                                             <li>
                                                 <a href="{{ route("search", Utils::removeKeyValue($key, $value)) }}" class="active">
                                                     <span class="label">X</span>
-                                                      {{ $value }}
+                                                    {{ $value }}
                                                 </a>
                                             </li>
                                         @endif
@@ -58,8 +58,8 @@
                                     @if (Utils::keyValueActive($key, $bucket["key"]) == false)
                                         <li>
                                             <a href="{{ route("search", Utils::addKeyValue($key, $bucket["key"])) }}">
-                                                  <span class="label">{{ $bucket["doc_count"] }}</span>
-                                                  {{ $bucket["key"] }}
+                                                <span class="label">{{ $bucket["doc_count"] }}</span>
+                                                {{ $bucket["key"] }}
                                             </a>
                                         </li>
                                     @endif
