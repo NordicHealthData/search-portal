@@ -105,7 +105,7 @@ class ElasticSearch extends ServiceProvider{
         $perPage = Request::input('perPage', 10);
         $from = $perPage * (Request::input('page', 1) - 1);
 
-        $query['highlight'] = array('fields' => array('content' => (object) array()));
+        $query['highlight'] = array('fields' => array('*' => (object) array()));
         $searchParams = array(
             'body' => $query,
             'size' => $perPage,
@@ -119,11 +119,12 @@ class ElasticSearch extends ServiceProvider{
         if($type){
             $searchParams['type'] = $type;
         }
+        //dd(json_encode($searchParams));
 
         $client = self::getClient();
 
         $queryResponse = $client->search($searchParams);
-        //dd($queryResponse);
+        dd($queryResponse);
         $paginator = new LengthAwarePaginator(
                             $queryResponse['hits']['hits'],
                             $queryResponse['hits']['total'],
