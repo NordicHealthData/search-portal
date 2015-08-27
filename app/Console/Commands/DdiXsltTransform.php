@@ -33,6 +33,9 @@ class DdiXsltTransform extends Command
         if(!isset($path) || !file_exists($path)) {
             $path = env('XSLT_IN_PATH');
         }
+        if (strcmp(substr($path, -1), '/') !== 0) {
+            $path .= '/';
+        }
         $this->info(PHP_EOL.'Using directory path for transformation: '.$path);
 
         $outpath = $this->argument('outpath');
@@ -56,7 +59,6 @@ class DdiXsltTransform extends Command
         $files = array_diff(scandir($path), array('..', '.'));
         $helper = new XsltHelper();
         foreach($files as $file) {
-            $this->comment('doing: ' . $path . $file);
             if(file_exists($path.$file)) {
                 $this->comment('Transforming: ' . $path . $file);
                 $helper->transform($xslt, $path . $file, $outpath);
