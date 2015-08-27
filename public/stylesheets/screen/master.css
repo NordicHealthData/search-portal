@@ -175,6 +175,10 @@ a:visited:hover {
     /*background: pink;*/
 }
 
+#content .card em {
+    background: lightgray;
+}
+
 #content .card .header {
     background-color: #272635;
     border-top-left-radius: 3px;

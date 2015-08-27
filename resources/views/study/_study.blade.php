@@ -21,6 +21,15 @@
                 @endif
             @endforeach
         @endif
+        @if(array_key_exists("highlight", $hit))
+            @foreach($hit["highlight"] as $highlight)
+                <p>
+                @foreach(array_keys($highlight) as $key)
+                        {!!$highlight[$key]!!}
+                @endforeach
+                </p>
+            @endforeach
+        @endif
     </div>
     <!-- /content -->
 </li>
