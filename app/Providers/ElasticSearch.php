@@ -124,7 +124,7 @@ class ElasticSearch extends ServiceProvider{
         $client = self::getClient();
 
         $queryResponse = $client->search($searchParams);
-        dd($queryResponse);
+        //dd($queryResponse);
         $paginator = new LengthAwarePaginator(
                             $queryResponse['hits']['hits'],
                             $queryResponse['hits']['total'],
