@@ -128,7 +128,22 @@ class Utils extends ServiceProvider{
         return $arguments;
     }
     
+    /**
+     * Fix non iso dates
+     * @param string $date
+     * @return string
+     */
+    public static function fixDate($date){
+        $fixedDate = str_replace('-00', '', $date);
+        return $fixedDate;
+    }
     
+    /**
+     * Generates the landign page
+     * @param string $agency agancy
+     * @param string $id if for the study
+     * @return string URL
+     */
     public static function getLandingPage($agency, $id){
         $agency = strtolower($agency);
         switch($agency){
@@ -144,6 +159,8 @@ class Utils extends ServiceProvider{
             case 'nsd':
                 return 'http://nsddata.nsd.uib.no/webview/?submode=abstract&mode=documentation&study=http://nsddata.nsd.uib.no/obj/fStudy/NSD'.$id;
                 break;
+            default:
+                return '';
         }
     }
 }
