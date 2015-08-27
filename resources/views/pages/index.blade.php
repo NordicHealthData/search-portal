@@ -6,8 +6,6 @@
             <div class="small-12 columns">
                 <h1>Nordic Health<br />
                     Data Portal <span class="tag prototype">[prototype]</span> <small>&mdash; Making Nordic Health Data Visible</small></h1>
-
-                @include("search._form")
             </div>
             <!-- /small-12.columns -->
         </div>
