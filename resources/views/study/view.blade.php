@@ -23,6 +23,7 @@
               @endif
           @endforeach
 
+          @if (array_key_exists("purpose", $study["_source"]))
           <h3>Purpose</h3>
 
           @foreach ($study["_source"]["purpose"] as $purpose)
@@ -30,7 +31,8 @@
                   <p>{{ $purpose["en"] }}</p>
               @endif
           @endforeach
-
+          @endif
+          
           <h3>Subjects</h3>
 
           <ul>
