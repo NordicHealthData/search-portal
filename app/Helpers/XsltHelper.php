@@ -73,11 +73,12 @@ class XsltHelper{
      * @throws \Exception on bad transformation
      */
     private function transformUsingSaxonJar($xslt, $xml, $outPath){
-        $command = 'java -jar '.env('XSLT_BASE_LOCATION').
+        $command = 'java -jar '.env('XSLT_SAXON_JAR_PATH').
                    ' -xsl:'.env('XSLT_BASE_LOCATION').$xslt.
                    ' -s:'.$xml.
-                   ' -o:'.$this->getOutFileName($xml).
-                   ' filepath='.$outPath;
+                   ' -o:'.$outPath.$this->getOutFileName($xml);
+        \Log::debug($command);
+        exec($command);
     }
 
     /**
