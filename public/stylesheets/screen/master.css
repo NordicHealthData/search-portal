@@ -256,3 +256,31 @@ a:visited:hover {
 #content .pagination li:first-child {
     margin: 0;
 }
+
+/* Twitter Bootstrap Typeahead */
+
+#content .typeahead.dropdown-menu {
+    background-color: #fff;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    box-shadow: 0 1px 2px rgba(43, 59, 93, 0.29);
+    list-style: none;
+    margin: 0;
+    position: absolute;
+    z-index: 1000;
+}
+
+#content .typeahead.dropdown-menu li {
+    border-top: 1px solid #ccc;
+}
+
+#content .typeahead.dropdown-menu li:first-child {
+    border-top: none;
+}
+
+#content .typeahead.dropdown-menu li a:link,
+#content .typeahead.dropdown-menu li a:visited {
+    display: block;
+    font-size: 14px;
+    padding: 10px;
+}
