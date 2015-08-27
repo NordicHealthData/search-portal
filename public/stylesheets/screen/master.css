@@ -31,6 +31,37 @@ a:visited:hover {
     text-decoration: underline;
 }
 
+/* Twitter Bootstrap Typeahead */
+
+.typeahead.dropdown-menu {
+    background-color: #fff;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    box-shadow: 0 1px 2px rgba(43, 59, 93, 0.29);
+    list-style: none;
+    margin: 0;
+    position: absolute;
+    z-index: 1000;
+}
+
+.typeahead.dropdown-menu li {
+    border-top: 1px solid #ccc;
+    float: none;
+    padding: 0 !important;
+}
+
+.typeahead.dropdown-menu li:first-child {
+    border-top: none;
+}
+
+.typeahead.dropdown-menu li a:link,
+.typeahead.dropdown-menu li a:visited {
+    color: #50c035 !important;
+    display: block;
+    font-size: 14px;
+    padding: 10px !important;
+}
+
 /* Structure
 ---------------------------------------------------------------------------- */
 
@@ -78,16 +109,50 @@ a:visited:hover {
 
 /* --- Navigation (Foundation Top Bar) --- */
 
-#header .navigation {
-    border-bottom: 1px solid #fff; /* Fallback for the Microsoft Internet Explorer */
-    border-bottom: 1px solid rgba(255, 255, 255, 0.50);
-    border-bottom: none;
-}
-
 #header .navigation #logo a:link,
 #header .navigation #logo a:visited {
     font-size: 20px;
     font-weight: 300; /* Light */
+}
+
+#header .navigation .has-form {
+    min-width: 300px;
+}
+
+#header .navigation form input[type="search"],
+#header .navigation form input[type="text"] {
+    background: none;
+    border: none;
+    border-bottom: 1px solid #fff; /* Fallback for the Microsoft Internet Explorer */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.50);
+    box-shadow: none;
+    color: #fff;
+}
+
+#header .navigation form input[type="search"]:focus,
+#header .navigation form input[type="text"]:focus {
+    border-bottom: 1px solid #fff;
+}
+
+#header .navigation form :-ms-input-placeholder {
+   color: #fff;
+}
+
+#header .navigation form :-moz-placeholder {
+   color: #fff;
+}
+
+#header .navigation form ::-moz-placeholder {
+   color: #fff;
+}
+
+#header .navigation form ::-webkit-input-placeholder {
+   color: #fff;
+}
+
+#header .navigation form .typeahead.dropdown-menu li a:link,
+#header .navigation form .typeahead.dropdown-menu li a:visited {
+    padding: 0 10px !important;
 }
 
 /* Content
@@ -150,11 +215,13 @@ a:visited:hover {
     color: #fff;
     margin-top: -30px;
     margin-bottom: 25px;
+    min-height: 400px;
     padding: 25px 0;
 }
 
 #content img.featured {
     background: none;
+    min-height: 0;
     padding: 0;
 }
 
@@ -163,7 +230,7 @@ a:visited:hover {
     font-size: 60px;
     font-weight: 200; /* Extra-Light */
     line-height: 3rem;
-    margin: 50px 0;
+    margin: 85px 0 50px 0;
 }
 
 #content .featured h1 small {
@@ -173,35 +240,6 @@ a:visited:hover {
     font-size: 26px;
     margin-top: 15px;
     line-height: 2rem;
-}
-
-#content .featured form {
-    margin-top: 50px;
-}
-
-#content .featured form input[type="search"],
-#content .featured form input[type="text"] {
-    background: none;
-    border: none;
-    border-bottom: 1px solid #fff;
-    box-shadow: none;
-    color: #fff;
-}
-
-:-ms-input-placeholder {
-   color: #fff;
-}
-
-:-moz-placeholder {
-   color: #fff;
-}
-
-::-moz-placeholder {
-   color: #fff;
-}
-
-::-webkit-input-placeholder {
-   color: #fff;
 }
 
 #content .featured .tag {
@@ -255,32 +293,4 @@ a:visited:hover {
 
 #content .pagination li:first-child {
     margin: 0;
-}
-
-/* Twitter Bootstrap Typeahead */
-
-#content .typeahead.dropdown-menu {
-    background-color: #fff;
-    border-bottom-left-radius: 3px;
-    border-bottom-right-radius: 3px;
-    box-shadow: 0 1px 2px rgba(43, 59, 93, 0.29);
-    list-style: none;
-    margin: 0;
-    position: absolute;
-    z-index: 1000;
-}
-
-#content .typeahead.dropdown-menu li {
-    border-top: 1px solid #ccc;
-}
-
-#content .typeahead.dropdown-menu li:first-child {
-    border-top: none;
-}
-
-#content .typeahead.dropdown-menu li a:link,
-#content .typeahead.dropdown-menu li a:visited {
-    display: block;
-    font-size: 14px;
-    padding: 10px;
 }

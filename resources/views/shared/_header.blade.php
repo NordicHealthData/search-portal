@@ -10,7 +10,10 @@
             <ul class="right">
                 <li>{!! link_to("/", "Home", array("title" => "Home")) !!}</li>
                 <li>{!! link_to_route("pages.show", "About", array("path" => "about"), array("title" => "About")) !!}</li>
-                <li><a href="/search" title="Search Health Data">Search Health Data</a></li>
+                <li class="has-form">
+                    @include("search._form")
+                </li>
+                <!-- /has-form -->
             </ul>
             <!-- /right -->
         </section>
