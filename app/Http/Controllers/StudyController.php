@@ -23,9 +23,9 @@ class StudyController extends Controller {
                                     env('ES_STUDY_INDEX_TYPE')
                                 );
         
-        if(!isset($study['_source']['landingpage'])){
-            $study['_source']['landingpage'] = Utils::getLandingPage($study['_source']['repository'], $study['_id']);
-        }
+        
+        $study['_source']['landingpage'] = Utils::getLandingPage($study['_source']['repository'], $study['_id']);
+        
         //dd($study);
         return view('study.view')
                 ->with('study', $study);

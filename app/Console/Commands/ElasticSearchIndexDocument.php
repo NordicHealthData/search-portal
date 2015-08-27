@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Config;
 use App\Providers\ElasticSearch;
+use Utils;
 
 class ElasticSearchIndexDocument extends Command {
 
@@ -42,6 +43,10 @@ class ElasticSearchIndexDocument extends Command {
             }
 
             $id = $body['id'];
+            
+            $body['startdate'] = Utils::fixDate($body['startdate']);
+            $body['enddate'] = Utils::fixDate($body['enddate']);
+            
             $index = env('ES_STUDY_UNIT_INDEX');
             $type = env('ES_STUDY_INDEX_TYPE');
 
