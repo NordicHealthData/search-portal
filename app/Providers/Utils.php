@@ -17,6 +17,20 @@ class Utils extends ServiceProvider{
         //
     }    
     
+    public static function getEn($array){
+        if(!is_array($array)){
+            return $array;
+        }else if(array_key_exists('en', $array)){
+            return $array['en'];
+        }else{
+            foreach($array as $key => $value){
+                if(array_key_exists('en', $value)){
+                    return $value['en'];
+                }
+            }
+        }
+    }
+    
     public static function contains($string, array $array){
         foreach($array as $item) {
             if (stripos($string, $item) !== false) return true;

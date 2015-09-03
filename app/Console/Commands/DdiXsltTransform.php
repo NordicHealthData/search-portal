@@ -33,8 +33,8 @@ class DdiXsltTransform extends Command
         if(!isset($path) || !file_exists($path)) {
             $path = env('XSLT_IN_PATH');
         }
-        if (strcmp(substr($path, -1), '/') !== 0) {
-            $path .= '/';
+        if (strcmp(substr($path, -1), "\\") !== 0) {
+            $path .= "\\";
         }
         $this->info(PHP_EOL.'Using directory path for transformation: '.$path);
 

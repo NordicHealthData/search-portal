@@ -1,26 +1,10 @@
 <li class="card">
     <header class="header">
         <span class="label">{{ $hit["_id"] }}</span>
-
-        @if (array_key_exists("title", $hit["_source"]) && is_array($hit["_source"]["title"]))
-            @foreach ($hit["_source"]["title"] as $title)
-                @if (array_key_exists("en", $title))
-                    <a href="/study/{{ $hit["_id"] }}">{{ $title["en"] }}</a>
-                @endif
-            @endforeach
-        @else
-            <a href="/study/{{ $hit["_id"] }}">[Title missing]</a>
-        @endif
+        <a href="/study/{{ $hit["_id"] }}">{{ Utils::getEn($hit["_source"]["title"]) }}</a>
     </header>
 
     <div class="content">
-        @if (array_key_exists("abstract", $hit["_source"]))
-            @foreach ($hit["_source"]["abstract"] as $abstract)
-                @if (array_key_exists("en", $abstract))
-                    <p>{{ str_limit($abstract["en"], 290) }}</p>
-                @endif
-            @endforeach
-        @endif
         @if(array_key_exists("highlight", $hit))
             @foreach($hit["highlight"] as $highlight)
                 <p>
@@ -29,6 +13,8 @@
                 @endforeach
                 </p>
             @endforeach
+        @elseif (array_key_exists("abstract", $hit["_source"]))
+            {{ str_limit(Utils::getEn($hit["_source"]["abstract"]), 150) }}
         @endif
     </div>
     <!-- /content -->
