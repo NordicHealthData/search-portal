@@ -63,7 +63,9 @@ Using apache:
  
 ### Import json document to the index
 
-```php artisan es:index-document path\to\document.json```
+  You can configure the default location of the json files in your .env file
+
+```php artisan es:ingest-documents path\to\documents``
 
  
 ### License
