@@ -33,25 +33,35 @@ class XsltHelper{
      */
     private function transformUsingBuiltInXslt($filePath, $outPath){
 	$source = file_get_contents($filePath);
-	$xml = new \DOMDocument;
-	$xml->loadXML($source);
-
-	$version = $this->getDDIVersion($source);
-
-	$xsl = new \DOMDocument;
-	
-	$xsl->load('resources/xslt/'.$version.'_json.xsl');
-	
-	$proc = new \XSLTProcessor;
-	$proc->importStyleSheet($xsl); 
-
-	$json_xml = $proc->transformToXML($xml);
-	
-	$json = json_encode(simplexml_load_string($json_xml));
         
-        file_put_contents($outPath.basename($filePath).'.json', $json);
+        $version = $this->getDDIVersion($source);
+        
+        if($version){
+            $xml = new \DOMDocument;
+            $xml->loadXML($source);
+
+            $xsl = new \DOMDocument;
+
+            $xsl->load('resources/xslt/'.$version.'_json.xsl');
+
+            $proc = new \XSLTProcessor;
+            $proc->importStyleSheet($xsl); 
+
+            $json_xml = $proc->transformToXML($xml);
+
+            $json = json_encode(simplexml_load_string($json_xml));
+
+            file_put_contents($outPath . basename($filePath).'.json', $json);
+        }else{
+            //TODO: Handle non suported documents
+        }
     }
-       
+    
+    /**
+     * Looks for ddi-version in source xml-string
+     * @param string $source the raw xml-string
+     * @return boolean|string the ddi version found, false if non found
+     */
     private function getDDIVersion(&$source){
         if (strpos($source,'ddi:instance:3_1') !== false) {
             return 'ddi_3_1';
@@ -59,27 +69,8 @@ class XsltHelper{
             return 'ddi_1_2_2';
         }else if(strpos($source,'"http://www.icpsr.umich.edu/DDI/Version2-0.dtd"') !== false){
             return 'ddi_2_0';
+        }else{
+            return false;
         }
-    }
-    
-
-
-    /**
-     * Get the base location path of XSLT stylesheets
-     * @return mixed
-     */
-    public function getBaseXsltLocation() {
-        return env('XSLT_BASE_LOCATION', '');
-    }
-
-    /**
-     * Get the json file name
-     * @param $xml xml file as basis to the json file
-     * @return string json file name
-     */
-    public function getOutFileName($xml) {
-        $filename = substr(strrchr($xml, "/"), 1);
-        $filename .=  '.json';
-        return $filename    ;
     }
 }
