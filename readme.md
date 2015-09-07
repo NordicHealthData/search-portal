@@ -54,14 +54,12 @@ Using apache:
  docker run --name portal -p 80:80 -it nordichealthportal
 
 ### Transform DDI-XML to json
-
-  Clone the DDI-XSLT project: https://github.com/MetadataTransform/ddi-xslt
-
-  Edit our ``.env`` file so ``XSLT_BASE_LOCATION`` points to your directory for ddi-xslt
+   
+  You can configure the default location of the source xml-folder in your .env file
 
   Run the transformation
 
-  ```php artisan xslt:ddi-to-json {version=ddi31} {path=null} {outpath=null}```
+  ```php artisan xslt:ddi-to-json {path=null} {outpath=null}```
  
 ### Import json document to the index
 
