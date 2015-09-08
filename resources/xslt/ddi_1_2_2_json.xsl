@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet 
-	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+    xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
 
     xmlns:ddi="http://www.icpsr.umich.edu/DDI"
@@ -24,74 +24,86 @@
                 </xsl:choose>
             </id>
 
+            <!-- repository -->
+            <repository>
+                <xsl:choose>
+                    <xsl:when test="ddi:stdyDscr/ddi:citation/ddi:distStmt/ddi:distrbtr/@abbr">
+                        <xsl:value-of select="ddi:stdyDscr/ddi:citation/ddi:distStmt/ddi:distrbtr/@abbr"/>
+                    </xsl:when>
+                    <xsl:when test="ddi:docDscr/ddi:citation/ddi:titlStmt/ddi:IDNo/@agency">
+                        <xsl:value-of select="ddi:docDscr/ddi:citation/ddi:titlStmt/ddi:IDNo/@agency"/>
+                    </xsl:when>
+                </xsl:choose>                     
+            </repository>
+            
             <!-- title -->
-			<xsl:for-each select="ddi:stdyDscr/ddi:citation/ddi:titlStmt/ddi:titl">
-				<title>
-					<xsl:call-template name="ddi-xslt:lang"/>
-				</title>
-			</xsl:for-each>
+            <xsl:for-each select="ddi:stdyDscr/ddi:citation/ddi:titlStmt/ddi:titl">
+                <title>
+                    <xsl:call-template name="ddi-xslt:lang"/>
+                </title>
+            </xsl:for-each>
 
             <!-- abstract -->
-			<xsl:for-each select="ddi:stdyDscr/ddi:stdyInfo/ddi:abstract">
-				<abstract>
-					<xsl:call-template name="ddi-xslt:lang"/>
-				</abstract>
-			</xsl:for-each>	
+            <xsl:for-each select="ddi:stdyDscr/ddi:stdyInfo/ddi:abstract">
+                <abstract>
+                    <xsl:call-template name="ddi-xslt:lang"/>
+                </abstract>
+            </xsl:for-each>	
 			
-			<!-- keyword -->
-			<xsl:call-template name="ddi-xslt:multipleLangString">
+            <!-- keyword -->
+            <xsl:call-template name="ddi-xslt:multipleLangString">
                 <xsl:with-param name="name">keyword</xsl:with-param>
                 <xsl:with-param name="path"
-                    select="ddi:stdyDscr/ddi:stdyInfo/ddi:subject/ddi:keyword"/>
+                                select="ddi:stdyDscr/ddi:stdyInfo/ddi:subject/ddi:keyword"/>
             </xsl:call-template>
 			
-			<!-- subject -->
-			<xsl:call-template name="ddi-xslt:multipleLangString">
+            <!-- subject -->
+            <xsl:call-template name="ddi-xslt:multipleLangString">
                 <xsl:with-param name="name">subject</xsl:with-param>
                 <xsl:with-param name="path"
-                    select="ddi:stdyDscr/ddi:stdyInfo/ddi:subject/ddi:topcClas"/>
+                                select="ddi:stdyDscr/ddi:stdyInfo/ddi:subject/ddi:topcClas"/>
             </xsl:call-template>			
 			
-			<!-- universe -->
+            <!-- universe -->
             <xsl:call-template name="ddi-xslt:multipleLangString">
                 <xsl:with-param name="name">universe</xsl:with-param>
                 <xsl:with-param name="path" select="ddi:stdyDscr/ddi:stdyInfo/ddi:sumDscr/ddi:universe"/>
             </xsl:call-template>
 			
-			<!-- analysisunit -->
-			<xsl:if test="ddi:stdyDscr/ddi:stdyInfo/ddi:sumDscr/ddi:anlyUnit">
-				<analysisunit>
-					<xsl:value-of select="ddi:stdyDscr/ddi:stdyInfo/ddi:sumDscr/ddi:anlyUnit"/>
-				</analysisunit>			
-			</xsl:if>
+            <!-- analysisunit -->
+            <xsl:if test="ddi:stdyDscr/ddi:stdyInfo/ddi:sumDscr/ddi:anlyUnit">
+                <analysisunit>
+                    <xsl:value-of select="ddi:stdyDscr/ddi:stdyInfo/ddi:sumDscr/ddi:anlyUnit"/>
+                </analysisunit>			
+            </xsl:if>
 			
-			<!-- country -->
-			<xsl:if test="ddi:stdyDscr/ddi:stdyInfo/ddi:sumDscr/ddi:nation">
-				<country>
-					<xsl:value-of select="ddi:stdyDscr/ddi:stdyInfo/ddi:sumDscr/ddi:nation"/>
-				</country>
-			</xsl:if>
+            <!-- country -->
+            <xsl:if test="ddi:stdyDscr/ddi:stdyInfo/ddi:sumDscr/ddi:nation">
+                <country>
+                    <xsl:value-of select="ddi:stdyDscr/ddi:stdyInfo/ddi:sumDscr/ddi:nation"/>
+                </country>
+            </xsl:if>
 
-			<!-- startdate -->
-			<xsl:if test="ddi:stdyDscr/ddi:stdyInfo/ddi:sumDscr/ddi:collDate[@event='start']">
-				<startdate>
-					<xsl:value-of select="ddi:stdyDscr/ddi:stdyInfo/ddi:sumDscr/ddi:collDate[@event='start']/@date"/>
-				</startdate>
-			</xsl:if>
+            <!-- startdate -->
+            <xsl:if test="ddi:stdyDscr/ddi:stdyInfo/ddi:sumDscr/ddi:collDate[@event='start']">
+                <startdate>
+                    <xsl:value-of select="ddi:stdyDscr/ddi:stdyInfo/ddi:sumDscr/ddi:collDate[@event='start']/@date"/>
+                </startdate>
+            </xsl:if>
 			
-			<!-- enddate -->
-			<xsl:if test="ddi:stdyDscr/ddi:stdyInfo/ddi:sumDscr/ddi:collDate[@event='end']">
-				<enddate>
-					<xsl:value-of select="ddi:stdyDscr/ddi:stdyInfo/ddi:sumDscr/ddi:collDate[@event='end']/@date"/>
-				</enddate>
-			</xsl:if>			
+            <!-- enddate -->
+            <xsl:if test="ddi:stdyDscr/ddi:stdyInfo/ddi:sumDscr/ddi:collDate[@event='end']">
+                <enddate>
+                    <xsl:value-of select="ddi:stdyDscr/ddi:stdyInfo/ddi:sumDscr/ddi:collDate[@event='end']/@date"/>
+                </enddate>
+            </xsl:if>			
 			
-			<!-- datakind -->
-			<xsl:for-each select="ddi:stdyInfo/ddi:sumDscr/ddi:dataKind">
-				<title>
-					<xsl:call-template name="ddi-xslt:lang"/>
-				</title>
-			</xsl:for-each>
+            <!-- datakind -->
+            <xsl:for-each select="ddi:stdyInfo/ddi:sumDscr/ddi:dataKind">
+                <title>
+                    <xsl:call-template name="ddi-xslt:lang"/>
+                </title>
+            </xsl:for-each>
         </json>
     </xsl:template>
 

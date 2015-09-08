@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-    xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:g="ddi:group:3_1"
-    xmlns:d="ddi:datacollection:3_1" xmlns:dce="ddi:dcelements:3_1"
-    xmlns:c="ddi:conceptualcomponent:3_1" xmlns:xhtml="http://www.w3.org/1999/xhtml"
-    xmlns:a="ddi:archive:3_1" xmlns:m1="ddi:physicaldataproduct/ncube/normal:3_1"
-    xmlns:ddi="ddi:instance:3_1" xmlns:m2="ddi:physicaldataproduct/ncube/tabular:3_1"
-    xmlns:l="ddi:logicalproduct:3_1" xmlns:m3="ddi:physicaldataproduct/ncube/inline:3_1"
-    xmlns:pd="ddi:physicaldataproduct:3_1" xmlns:cm="ddi:comparative:3_1"
-    xmlns:s="ddi:studyunit:3_1" xmlns:r="ddi:reusable:3_1" xmlns:pi="ddi:physicalinstance:3_1"
-    xmlns:ds="ddi:dataset:3_1" xmlns:pr="ddi:profile:3_1"
-    xmlns:fn="http://www.w3.org/2005/xpath-functions"
-    xmlns:ddi-xslt="https://github.com/MetadataTransform/ddi-xslt"
-    exclude-result-prefixes="xs g d dce c a ddi m1 m2 m3 l pd cm s r pi ds pr xhtml fn ddi-xslt"
-    version="1.0">
+                xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:g="ddi:group:3_1"
+                xmlns:d="ddi:datacollection:3_1" xmlns:dce="ddi:dcelements:3_1"
+                xmlns:c="ddi:conceptualcomponent:3_1" xmlns:xhtml="http://www.w3.org/1999/xhtml"
+                xmlns:a="ddi:archive:3_1" xmlns:m1="ddi:physicaldataproduct/ncube/normal:3_1"
+                xmlns:ddi="ddi:instance:3_1" xmlns:m2="ddi:physicaldataproduct/ncube/tabular:3_1"
+                xmlns:l="ddi:logicalproduct:3_1" xmlns:m3="ddi:physicaldataproduct/ncube/inline:3_1"
+                xmlns:pd="ddi:physicaldataproduct:3_1" xmlns:cm="ddi:comparative:3_1"
+                xmlns:s="ddi:studyunit:3_1" xmlns:r="ddi:reusable:3_1" xmlns:pi="ddi:physicalinstance:3_1"
+                xmlns:ds="ddi:dataset:3_1" xmlns:pr="ddi:profile:3_1"
+                xmlns:fn="http://www.w3.org/2005/xpath-functions"
+                xmlns:ddi-xslt="https://github.com/MetadataTransform/ddi-xslt"
+                exclude-result-prefixes="xs g d dce c a ddi m1 m2 m3 l pd cm s r pi ds pr xhtml fn ddi-xslt"
+                version="1.0">
     <xsl:output method="xml" indent="yes" omit-xml-declaration="yes"/>
 
     <xsl:param name="defaultLang">en</xsl:param>
@@ -36,13 +36,18 @@
                 </xsl:choose>
             </id>
 
-			<!-- doi -->
-			<xsl:if test="s:StudyUnit/r:Citation/r:InternationalIdentifier[@type='DOI']">
-				<doi>
-					<xsl:value-of select="s:StudyUnit/r:Citation/r:InternationalIdentifier[@type='DOI']"/>
-				</doi>
-			</xsl:if>
-			
+            <!-- doi -->
+            <xsl:if test="s:StudyUnit/r:Citation/r:InternationalIdentifier[@type='DOI']">
+                <doi>
+                    <xsl:value-of select="s:StudyUnit/r:Citation/r:InternationalIdentifier[@type='DOI']"/>
+                </doi>
+            </xsl:if>
+            
+            <!-- repository -->
+            <repository>
+                <xsl:value-of select="@agency"/>
+            </repository>		
+                        	
             <!-- title -->
             <xsl:call-template name="ddi-xslt:multipleLangString">
                 <xsl:with-param name="name">title</xsl:with-param>
@@ -71,14 +76,14 @@
             <xsl:call-template name="ddi-xslt:multipleLangString">
                 <xsl:with-param name="name">subject</xsl:with-param>
                 <xsl:with-param name="path"
-                    select="s:StudyUnit/r:Coverage/r:TopicalCoverage/r:Subject"/>
+                                select="s:StudyUnit/r:Coverage/r:TopicalCoverage/r:Subject"/>
             </xsl:call-template>
 
             <!-- keyword -->
             <xsl:call-template name="ddi-xslt:multipleLangString">
                 <xsl:with-param name="name">keyword</xsl:with-param>
                 <xsl:with-param name="path"
-                    select="s:StudyUnit/r:Coverage/r:TopicalCoverage/r:Keyword"/>
+                                select="s:StudyUnit/r:Coverage/r:TopicalCoverage/r:Keyword"/>
             </xsl:call-template>
 
             <!-- modeofcollection -->
@@ -127,8 +132,8 @@
 
             <!-- startdate -->
             <startdate>
-            <xsl:if
-                test="s:StudyUnit/r:Coverage/r:TemporalCoverage/r:ReferenceDate/r:StartDate | s:StudyUnit/r:Coverage/r:TemporalCoverage/r:ReferenceDate/r:SimpleDate">
+                <xsl:if
+                    test="s:StudyUnit/r:Coverage/r:TemporalCoverage/r:ReferenceDate/r:StartDate | s:StudyUnit/r:Coverage/r:TemporalCoverage/r:ReferenceDate/r:SimpleDate">
                 
                     <xsl:choose>
                         <xsl:when
@@ -150,13 +155,13 @@
                         </xsl:otherwise>
                     </xsl:choose>
                 
-            </xsl:if>
+                </xsl:if>
             </startdate>
 
             <!-- enddate -->
             <enddate>
-            <xsl:if
-                test="s:StudyUnit/r:Coverage/r:TemporalCoverage/r:ReferenceDate/r:EndDate | s:StudyUnit/r:Coverage/r:TemporalCoverage/r:ReferenceDate/r:SimpleDate">
+                <xsl:if
+                    test="s:StudyUnit/r:Coverage/r:TemporalCoverage/r:ReferenceDate/r:EndDate | s:StudyUnit/r:Coverage/r:TemporalCoverage/r:ReferenceDate/r:SimpleDate">
                 
                     <xsl:choose>
                         <xsl:when
@@ -178,7 +183,7 @@
                         </xsl:otherwise>
                     </xsl:choose>
                 
-            </xsl:if>
+                </xsl:if>
             </enddate>
             
             <!-- variable -->
@@ -189,7 +194,9 @@
     <xsl:template match="l:Variable">
         <variable>
             <!-- id -->
-            <id><xsl:value-of select="@id"/>:<xsl:value-of select="@version"/></id>
+            <id>
+                <xsl:value-of select="@id"/>:<xsl:value-of select="@version"/>
+            </id>
             
             <!-- label -->
             <xsl:call-template name="ddi-xslt:multipleLangString">
@@ -203,7 +210,9 @@
                 <xsl:for-each select="//c:Concept[@id = $cID]">
                     <concept>
                         <!-- id -->
-                        <id><xsl:value-of select="@id"/>:<xsl:value-of select="@version"/></id>
+                        <id>
+                            <xsl:value-of select="@id"/>:<xsl:value-of select="@version"/>
+                        </id>
                         <!-- label -->
                         <xsl:call-template name="ddi-xslt:multipleLangString">
                             <xsl:with-param name="name">label</xsl:with-param>
@@ -228,7 +237,7 @@
             <xsl:if test="l:Representation/l:CodeRepresentation">
                 <representation>CODE</representation>
                 <xsl:variable name="csID"
-                    select="l:Representation/l:CodeRepresentation/r:CodeSchemeReference/r:ID"/>
+                              select="l:Representation/l:CodeRepresentation/r:CodeSchemeReference/r:ID"/>
                 <xsl:for-each select="//l:CodeScheme[@id = $csID]/l:Code/l:CategoryReference/r:ID">
                     <xsl:variable name="crID" select="."/>
                     <xsl:for-each select="//l:Category[@id = $crID]/r:Label">
