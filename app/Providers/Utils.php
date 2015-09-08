@@ -18,17 +18,21 @@ class Utils extends ServiceProvider{
     }    
     
     public static function getEn($array){
+        $output = '';
         if(!is_array($array)){
-            return $array;
+            $output = $array;
         }else if(array_key_exists('en', $array)){
-            return $array['en'];
-        }else{
+            $output = $array['en'];
+        }elseif(is_array($array)){
             foreach($array as $key => $value){
-                if(array_key_exists('en', $value)){
-                    return $value['en'];
+                if(is_numeric($key)){
+                    $output = Utils::getEn($value);
+                }elseif($key == 'en'){
+                    $output = $value;
                 }
             }
         }
+        return $output;
     }
     
     public static function contains($string, array $array){

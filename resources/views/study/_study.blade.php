@@ -5,11 +5,12 @@
     </header>
 
     <div class="content">
+        
         @if(array_key_exists("highlight", $hit))
-            @foreach($hit["highlight"] as $highlight)
+            @foreach($hit["highlight"] as $label => $highlight)
                 <p>
                 @foreach(array_keys($highlight) as $key)
-                        {!!$highlight[$key]!!}
+                    <strong>{{ $label }}</strong>: {!!$highlight[$key]!!}
                 @endforeach
                 </p>
             @endforeach
