@@ -8,12 +8,12 @@ Nordic Health Data Portal typography styles
 
 @font-face {
     font-family: "Work Sans"; /* Regular */
-    src: url(/fonts/work-sans-regular-webfont.eot);
-    src: url(/fonts/work-sans-regular-webfont.eot?#iefix) format("embedded-opentype"),
-         url(/fonts/work-sans-regular-webfont.woff2) format("woff2"),
-         url(/fonts/work-sans-regular-webfont.woff) format("woff"),
-         url(/fonts/work-sans-regular-webfont.ttf) format("truetype"),
-         url(/fonts/work-sans-regular-webfont.svg#work_sansregular) format("svg");
+    src: url(../../fonts/work-sans-regular-webfont.eot);
+    src: url(../../fonts/work-sans-regular-webfont.eot?#iefix) format("embedded-opentype"),
+         url(../../fonts/work-sans-regular-webfont.woff2) format("woff2"),
+         url(../../fonts/work-sans-regular-webfont.woff) format("woff"),
+         url(../../fonts/work-sans-regular-webfont.ttf) format("truetype"),
+         url(../../fonts/work-sans-regular-webfont.svg#work_sansregular) format("svg");
     font-style: normal;
     font-weight: normal;
     font-weight: 400;
@@ -21,12 +21,12 @@ Nordic Health Data Portal typography styles
 
 @font-face {
     font-family: "Work Sans"; /* Thin */
-    src: url(/fonts/work-sans-thin-webfont.eot);
-    src: url(/fonts/work-sans-thin-webfont.eot?#iefix) format("embedded-opentype"),
-         url(/fonts/work-sans-thin-webfont.woff2) format("woff2"),
-         url(/fonts/work-sans-thin-webfont.woff) format("woff"),
-         url(/fonts/work-sans-thin-webfont.ttf) format("truetype"),
-         url(/fonts/work-sans-thin-webfont.svg#work_sansthin) format("svg");
+    src: url(../../fonts/work-sans-thin-webfont.eot);
+    src: url(../../fonts/work-sans-thin-webfont.eot?#iefix) format("embedded-opentype"),
+         url(../../fonts/work-sans-thin-webfont.woff2) format("woff2"),
+         url(../../fonts/work-sans-thin-webfont.woff) format("woff"),
+         url(../../fonts/work-sans-thin-webfont.ttf) format("truetype"),
+         url(../../fonts/work-sans-thin-webfont.svg#work_sansthin) format("svg");
     font-style: normal;
     font-weight: normal;
     font-weight: 100;
@@ -34,12 +34,12 @@ Nordic Health Data Portal typography styles
 
 @font-face {
     font-family: "Work Sans"; /* Extra-Light */
-    src: url(/fonts/work-sans-extralight-webfont.eot);
-    src: url(/fonts/work-sans-extralight-webfont.eot?#iefix) format("embedded-opentype"),
-         url(/fonts/work-sans-extralight-webfont.woff2) format("woff2"),
-         url(/fonts/work-sans-extralight-webfont.woff) format("woff"),
-         url(/fonts/work-sans-extralight-webfont.ttf) format("truetype"),
-         url(/fonts/work-sans-extralight-webfont.svg#work_sansextralight) format("svg");
+    src: url(../../fonts/work-sans-extralight-webfont.eot);
+    src: url(../../fonts/work-sans-extralight-webfont.eot?#iefix) format("embedded-opentype"),
+         url(../../fonts/work-sans-extralight-webfont.woff2) format("woff2"),
+         url(../../fonts/work-sans-extralight-webfont.woff) format("woff"),
+         url(../../fonts/work-sans-extralight-webfont.ttf) format("truetype"),
+         url(../../fonts/work-sans-extralight-webfont.svg#work_sansextralight) format("svg");
     font-style: normal;
     font-weight: normal;
     font-weight: 200;
@@ -47,12 +47,12 @@ Nordic Health Data Portal typography styles
 
 @font-face {
     font-family: "Work Sans"; /* Light */
-    src: url(/fonts/work-sans-light-webfont.eot);
-    src: url(/fonts/work-sans-light-webfont.eot?#iefix) format("embedded-opentype"),
-         url(/fonts/work-sans-light-webfont.woff2) format("woff2"),
-         url(/fonts/work-sans-light-webfont.woff) format("woff"),
-         url(/fonts/work-sans-light-webfont.ttf) format("truetype"),
-         url(/fonts/work-sans-light-webfont.svg#work_sanslight) format("svg");
+    src: url(../../fonts/work-sans-light-webfont.eot);
+    src: url(../../fonts/work-sans-light-webfont.eot?#iefix) format("embedded-opentype"),
+         url(../../fonts/work-sans-light-webfont.woff2) format("woff2"),
+         url(../../fonts/work-sans-light-webfont.woff) format("woff"),
+         url(../../fonts/work-sans-light-webfont.ttf) format("truetype"),
+         url(../../fonts/work-sans-light-webfont.svg#work_sanslight) format("svg");
     font-style: normal;
     font-weight: normal;
     font-weight: 300;
@@ -60,12 +60,12 @@ Nordic Health Data Portal typography styles
 
 @font-face {
     font-family: "Work Sans"; /* Medium */
-    src: url(/fonts/work-sans-medium-webfont.eot);
-    src: url(/fonts/work-sans-medium-webfont.eot?#iefix) format("embedded-opentype"),
-         url(/fonts/work-sans-medium-webfont.woff2) format("woff2"),
-         url(/fonts/work-sans-medium-webfont.woff) format("woff"),
-         url(/fonts/work-sans-medium-webfont.ttf) format("truetype"),
-         url(/fonts/work-sans-medium-webfont.svg#work_sansmedium) format("svg");
+    src: url(../../fonts/work-sans-medium-webfont.eot);
+    src: url(../../fonts/work-sans-medium-webfont.eot?#iefix) format("embedded-opentype"),
+         url(../../fonts/work-sans-medium-webfont.woff2) format("woff2"),
+         url(../../fonts/work-sans-medium-webfont.woff) format("woff"),
+         url(../../fonts/work-sans-medium-webfont.ttf) format("truetype"),
+         url(../../fonts/work-sans-medium-webfont.svg#work_sansmedium) format("svg");
     font-style: normal;
     font-weight: normal;
     font-weight: 500;
@@ -73,12 +73,12 @@ Nordic Health Data Portal typography styles
 
 @font-face {
     font-family: "Work Sans"; /* Semi-Bold */
-    src: url(/fonts/work-sans-semibold-webfont.eot);
-    src: url(/fonts/work-sans-semibold-webfont.eot?#iefix) format("embedded-opentype"),
-         url(/fonts/work-sans-semibold-webfont.woff2) format("woff2"),
-         url(/fonts/work-sans-semibold-webfont.woff) format("woff"),
-         url(/fonts/work-sans-semibold-webfont.ttf) format("truetype"),
-         url(/fonts/work-sans-semibold-webfont.svg#work_sanssemibold) format("svg");
+    src: url(../../fonts/work-sans-semibold-webfont.eot);
+    src: url(../../fonts/work-sans-semibold-webfont.eot?#iefix) format("embedded-opentype"),
+         url(../../fonts/work-sans-semibold-webfont.woff2) format("woff2"),
+         url(../../fonts/work-sans-semibold-webfont.woff) format("woff"),
+         url(../../fonts/work-sans-semibold-webfont.ttf) format("truetype"),
+         url(../../fonts/work-sans-semibold-webfont.svg#work_sanssemibold) format("svg");
     font-style: normal;
     font-weight: bold;
     font-weight: 600;
@@ -86,12 +86,12 @@ Nordic Health Data Portal typography styles
 
 @font-face {
     font-family: "Work Sans"; /* Bold */
-    src: url(/fonts/work-sans-bold-webfont.eot);
-    src: url(/fonts/work-sans-bold-webfont.eot?#iefix) format("embedded-opentype"),
-         url(/fonts/work-sans-bold-webfont.woff2) format("woff2"),
-         url(/fonts/work-sans-bold-webfont.woff) format("woff"),
-         url(/fonts/work-sans-bold-webfont.ttf) format("truetype"),
-         url(/fonts/work-sans-bold-webfont.svg#work_sansbold) format("svg");
+    src: url(../../fonts/work-sans-bold-webfont.eot);
+    src: url(../../fonts/work-sans-bold-webfont.eot?#iefix) format("embedded-opentype"),
+         url(../../fonts/work-sans-bold-webfont.woff2) format("woff2"),
+         url(../../fonts/work-sans-bold-webfont.woff) format("woff"),
+         url(../../fonts/work-sans-bold-webfont.ttf) format("truetype"),
+         url(../../fonts/work-sans-bold-webfont.svg#work_sansbold) format("svg");
     font-style: normal;
     font-weight: bold;
     font-weight: 700;
@@ -99,12 +99,12 @@ Nordic Health Data Portal typography styles
 
 @font-face {
     font-family: "Work Sans"; /* Extra-Bold */
-    src: url(/fonts/work-sans-extrabold-webfont.eot);
-    src: url(/fonts/work-sans-extrabold-webfont.eot?#iefix) format("embedded-opentype"),
-         url(/fonts/work-sans-extrabold-webfont.woff2) format("woff2"),
-         url(/fonts/work-sans-extrabold-webfont.woff) format("woff"),
-         url(/fonts/work-sans-extrabold-webfont.ttf) format("truetype"),
-         url(/fonts/work-sans-extrabold-webfont.svg#work_sansextrabold) format("svg");
+    src: url(../../fonts/work-sans-extrabold-webfont.eot);
+    src: url(../../fonts/work-sans-extrabold-webfont.eot?#iefix) format("embedded-opentype"),
+         url(../../fonts/work-sans-extrabold-webfont.woff2) format("woff2"),
+         url(../../fonts/work-sans-extrabold-webfont.woff) format("woff"),
+         url(../../fonts/work-sans-extrabold-webfont.ttf) format("truetype"),
+         url(../../fonts/work-sans-extrabold-webfont.svg#work_sansextrabold) format("svg");
     font-style: normal;
     font-weight: bolder;
     font-weight: 800;
@@ -112,12 +112,12 @@ Nordic Health Data Portal typography styles
 
 @font-face {
     font-family: "Work Sans"; /* Ultra-Bold / Black */
-    src: url(/fonts/work-sans-black-webfont.eot);
-    src: url(/fonts/work-sans-black-webfont.eot?#iefix) format("embedded-opentype"),
-         url(/fonts/work-sans-black-webfont.woff2) format("woff2"),
-         url(/fonts/work-sans-black-webfont.woff) format("woff"),
-         url(/fonts/work-sans-black-webfont.ttf) format("truetype"),
-         url(/fonts/work-sans-black-webfont.svg#work_sansblack) format("svg");
+    src: url(../../fonts/work-sans-black-webfont.eot);
+    src: url(../../fonts/work-sans-black-webfont.eot?#iefix) format("embedded-opentype"),
+         url(../../fonts/work-sans-black-webfont.woff2) format("woff2"),
+         url(../../fonts/work-sans-black-webfont.woff) format("woff"),
+         url(../../fonts/work-sans-black-webfont.ttf) format("truetype"),
+         url(../../fonts/work-sans-black-webfont.svg#work_sansblack) format("svg");
     font-style: normal;
     font-weight: bolder;
     font-weight: 900;

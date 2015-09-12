@@ -1,7 +1,7 @@
 @extends("layouts.default")
 
 @section("content")
-    <img src="/images/content/nordic_health_data_group_photo.jpg" class="featured" alt="Nordic Health Data (group photo)" />
+    <img src="{{ asset('/images/content/nordic_health_data_group_photo.jpg') }}" class="featured" alt="Nordic Health Data (group photo)" />
 
     <div class="row">
         <div class="small-12 columns">

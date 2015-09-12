@@ -15,11 +15,11 @@
     <meta name="viewport" content="width = device-width, initial-scale = 1.0" />
 
     <!-- Favicon -->
-    <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="{{ asset('/images/favicon.ico') }}" type="image/x-icon" />
 
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="/stylesheets/screen/screen.css" media="screen, projection" />
+    <link rel="stylesheet" href="{{ asset('/stylesheets/screen/screen.css') }}" media="screen, projection" />
 
     <!-- JavaScripts -->
-    <script src="/javascripts/modernizr.js"></script>
+    <script src="{{ asset('/javascripts/modernizr.js') }}"></script>
 </head>
