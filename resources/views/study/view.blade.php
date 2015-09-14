@@ -39,18 +39,18 @@
           <ul>
               @foreach ($study["_source"]["subject"] as $subject)
                   @if (array_key_exists("en", $subject))
-                      <li><a href="/search?subject={{ $subject["en"] }}">{{ $subject["en"] }}</a></li>
+                      <li><a href="{{ action('SearchController@search', ['subject' => $subject["en"]]) }}">{{ $subject["en"] }}</a></li>
                   @endif
               @endforeach
           </ul>
           @endif
-          
+
           @if (array_key_exists("keyword", $study["_source"]))
           <h3>Keywords</h3>
           <ul>
               @foreach ($study["_source"]["keyword"] as $keyword)
                   @if (array_key_exists("en", $keyword))
-                      <li><a href="/search?keyword={{ $keyword["en"] }}">{{ $keyword["en"] }}</a></li>
+                      <li><a href="{{ action('SearchController@search', ['keyword' => $keyword["en"]]) }}">{{ $keyword["en"] }}</a></li>
                   @endif
               @endforeach
           </ul>
