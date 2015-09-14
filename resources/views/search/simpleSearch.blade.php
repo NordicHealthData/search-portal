@@ -6,7 +6,7 @@
             <h1>Search Health Data</h1>
 
             {!! Form::open(array("action" => "SearchController@search", "method" => "GET")) !!}
-            {!! Form::text("q", Request::input("q"), array("class" => "search", "autocomplete" => "off", "placeholder" => "Search for Studies...")) !!}
+            {!! Form::text("q", Request::input("q"), array("class" => "search", "autocomplete" => "off", "placeholder" => "Search for Studies...", "data-suggesturl"=> action("SearchController@suggest"))) !!}
 
             @if (isset($hits->aggregations))
                 @foreach ($hits->aggregations as $key => $aggregation)

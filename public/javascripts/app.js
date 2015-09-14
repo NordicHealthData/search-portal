@@ -15,7 +15,7 @@ $(document).ready(function() {
       method: "get",
       timeout: 300,
       triggerLength: 3,
-      url: "/suggest",
+      url: $("input.search").attr("data-suggesturl"),
       valueField: "freq",
       preDispatch: function(query) {
         return {
