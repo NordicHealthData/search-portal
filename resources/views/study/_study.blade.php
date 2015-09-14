@@ -1,11 +1,10 @@
 <li class="card">
     <header class="header">
         <span class="label">{{ $hit["_id"] }}</span>
-        <a href="/study/{{ $hit["_id"] }}">{{ Utils::getEn($hit["_source"]["title"]) }}</a>
+        <a href="{{ action('StudyController@view', ['id' => $hit["_id"]]) }}">{{ Utils::getEn($hit["_source"]["title"]) }}</a>
     </header>
 
     <div class="content">
-        
         @if(array_key_exists("highlight", $hit))
             @foreach($hit["highlight"] as $label => $highlight)
                 <p>
