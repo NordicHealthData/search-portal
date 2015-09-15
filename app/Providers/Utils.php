@@ -31,6 +31,9 @@ class Utils extends ServiceProvider{
                     $output = $value;
                 }
             }
+            if(empty($output)){
+                $output = reset($array);
+            }
         }
         return $output;
     }
