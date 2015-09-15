@@ -3,11 +3,10 @@
 @section("content")
   <div class="row">
       <div class="small-12 columns">
-          @foreach ($study["_source"]["title"] as $title)
-              @if (array_key_exists("en", $title))
-                  <h1>{{ $title["en"] }}</h1>
-              @endif
-          @endforeach
+          <?php debug($study["_source"]);?>
+
+           <h1>{{ Utils::getEn($study["_source"]["title"]) }}</h1>
+
 
           <p><strong>ID:</strong> <span>{{ $study["_id"] }}</span><br /></p>
 
@@ -15,22 +14,17 @@
               <p><a href="{{ $study["_source"]["landingpage"] }}">{{ $study["_source"]["landingpage"] }}</a></p>
           @endif
 
+          @if (array_key_exists("abstract", $study["_source"]))
           <h3>Abstract</h3>
 
-          @foreach ($study["_source"]["abstract"] as $abstract)
-              @if (array_key_exists("en", $abstract))
-                  <p>{{ $abstract["en"] }}</p>
-              @endif
-          @endforeach
-
+          <p>{{ Utils::getEn($study["_source"]["abstract"]) }}</p>
+          @endif
+             
+          
           @if (array_key_exists("purpose", $study["_source"]))
           <h3>Purpose</h3>
 
-          @foreach ($study["_source"]["purpose"] as $purpose)
-              @if (array_key_exists("en", $purpose))
-                  <p>{{ $purpose["en"] }}</p>
-              @endif
-          @endforeach
+          <p>{{ Utils::getEn($study["_source"]["purpose"]) }}</p>
           @endif
           
           @if (array_key_exists("subject", $study["_source"]))
@@ -65,6 +59,7 @@
               @endif
           </p>
 
+          @if (array_key_exists("creator", $study["_source"]))
           <h3>Creator</h3>
 
           <ul>
@@ -78,6 +73,7 @@
               @endforeach
           </ul>
       </div>
+      @endif
       <!-- /small-12.columns -->
   </div>
   <!-- /row -->
