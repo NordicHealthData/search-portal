@@ -126,28 +126,28 @@ Nordic Health Data Portal typography styles
 /* Headings
 ---------------------------------------------------------------------------- */
 
-h1 {
-    color: #50c035;
-    font-family: "Work Sans", "Trebuchet MS", Helvetica, "Helvetica Neue", sans-serif;
-    font-size: 1.6875rem; /* ≈ 27px */
-    font-weight: normal;
-    line-height: 1em;
-    margin: 0 0 0.5em 0;
-}
-
+h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-    color: #50c035;
     font-family: "Work Sans", "Trebuchet MS", Helvetica, "Helvetica Neue", sans-serif;
     font-weight: normal;
+    line-height: 1em;
+}
+
+h1 {
+    color: #50c035;
+    font-size: 1.6875rem; /* ≈ 27px */
+    margin: 0 0 0.5em 0;
 }
 
 h2 {
+    color: #50c035;
     font-size: 28px;
     font-weight: 300; /* Light */
+    margin-bottom: 0.5em;
 }
 
 h3 {
