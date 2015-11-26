@@ -27,11 +27,13 @@ Documentation for the framework can be found on the [Laravel website](http://lar
 
 ## Run
 
-Run app using php builtin webserver:
+There is several ways to run the portal during development or for production. Use one of the following methods.
+
+### Run app using php builtin webserver
 
 ```php artisan serve```
 
-Using vagrant:
+### Using vagrant
  go to the projects root directory
  
  generate ssh key:
@@ -42,11 +44,11 @@ Using vagrant:
  
  ```vagrant up```
  
-Using apache:
+### Using apache
 
  add a site/vhost and point it to the directory ```./search-portal/public``` 
 
- Using docker:
+ ### Using docker
 
  cp .env.example .env
  vim .env
