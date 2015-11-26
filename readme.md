@@ -48,7 +48,7 @@ There is several ways to run the portal during development or for production. Us
 
  add a site/vhost and point it to the directory ```./search-portal/public``` 
 
- ### Using docker
+### Using docker
 
  cp .env.example .env
  vim .env
