@@ -50,10 +50,12 @@ There is several ways to run the portal during development or for production. Us
 
 ### Using docker
 
+```
  cp .env.example .env
  vim .env
  docker build -t nordichealthportal .
  docker run --name portal -p 80:80 -it nordichealthportal
+```
 
 ### Transform DDI-XML to json
    
