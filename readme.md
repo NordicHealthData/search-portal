@@ -10,6 +10,7 @@ Documentation for the framework can be found on the [Laravel website](http://lar
 
 * PHP (5.5.9 or newer)
 * Composer https://getcomposer.org (to install/update packages)
+* Running instance or cluster of Eleasticsearch https://www.elastic.co/products/elasticsearch
 
 ## Setup
 
@@ -24,6 +25,8 @@ Documentation for the framework can be found on the [Laravel website](http://lar
 4. Edit the config (database curerntly not used)
     
     change ``ELASTICH_SEARCH_HOST`` to your elastic search host
+
+5. A running instance of Elasticsearch can be achieved by running Elasticsearch in Docker, see:                 https://github.com/dockerfile/elasticsearch 
 
 ## Run
 
