@@ -8,7 +8,7 @@ Documentation for the framework can be found on the [Laravel website](http://lar
 
 ## Requirements
 
-* PHP (5.5.9 or newer)
+* PHP (5.5.9 or later)
 * Composer https://getcomposer.org (to install/update packages)
 * Running instance or cluster of Eleasticsearch https://www.elastic.co/products/elasticsearch
 
