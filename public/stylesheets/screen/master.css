@@ -349,3 +349,50 @@ a:visited:hover {
     display: inline-block;
     padding: 2px 5px;
 }
+/* Linkbutton*/
+.title{
+	width: 70%;
+}
+.linkbutton{
+	border: 2px solid #50c035;
+	padding: 5px;
+	font-weight: 500;
+	position: absolute;
+	top: 20px;
+	left: 850px;
+	font-size: 120%;
+}
+.linkbutton:hover{
+	background-color: #50c035;
+}
+/*content*/
+.abstract{
+	width: 70%;
+}
+/*sidebar*/
+.sidebar{
+	width: 15%;
+	float: right;
+	position: relative;
+	top: -640px;
+	left: 10px;
+}
+.sidebar ul{
+	visibility: hidden;
+	list-style-type: square;
+	margin: 0px;
+	position:relative;
+	left:16px;
+}
+.sidebar h3{
+	border: 2px solid #50c035;
+	padding: 5px;
+	font-weight: 500;
+	color: #50c035;
+}
+.sidebar:hover ul{
+	visibility: visible;
+}
+.sidebar li{
+	position: relative;
+}
