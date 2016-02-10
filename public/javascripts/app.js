@@ -1,3 +1,4 @@
+
 /*
 -------------------------------------------------------------------------------
 Nordic Health Data Portal JavaScript
@@ -31,5 +32,18 @@ $(document).ready(function() {
         }
       },
     },
+  });
+  //hide searchfilters
+  $(".filter ul").hide();
+  
+  $(".filter h2").click(function (){
+      console.log("clicked on header");
+      if($(this).siblings("ul").css("display")== "block"){
+          $(this).siblings("ul").slideUp(); 
+      }else{
+         $(this).siblings("ul").slideDown(); 
+      }
+      
+      
   });
 });

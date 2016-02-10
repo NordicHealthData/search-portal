@@ -393,6 +393,3 @@ a:visited:hover {
 .sidebar:hover ul{
 	visibility: visible;
 }
-.sidebar li{
-	position: relative;
-}

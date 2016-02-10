@@ -37,7 +37,7 @@
             <ul class="small-block-grid-1 medium-block-grid-4">
                 @foreach ($aggregations as $key => $aggregation)
                     @if (count($hits->aggregations[$key]["buckets"]) > 0 || Input::has($key))
-                        <li>
+                        <li class = "filter">
                             <h2>{{ ucfirst($key) }}</h2>
 
                             <ul class="filters">
