@@ -72,7 +72,7 @@ There is several ways to run the portal during development or for production. Us
 
   You can configure the default location of the json files in your .env file
 
-```php artisan es:ingest-documents path\to\documents``
+``php artisan es:ingest-documents path\to\documents``
 
 ### Contributors
 * DDA https://www.sa.dk/undervisning-forskning/dda-dansk-data-arkiv
