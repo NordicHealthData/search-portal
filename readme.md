@@ -75,10 +75,10 @@ There is several ways to run the portal during development or for production. Us
 ```php artisan es:ingest-documents path\to\documents``
 
 ### Contributors
-DDA https://www.sa.dk/undervisning-forskning/dda-dansk-data-arkiv
-FSD http://www.fsd.uta.fi
-NSD http://nsd.uib.no
-SND http://snd.gu.se
+* DDA https://www.sa.dk/undervisning-forskning/dda-dansk-data-arkiv
+* FSD http://www.fsd.uta.fi
+* NSD http://nsd.uib.no
+* SND http://snd.gu.se
 
 
  
