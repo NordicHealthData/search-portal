@@ -36,14 +36,31 @@ $(document).ready(function() {
   //hide searchfilters
   $(".filter ul").hide();
   
-  $(".filter h2").click(function (){
-      console.log("clicked on header");
-      if($(this).siblings("ul").css("display")== "block"){
+  $(".filter h2").click(function (){      
+      var display = $(this).siblings("ul").css("display");
+      
+      if(display == "block"){
           $(this).siblings("ul").slideUp(); 
       }else{
          $(this).siblings("ul").slideDown(); 
       }
-      
-      
+  });
+  
+  $(".sidebar ul").hide();
+  
+  $(".subject").on("mouseenter", function (){
+      $(this).siblings(".subjectul").slideDown("slow");
+  });
+  
+  $("#subject").on("mouseleave", function (){
+     $(".subjectul").slideUp("slow"); 
+  });
+  
+  $(".keyword").on('mouseenter', function (){
+      $(this).siblings(".keywordul").slideDown("slow");
+  });
+  
+  $("#keyword").on("mouseleave", function (){
+      $(".keywordul").slideUp("slow");
   });
 });
