@@ -6,19 +6,7 @@
             <h1 class="title" >{{ Utils::getEn($study["_source"]["title"]) }}</h1>
 
             <p><strong>ID:</strong> <span>{{ $study["_id"] }}</span><br /></p>
-
-            @if (array_key_exists("abstract", $study["_source"]))
-            <h3>Abstract</h3>
-
-            <p class="abstract" >{{ Utils::getEn($study["_source"]["abstract"]) }}</p>
-            @endif
-
-            @if (array_key_exists("purpose", $study["_source"]))
-            <h3>Purpose</h3>
-
-            <p>{{ Utils::getEn($study["_source"]["purpose"]) }}</p>
-            @endif
-
+            
             <p>
                 @if (array_key_exists("startdate", $study["_source"]))
                 <strong>Start date:</strong> <span>{{ $study["_source"]["startdate"] }}</span><br />
@@ -27,7 +15,7 @@
                 <strong>End date:</strong> <span>{{ $study["_source"]["enddate"] }}</span><br />
                 @endif
             </p>
-
+            
             @if (array_key_exists("creator", $study["_source"]))
             <h3>Creator</h3>
 
@@ -42,6 +30,19 @@
                 @endforeach
             </ul>
             @endif    
+
+            @if (array_key_exists("abstract", $study["_source"]))
+            <h3>Abstract</h3>
+
+            <p class="abstract" >{{ Utils::getEn($study["_source"]["abstract"]) }}</p>
+            @endif
+
+            @if (array_key_exists("purpose", $study["_source"]))
+            <h3>Purpose</h3>
+
+            <p>{{ Utils::getEn($study["_source"]["purpose"]) }}</p>
+            @endif
+
     </div>
     <div  class="small-2 columns sidebar">
         @if ($study["_source"]["landingpage"])
