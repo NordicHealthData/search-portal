@@ -46,23 +46,30 @@ $(document).ready(function() {
       }
   });
   
-  $(".sidebar ul").hide();
+  $(".subjectul").hide();
   
-  $(".subject").on("mouseenter", function (){
-      $(this).siblings(".subjectul").slideDown("slow");
+  $(".subject").click(function(){
+      var display = $(this).siblings("ul").css("display");
+      
+      if(display == "block"){
+          $(this).siblings("ul").slideUp(); 
+      }else{
+         $(this).siblings("ul").slideDown(); 
+      }
+  });
+  //Sidebar dropdownmenu
+  $(".keywordul").hide();
+  
+  $(".keyword").click(function(){
+      var display = $(this).siblings("ul").css("display");
+      
+      if(display == "block"){
+          $(this).siblings("ul").slideUp(); 
+      }else{
+         $(this).siblings("ul").slideDown(); 
+      }
   });
   
-  $("#subject").on("mouseleave", function (){
-     $(".subjectul").slideUp("slow"); 
-  });
-  
-  $(".keyword").on('mouseenter', function (){
-      $(this).siblings(".keywordul").slideDown("slow");
-  });
-  
-  $("#keyword").on("mouseleave", function (){
-      $(".keywordul").slideUp("slow");
-  });
   //collapse long text
   $(".abstract").readmore();
 });

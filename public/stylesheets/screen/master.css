@@ -114,14 +114,26 @@ a:visited:hover {
 #home{
     z-index: 1;
     list-style-type: none;
+    font-weight: 400;
+}
+#home a:hover{
+    color: #50C04C;
 }
 #about{
     list-style-type: none;
     z-index: 2;
     list-style-type: none;
+    font-weight: 400;
+}
+#about a:hover{
+    color: #50C04C;
 }
 #search{
     list-style-type: none;
+    font-weight: 400;
+}
+#search a:hover{
+    color: #50C04C;
 }
 #searchstudies{
     z-index: 3;
@@ -405,6 +417,9 @@ a:visited:hover {
 }
 
 /*sidebar*/
+.linkbutton:hover{
+    color: white;
+}
 .sidebar{
     width: 150px;
     float: right;
@@ -422,7 +437,7 @@ a:visited:hover {
 }
 .sidebar h3:hover{
     background-color: #50c035;
-    color: #81ec62;
+    color: white;
     cursor: pointer;
     transition: ease-in-out 0.5s;
 }
@@ -438,9 +453,13 @@ a:visited:hover {
 .sidebar ul li:hover{
     background-color: #50c035;
     transition: ease-in-out 0.5s;
+    
 }
 .sidebar ul li a{
     display: table-cell;
+}
+.sidebar ul li a:hover{
+    color: white;
 }
 .abstract{
     margin-bottom: 0px;
