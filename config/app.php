@@ -53,6 +53,19 @@ return [
         'collection' => ['terms' => ['field' => 'collection']],
         'group' => ['terms' => ['field' => 'group']],
     ],
+    
+    'elastic_search_aggregations_title' => [
+        'repository' => 'Repository',
+        'subject' => 'Subject',
+        'keyword' => 'Keyword',
+        'kindofdata' => 'Kind of data',
+        'country' => 'Country',
+        'modeofcollection' => 'Mode of collection',
+        'samplingprocedure' => 'Sampling procedure',
+        'timemethod' => 'Time method',
+        'collection' => 'Collection',
+        'group' => 'Group',
+    ],
 	
     /*
     |--------------------------------------------------------------------------

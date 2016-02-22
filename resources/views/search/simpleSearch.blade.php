@@ -34,11 +34,11 @@
 
             <h2>Filter Search Results by</h2>
 
-            <ul class="small-block-grid-1 medium-block-grid-4">
+            <ul class="small-block-grid-1 medium-block-grid-7">
                 @foreach ($aggregations as $key => $aggregation)
                     @if (count($hits->aggregations[$key]["buckets"]) > 0 || Input::has($key))
                         <li class = "filter">
-                            <h2>{{ ucfirst($key) }}</h2>
+                            <h2>{{ $aggregations_title[$key] }}</h2>
 
                             <ul class="filters">
                                 @if (Input::has($key))
@@ -73,7 +73,7 @@
 
             <p><strong>Total:</strong> <span class="badge">{{ $hits->total() }}</span></p>
 
-            <ul class="small-block-grid-1 medium-block-grid-3">
+            <ul class="small-block-grid-1 medium-block-grid-4">
                 @foreach($hits as $hit)
                     @include("study._study")
                 @endforeach

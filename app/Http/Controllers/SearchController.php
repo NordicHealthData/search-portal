@@ -56,6 +56,7 @@ class SearchController extends Controller {
         return view('search.simpleSearch')
                         ->with('type', null)
                         ->with('aggregations', $query['aggregations'])
+                        ->with('aggregations_title', Config::get('app.elastic_search_aggregations_title'))
                         ->with('hits', $hits);
     }
 

@@ -8,7 +8,7 @@
             <p><strong>ID:</strong> <span>{{ $study["_id"] }}</span><br /></p>
 
             @if (array_key_exists("abstract", $study["_source"]))
-            <h3 class="Abstract" >Abstract</h3>
+            <h3>Abstract</h3>
 
             <p class="abstract" >{{ Utils::getEn($study["_source"]["abstract"]) }}</p>
             @endif

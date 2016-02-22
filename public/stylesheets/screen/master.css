@@ -100,19 +100,47 @@ a:visited:hover {
 #header .top-bar .top-bar-section ul li > a {
     color: #fff;
     font-family: "Work Sans", "Trebuchet MS", Helvetica, "Helvetica Neue", sans-serif;
-    font-size: 14px;
+    font-size: 20px
 }
 
+/*frontpage home/about/search studies*/
+#frontpage-left-menu{
+    font-size: 1.3em!important;
+    padding: 15px;
+    background-color: rgba(245,245,245,0.75);
+    min-height: 300px;
+    border-radius: 20px;
+}
+#home{
+    z-index: 1;
+    list-style-type: none;
+}
+#about{
+    list-style-type: none;
+    z-index: 2;
+    list-style-type: none;
+}
+#search{
+    list-style-type: none;
+}
+#searchstudies{
+    z-index: 3;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    font-family: "Work Sans", "Trebuchet MS", Helvetica, "Helvetica Neue", sans-serif;
+}
 #header .top-bar .has-dropdown .dropdown li {
     padding: 0;
 }
+
 
 /* --- Navigation (Foundation Top Bar) --- */
 
 #header .navigation #logo a:link,
 #header .navigation #logo a:visited {
-    font-size: 20px;
-    font-weight: 300; /* Light */
+    font-size: 30px;
+    font-weight: 400; /* Light */
 }
 
 #header .navigation .has-form {
@@ -121,33 +149,56 @@ a:visited:hover {
 
 #header .navigation form input[type="search"],
 #header .navigation form input[type="text"] {
-    background: none;
-    border: none;
-    border-bottom: 1px solid #fff; /* Fallback for the Microsoft Internet Explorer */
-    border-bottom: 1px solid rgba(255, 255, 255, 0.50);
-    box-shadow: none;
-    color: #fff;
+    border-radius: 0;
+    background-color: #fff;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #ccc;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+    color: rgba(0,0,0,0.75);
+    display: block;
+    font-family: inherit;
+    font-size: 0.875rem;
+    margin: 0 0 1rem 0;
+    padding: 0.5rem;
+    width: 100%;
 }
-
 #header .navigation form input[type="search"]:focus,
 #header .navigation form input[type="text"]:focus {
-    border-bottom: 1px solid #fff;
+    border: 1px solid grey;
+    box-shadow: inset 0 1px 2px rgba(255,255,255,0.1);
+}
+
+#header .navigation form input.search::-webkit-input-placeholder{
+    color: #D5CFDA;
+}
+
+#header .navigation form input.search:-moz-placeholder { /* Firefox 18- */
+    color: #D5CFDA !important;  
+}
+ 
+#header .navigation form input.search::-moz-placeholder {  /* Firefox 19+ */
+    color: #D5CFDA !important;  
+}
+ 
+#header .navigation form input.search:-ms-input-placeholder {  
+    color: #D5CFDA !important;  
 }
 
 #header .navigation form :-ms-input-placeholder {
-   color: #fff;
+    color: #fff;
 }
 
 #header .navigation form :-moz-placeholder {
-   color: #fff;
+    color: #fff;
 }
 
 #header .navigation form ::-moz-placeholder {
-   color: #fff;
+    color: #fff;
 }
 
 #header .navigation form ::-webkit-input-placeholder {
-   color: #fff;
+    color: #fff;
 }
 
 #header .navigation form .typeahead.dropdown-menu li a:link,
@@ -236,7 +287,7 @@ a:visited:hover {
     font-size: 60px;
     font-weight: 200; /* Extra-Light */
     line-height: 3rem;
-    margin: 85px 0 50px 0;
+    margin: 85px 0 50px 0px;
 }
 
 #content .featured h1 small {
@@ -272,10 +323,13 @@ a:visited:hover {
     margin-right: 10px;
     max-width: 64px;
 }
-
+.filter h2{
+    cursor: pointer;
+    font-size: 165%;
+}
 #content .filters {
     list-style: none;
-    margin: 0
+    margin: 0px;
 }
 
 #content .filters li {
@@ -387,4 +441,7 @@ a:visited:hover {
 }
 .sidebar ul li a{
     display: table-cell;
+}
+.abstract{
+    margin-bottom: 0px;
 }

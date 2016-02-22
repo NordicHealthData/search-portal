@@ -63,4 +63,7 @@ $(document).ready(function() {
   $("#keyword").on("mouseleave", function (){
       $(".keywordul").slideUp("slow");
   });
+  //collapse long text
+  $(".abstract").readmore();
 });
+

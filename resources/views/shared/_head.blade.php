@@ -22,4 +22,5 @@
 
     <!-- JavaScripts -->
     <script src="{{ asset("/javascripts/modernizr.js") }}"></script>
+    
 </head>
