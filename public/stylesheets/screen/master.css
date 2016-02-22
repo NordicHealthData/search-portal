@@ -335,9 +335,15 @@ a:visited:hover {
     margin-right: 10px;
     max-width: 64px;
 }
+.filter{
+    margin: 5px;
+    background-color: rgba(245,245,245,0.75);
+    border-radius: 10px;
+    border: 2px solid #50c035;
+}
 .filter h2{
     cursor: pointer;
-    font-size: 165%;
+    font-size: 150%;
 }
 #content .filters {
     list-style: none;
@@ -353,13 +359,16 @@ a:visited:hover {
 }
 
 #content .filters li .label {
-    background-color: #fff;
+    background-color: rgba(245,245,245,0.75);
     border-radius: 5px;
     font-size: 13px;
     font-weight: normal;
     font-weight: 400; /* Regular */
     padding: 2px 5px;
     text-align: center;
+}
+.filters .label{
+    border: 1px solid #50c035;
 }
 
 /* Pagination */
