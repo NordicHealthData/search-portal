@@ -1,0 +1,130 @@
+{
+    "analysisunit": {
+        "Individual": [
+            "Individuals"
+        ],
+        "Organization": [
+            "Organisation"
+        ],
+        "Family": [],
+        "Family: Household family": [
+            "Household family"
+        ],
+        "Household": [],
+        "Housing Unit": [],
+        "Event/Process": [
+            "Process"
+        ],
+        "Geographic Unit": [],
+        "Time Unit": [],
+        "Text Unit": [],
+        "Group": [],
+        "Object": [],
+        "Other": []
+    },
+    "modeofcollection": {
+        "Interview": [],
+        "Face-to-face interview": [],
+        "Face-to-face interview: CAPI": [],
+        "Face-to-face interview: PAPI": [],
+        "Telephone interview": [],
+        "Telephone interview: CATI": [],
+        "E-mail interview": [],
+        "Web-based interview": [
+            "Web interview",
+            "Internet survey",
+            "Web Survey"
+        ],
+        "Self-administered questionnaire": [
+            "Mail survey",
+            "Postal survey",
+            "Paper/pencil questionnaire"
+        ],
+        "Fixed form self-administered questionnaire": [],
+        "Fixed form self-administered questionnaire: E-mail": [],
+        "Fixed form self-administered questionnaire: Paper ": [
+            "Pen and paper survey"
+        ],
+        "Fixed form self-administered questionnaire: SMS/MMS": [],
+        "Fixed form self-administered questionnaire: Web-based": [],
+        "Interactive self-administered questionnaire": [],
+        "Interactive self-administered questionnaire: CASI": [],
+        "Interactive self-administered questionnaire: CASI: VCASI": [],
+        "Interactive self-administered questionnaire: CASI: ACASI": [],
+        "Interactive self-administered questionnaire: CASI: TACASI": [],
+        "Interactive self-administered questionnaire: CAWI": [
+            "Internet survey (TNS Gallup Channel)"
+        ],
+        "Focus group": [],
+        "Face-to-face focus group": [
+            "Group Interview"
+        ],
+        "Telephone focus group": [],
+        "Online focus group": [],
+        "Self-administered writings and/or diaries": [
+            "Self-administered writings",
+            "Diary"
+        ],
+        "Self-administered writings and/or diaries: E-mail": [],
+        "Self-administered writings and/or diaries: Paper": [],
+        "Self-administered writings and/or diaries: Web-based": [],
+        "Observation": [],
+        "Field observation": [],
+        "Participant field observation": [
+            "Participant Observation"
+        ],
+        "Non-participant field observation": [],
+        "Laboratory observation": [],
+        "Participant laboratory observation": [],
+        "Non-participant laboratory observation": [],
+        "Computer-based observation": [],
+        "Experiment": [],
+        "Laboratory experiment": [],
+        "Field/Intervention experiment": [],
+        "Web-based experiment": [],
+        "Recording": [],
+        "Content coding": [
+            "Coding scheme"
+        ],
+        "Transcription": [],
+        "Compilation/Synthesis": [],
+        "Summary": [],
+        "Aggregation": [],
+        "Simulation": [],
+        "Measurements and tests": [],
+        "Educational measurements and tests": [],
+        "Physical measurements and tests": [
+            "Psychological test"
+        ],
+        "Psychological measurements and tests": [],
+        "Other": []
+    },
+    "timemethod": {
+        "Longitudinal": [],
+        "Longitudinal: Cohort/Event-based": [
+            "Cohort study",
+            "Longitudinal: Cohort"
+        ],
+        "Longitudinal: Trend/Repeated cross-section": [
+            "Trend study"
+        ],
+        "Longitudinal: Panel": [
+            "Panel study",
+            "Longitudinal: Panel study",
+            "Follow-up survey"
+        ],
+        "Longitudinal: Panel: Continuous": [
+            "Cross-sectional study"
+        ],
+        "Longitudinal: Panel: Interval": [],
+        "Time Series": [],
+        "TimeSeries: Continuous": [],
+        "TimeSeries: Discrete": [],
+        "Cross-section": [],
+        "Cross-section ad-hoc follow-up": [
+            "Cross-sectional study with patial replication",
+            "Cross-section ad hocc follow-up"
+        ],
+        "Other": []
+    }
+}
