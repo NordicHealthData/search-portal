@@ -12,7 +12,7 @@
 */
 
 // search
-Route::get('search', 'SearchController@index');
+
 Route::get('search', ['as' => 'search', 'uses' => 'SearchController@search']);
 Route::get('suggest', 'SearchController@suggest');
 
