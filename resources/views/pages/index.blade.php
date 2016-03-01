@@ -12,6 +12,9 @@
                 </ul>
             </div>
             <div class="small-8 columns">
+                @include("search._form")
+            </div>
+            <div class="small-8 columns">
                 <h1>Nordic Health<br />
                     Data Portal <span class="tag prototype">[prototype]</span> <small>&mdash; Making Nordic Health Data Visible</small></h1>
             </div>

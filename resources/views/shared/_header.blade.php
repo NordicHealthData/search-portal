@@ -10,9 +10,7 @@
             <ul class="right">
                 <li id = "home">{!! link_to("/", "Home", array("title" => "Home")) !!}</li>
                 <li id = "about">{!! link_to_route("pages.show", "About", array("path" => "about"), array("title" => "About")) !!}</li>
-                <li class="has-form">
-                    @include("search._form")
-                </li>
+            
                 <!-- /has-form -->
             </ul>
             <!-- /right -->
