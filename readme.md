@@ -5,28 +5,48 @@ This is a an search portal built using Laravel 5.1 for interfacing with Elastic 
 ## Laravel documentationDocumentation
 [Laravel website](http://laravel.com/docs).
 
-## Requirements
+## 1. Requirements
 
 * PHP (5.5.9 or later)
 * Composer https://getcomposer.org (to install/update packages)
-* Running instance or cluster of Eleasticsearch https://www.elastic.co/products/elasticsearch
+* Running instance or cluster of Eleasticsearch https://www.elastic.co/products/elasticsearch (requires Java)
 
-## Setup
+## 2. Setup
 
-1. Clone this repository (using git)
+__a.__ Clone this repository (using git)
 
-2. Install packages using composer
+__b.__ Install packages using composer
    Navigate to the project folder and run:
 
    ```composer install```
 
-3. Copy ```.env.exmaple``` to a new file named ```.env```
+__c.__ Copy ```.env.exmaple``` to a new file named ```.env```
 
-4. Edit the config
+__d.__ Edit the config
     
     change ``ELASTICH_SEARCH_HOST`` to your elastic search host (default ```localhost:9200```)
 
-5. A running instance of Elasticsearch can be achieved by running Elasticsearch in Docker, see:                 https://github.com/dockerfile/elasticsearch 
+__e.__ Start elastic search by running a local instance of Elasticsearch 
+   By running a local copy of elastic search https://www.elastic.co/products/elasticsearch
+   Via docker: https://github.com/dockerfile/elasticsearch 
+
+## 3. Transform and import records to Elastic Search
+
+The portal have built in function to transform DDI into json and put it into Elastic Search.
+
+### Transform DDI-XML to json
+   
+  You can configure the default location of the source xml-folder in your .env file
+
+  Run the transformation
+
+  ```php artisan xslt:ddi-to-json {path=null} {outpath=null}```
+ 
+### Import json document to the index
+
+  You can configure the default location of the json files in your .env file
+
+``php artisan es:ingest-documents path\to\documents``
 
 ## Run
 
@@ -64,24 +84,6 @@ Make sure you local instance of elastic search is running
  docker build -t nordichealthportal .
  docker run --name portal -p 80:80 -it nordichealthportal
 ```
-
-## Transform and import records to Elastic Search
-
-The portal have built in function to transform DDI into json and put it into Elastic Search.
-
-### Transform DDI-XML to json
-   
-  You can configure the default location of the source xml-folder in your .env file
-
-  Run the transformation
-
-  ```php artisan xslt:ddi-to-json {path=null} {outpath=null}```
- 
-### Import json document to the index
-
-  You can configure the default location of the json files in your .env file
-
-``php artisan es:ingest-documents path\to\documents``
 
 ### Contributors
 * DDA https://www.sa.dk/undervisning-forskning/dda-dansk-data-arkiv
