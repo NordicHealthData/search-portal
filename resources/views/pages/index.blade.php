@@ -3,20 +3,27 @@
 @section("content")
     <div class="featured">
         <div class="row">
-            <div class="small-4 columns">
+            <!--<div class="small-4 columns">
                 <ul id="frontpage-left-menu"  class="vertical menu">
                     <li id = "home">{!! link_to("/", "Home", array("title" => "Home")) !!}</li>
                     <li id = "about">{!! link_to_route("pages.show", "About", array("path" => "about"), array("title" => "About")) !!}</li>
                     <li id = "search">{!! link_to("/search", "Search Studies", array("title" => "Search")) !!}</li>
-                    <!-- /has-form -->
+                    
                 </ul>
-            </div>
-            <div class="small-8 columns">
-                @include("search._form")
-            </div>
-            <div class="small-8 columns">
-                <h1>Nordic Health<br />
+            </div>-->
+            <div class="small-12 columns">
+                <div class="row">
+                    <h1>Nordic Health<br />
                     Data Portal <span class="tag prototype">[prototype]</span> <small>&mdash; Making Nordic Health Data Visible</small></h1>
+                </div>
+                <div class="row">
+                    <div class="small-8 columns">
+                        @include("search._form")
+                    </div>
+                    <div class="small-4 columns">
+                        {!! Form::submit("Search", array("class" => "button")) !!}
+                    </div>
+                </div>
             </div>
             <!-- /small-12.columns -->
         </div>

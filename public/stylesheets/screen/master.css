@@ -100,12 +100,11 @@ a:visited:hover {
 #header .top-bar .top-bar-section ul li > a {
     color: #fff;
     font-family: "Work Sans", "Trebuchet MS", Helvetica, "Helvetica Neue", sans-serif;
-    font-size: 20px
+    font-size: 23px
 }
-
 /*frontpage home/about/search studies*/
 #frontpage-left-menu{
-    font-size: 1.3em!important;
+    font-size: 1.5em!important;
     padding: 15px;
     background-color: rgba(245,245,245,0.75);
     min-height: 300px;
@@ -306,7 +305,6 @@ a:visited:hover {
     min-height: 400px;
     padding: 25px 0;
 }
-
 #content img.featured {
     background: none;
     min-height: 0;
@@ -315,7 +313,7 @@ a:visited:hover {
 
 #content .featured h1 {
     color: #fff;
-    font-size: 60px;
+    font-size: 70px;
     font-weight: 200; /* Extra-Light */
     line-height: 3rem;
     margin: 85px 0 50px 0px;
@@ -355,7 +353,7 @@ a:visited:hover {
     max-width: 64px;
 }
 #content .featured .button{
-    margin-left: 10px;
+    margin-left: -230px;
     margin-top: 0px;
     padding: 5px;
 }
