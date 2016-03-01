@@ -2,8 +2,7 @@
 
 This is a an search portal built using Laravel 5.1 for interfacing with Elastic Search
 
-## Laravel documentationDocumentation
-[Laravel website](http://laravel.com/docs).
+[Laravel documentation](https://laravel.com/docs/5.1).
 
 ## 1. Requirements
 
