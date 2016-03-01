@@ -52,7 +52,7 @@ The portal have built in function to transform DDI into json and put it into Ela
 
 There is several ways to run the portal during development or for production. Use one of the following methods.
 
-### Run app using php builtin webserver (tehe easy way)
+### Run app using php builtin webserver (the easy way)
 Run:
 
 ```php artisan serve```
