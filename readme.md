@@ -22,9 +22,9 @@ __b.__ Install packages using composer
 
 __c.__ Copy ```.env.exmaple``` to a new file named ```.env```
 
-__d.__ Edit the config
+__d.__ Edit the config (.env)
     
-    change ``ELASTICH_SEARCH_HOST`` to your elastic search host (default ```localhost:9200```)
+    change ELASTICH_SEARCH_HOST to your elastic search host (default localhost:9200)
 
 __e.__ Start elastic search by running a local instance of Elasticsearch 
    By running a local copy of elastic search https://www.elastic.co/products/elasticsearch
@@ -37,6 +37,7 @@ The portal have built in function to transform DDI into json and put it into Ela
 ### Transform DDI-XML to json
    
   You can configure the default location of the source xml-folder in your .env file
+  DDI from SND, NSD, FSD and DDA can be downloaded via http://dev.snd.gu.se/sites/dev.snd.gu.se/files/metadata-2016-03-01.zip
 
   Run the transformation
 
