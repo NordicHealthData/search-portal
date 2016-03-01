@@ -17,11 +17,8 @@
                     Data Portal <span class="tag prototype">[prototype]</span> <small>&mdash; Making Nordic Health Data Visible</small></h1>
                 </div>
                 <div class="row">
-                    <div class="small-8 columns">
+                    <div class="small-12 columns">
                         @include("search._form")
-                    </div>
-                    <div class="small-4 columns">
-                        {!! Form::submit("Search", array("class" => "button")) !!}
                     </div>
                 </div>
             </div>

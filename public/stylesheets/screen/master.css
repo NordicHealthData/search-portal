@@ -352,9 +352,12 @@ a:visited:hover {
     margin-right: 10px;
     max-width: 64px;
 }
+#content .featured .search{
+    margin-left: -10px;
+}
 #content .featured .button{
-    margin-left: -230px;
     margin-top: 0px;
+    margin-left: 6px;
     padding: 5px;
 }
 .filter:first-child{
