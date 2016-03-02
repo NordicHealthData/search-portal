@@ -20,7 +20,7 @@ body {
 
 a:link,
 a:visited {
-    color: #50c035;
+    color: #187D00;
     outline: none;
     text-decoration: none;
 }
@@ -157,7 +157,7 @@ a:visited:hover {
 
 #header .navigation .has-form {
     min-width: 300px;
-    
+
 }
 
 #header .navigation form input[type="search"],
@@ -188,15 +188,15 @@ a:visited:hover {
 }
 
 #header .navigation form input.search:-moz-placeholder { /* Firefox 18- */
-    color: #D5CFDA !important;  
+    color: #D5CFDA !important;
 }
- 
+
 #header .navigation form input.search::-moz-placeholder {  /* Firefox 19+ */
-    color: #D5CFDA !important;  
+    color: #D5CFDA !important;
 }
- 
-#header .navigation form input.search:-ms-input-placeholder {  
-    color: #D5CFDA !important;  
+
+#header .navigation form input.search:-ms-input-placeholder {
+    color: #D5CFDA !important;
 }
 
 #header .navigation form :-ms-input-placeholder {
@@ -266,7 +266,7 @@ a:visited:hover {
 
 #content .card em {
     background: lightgray;
-} 
+}
 #content .card .header {
     background-color: #272635;
     border-left: 2px solid #272635;
@@ -284,7 +284,7 @@ a:visited:hover {
     color: #fff;
 }
 
-#content .card .header .label { 
+#content .card .header .label {
     font-size: 20px;
     display: block;
     font-weight: 500;
@@ -369,7 +369,7 @@ a:visited:hover {
     width: 50px;
 }
 .filter:first-child{
-    margin-left:30px; 
+    margin-left:30px;
 }
 .filter{
     margin: 5px;
@@ -412,13 +412,13 @@ a:visited:hover {
     text-align: center;
     margin-bottom: 25px;
     margin-top: 20px;
-    
+
 }
 /* Pagination */
 
 #content .pagination {
     list-style: none;
-    margin: 0 0 25px 30%;
+    margin: 0 0 25px 23%;
 }
 #content .pagination a{
     color: #272635;
@@ -509,7 +509,7 @@ a:visited:hover {
 .sidebar ul li:hover{
     background-color: #50c035;
     transition: ease-in-out 0.5s;
-    
+
 }
 .sidebar ul li a{
     display: table-cell;
