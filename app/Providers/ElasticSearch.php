@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Mockery\CountValidator\Exception;
 use Request;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\ServiceProvider;
@@ -42,7 +43,7 @@ class ElasticSearch extends ServiceProvider{
      *
      * @return Object Elastic Search client
      */
-    private static function getClient() {
+    public static function getClient() {
         if ( is_null( self::$client ) ){
             $params = array();
             $params['hosts'] = array (env('app.elastic_search_host'));
@@ -235,5 +236,23 @@ class ElasticSearch extends ServiceProvider{
         $deleteParams = array();
         $deleteParams['index'] = $index;
         $client->indices()->delete($deleteParams);
+    }
+
+    public static function isIndexCreated($indexName) {
+        $client = self::getClient();
+        $params['index'] = $indexName;
+        try {
+            $response = $client->indices()->getSettings($params);
+            return true;
+        } catch(\Exception $e) {
+            return false;
+        }
+    }
+
+    public static function createIndexFromJsonFile() {
+        $mapping = file_get_contents('./resources/mapping/study.json');
+        $mappingArray = json_decode($mapping, true);
+        //dd($mappingArray);
+        $result = self::getClient()->indices()->create($mappingArray);
     }
 }
