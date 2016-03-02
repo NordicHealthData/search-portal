@@ -5,21 +5,13 @@
     <div class="small-10 columns">
             <h1 class="title" >{{ Utils::getEn($study["_source"]["title"]) }}</h1>
 
-            <p>
-                <strong>Archive identifier:</strong><span>{{ $study["_id"] }}</span>
+            @if ($study["_source"]["landingpage"])
+                <p>
+                <strong>Link to the archive hosting the research data: <a href="{{ $study["_source"]["landingpage"] }}">{{ $study["_source"]["landingpage"] }}</a></strong>
                 <br>
-            </p>
-
-                @if ($study["_source"]["landingpage"])
-                    <p>
-                    <strong>Link to the archive hosting the research data: <a href="{{ $study["_source"]["landingpage"] }}">{{ $study["_source"]["landingpage"] }}</a></strong>
-                    <br>
-                    If you have any questions regarding this data set please refer your questions to the archive responsible for the study.
-                    </p>
-                @endif
-
-
-            </p>
+                If you have any questions regarding this data set please refer your questions to the archive responsible for the study.
+                </p>
+            @endif
 
             <p>
                 @if (array_key_exists("startdate", $study["_source"]))
@@ -46,6 +38,11 @@
             </ul>
             @endif
 
+            <p>
+                <strong>Archive identifier: </strong><span>{{ $study["_id"] }}</span>
+                <br>
+            </p>
+
             @if (array_key_exists("abstract", $study["_source"]))
             <h3>Abstract</h3>
 
@@ -57,6 +54,9 @@
 
             <p>{{ Utils::getEn($study["_source"]["purpose"]) }}</p>
             @endif
+
+
+
 
     </div>
     <div  class="small-2 columns sidebar">
