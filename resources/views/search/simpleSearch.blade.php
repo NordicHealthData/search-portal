@@ -4,39 +4,51 @@
     <div class="row">
         <div class="small-12 columns">
             <div class="row">
-                <div class="small-6 columns">
-                    <div class="searchbar">
+                <div class="searchbar">
                     <h1>Search Health Data</h1>
+                    <div class="small-8 columns">                                           
                         {!! Form::open(array("action" => "SearchController@search", "method" => "GET")) !!}
                         {!! Form::text("q", Request::input("q"), array("class" => "search", "autocomplete" => "off", "placeholder" => "Search for Studies...", "data-suggesturl"=> action("SearchController@suggest"))) !!}
-
+                        
                         @if (isset($hits->aggregations))
                             @foreach ($hits->aggregations as $key => $aggregation)
                                 @if (Input::get($key))
                                     {!! Form::hidden($key, Input::get($key)) !!}
                                 @endif
-                            @endforeach
-                        @endif
+                            @endforeach                
+                        @endif                        
+                    </div>                
+                    <div class="small-4 columns">
+                        <button type="submit" class="button">
+                                <i class="fi-magnifying-glass"></i>
+                        </button>
+                        {!! Form::close() !!}
                     </div>
                 </div>
-                <div class="small-6 columns">
-                    {!! Form::submit("Search", array("class" => "button")) !!}
-                    {!! Form::close() !!}
-
+            </div> 
+            <div class="row">
+                <div class="small-12 columns">
+                    <ul class="aggregations small-4 columns">
                     @foreach ($aggregations as $key => $aggregation)
                         @if (Input::has($key))
                             @foreach (Utils::getArgumentValues($key) as $value)
                                 @if (Utils::keyValueActive($key, $value))
-                                    <a href="{{ route("search", Utils::removeKeyValue($key, $value)) }}" class="label label-info">
-                                        <span class="text-info">{{ ucfirst($key) }}:</span> {{ $value }}
-                                        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-                                    </a>
+                                    <li class="aggregation">
+                                        <a href="{{ route("search", Utils::removeKeyValue($key, $value)) }}" class="label label-info">
+                                            <span class="text-info">{{ ucfirst($key) }}:</span> {{ $value }}
+                                            <span class="badge">
+                                                <i class="fi-x"></i>
+                                            </span>
+                                        </a>
+                                    </li>
                                 @endif
                             @endforeach
                         @endif
                     @endforeach
-                </div>    
-            </div> 
+                    </ul>
+                </div>
+            </div>
+            
             <h2>Filter Search Results by</h2>
 
             <ul class="small-block-grid-1 medium-block-grid-8">
@@ -76,7 +88,7 @@
                 @endforeach
             </ul>
 
-            <p class="total"><strong>Total:</strong> <span class="badge">{{ $hits->total() }}</span></p>
+            <p class="total"><strong>Total:</strong> <span>{{ $hits->total() }}</span></p>
 
             <ul class="small-block-grid-1 medium-block-grid-1">
                 @foreach($hits as $hit)

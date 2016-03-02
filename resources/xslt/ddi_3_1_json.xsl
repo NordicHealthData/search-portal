@@ -227,6 +227,27 @@
                 </xsl:for-each>
             </xsl:for-each>
 
+            <!-- question -->
+            <xsl:for-each select="l:QuestionReference">
+                <xsl:variable name="qiID" select="r:ID"/>
+                <xsl:for-each select="//d:QuestionItem[@id = $qiID]">
+                    <question>                        
+                        <!-- id -->
+                        <id>
+                            <xsl:value-of select="@id"/>:<xsl:value-of select="@version"/>
+                        </id>                        
+                        <!-- label -->
+                        <xsl:for-each select="d:QuestionText">
+                            <label>                                
+                                <xsl:call-template name="ddi-xslt:lang">
+                                    <xsl:with-param name="lang">.</xsl:with-param>
+                                </xsl:call-template>
+                            </label>
+                        </xsl:for-each>                       
+                    </question>
+                </xsl:for-each>
+            </xsl:for-each>
+
             <!-- representation -->
             <xsl:if test="l:Representation/l:TextRepresentation">
                 <representation>TEXT</representation>
@@ -278,14 +299,14 @@
 
     <xsl:template name="ddi-xslt:escapeQuote">
         <xsl:param name="pText" select="normalize-space(.)"/>
-        
+
         <xsl:if test="string-length($pText) >0">
             <xsl:value-of select=
                 "substring-before(concat($pText, '&quot;'), '&quot;')"/>
-            
+
             <xsl:if test="contains($pText, '&quot;')">
                 <xsl:text>\"</xsl:text>
-                
+
                 <xsl:call-template name="ddi-xslt:escapeQuote">
                     <xsl:with-param name="pText" select=
                         "substring-after($pText, '&quot;')"/>

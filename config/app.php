@@ -52,6 +52,7 @@ return [
         'timemethod' => ['terms' => ['field' => 'timemethod.en']],
         'collection' => ['terms' => ['field' => 'collection']],
         'group' => ['terms' => ['field' => 'group']],
+        'variable' => ['terms' => ['field' => 'variable.label.da']],
     ],
     
     'elastic_search_aggregations_title' => [
@@ -177,7 +178,8 @@ return [
         Illuminate\View\ViewServiceProvider::class,
 
         Collective\Html\HtmlServiceProvider::class,
-	Barryvdh\Debugbar\ServiceProvider::class,
+	    Barryvdh\Debugbar\ServiceProvider::class,
+
         /*
          * Application Service Providers...
          */
@@ -186,7 +188,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         App\Providers\ElasticSearch::class,
         App\Providers\Utils::class,
-
+        App\Providers\TranslateProvider::class,
     ],
 
     /*

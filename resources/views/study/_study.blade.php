@@ -2,8 +2,7 @@
     <li class="card">
         <header class="header">
             <a href="{{ action('StudyController@view', ['id' => $hit["_id"]]) }}">
-                <strong class="label">{{ $hit["_id"] }}</strong>
-                {{ Utils::getEn($hit["_source"]["title"]) }}
+                <strong class="label">{{ Utils::getEn($hit["_source"]["title"]) }}</strong>
             </a>
         </header>
 
