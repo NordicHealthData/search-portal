@@ -245,6 +245,22 @@ a:visited:hover {
     padding: 10px 15px 10px 15px;
     font-size: 25px;
 }
+#content .searchbar .search {
+    display: inline-block;
+}
+#content .searchbar button {
+    margin-top: 0px;
+    margin-left: 0px;
+    padding: 5px;
+    background-color: #888;
+    color: #fff;
+    height: 37px;
+    width: 50px;
+}
+#content .searchbar .columns {
+    margin: 0;
+    padding: 0;
+}
 /* "Cards" */
 
 #content .card {
@@ -353,12 +369,16 @@ a:visited:hover {
     max-width: 64px;
 }
 #content .featured .search{
-    margin-left: -10px;
+
 }
 #content .featured .button{
     margin-top: 0px;
-    margin-left: 6px;
+    margin-left: 0px;
     padding: 5px;
+    background-color: #888;
+    color: #fff;
+    height: 37px;
+    width: 50px;
 }
 .filter:first-child{
     margin-left:30px; 

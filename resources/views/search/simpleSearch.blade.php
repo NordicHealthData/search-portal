@@ -4,25 +4,27 @@
     <div class="row">
         <div class="small-12 columns">
             <div class="row">
-                <div class="small-6 columns">
-                    <div class="searchbar">
+                <div class="searchbar">
                     <h1>Search Health Data</h1>
+                    <div class="small-8 columns">                                           
                         {!! Form::open(array("action" => "SearchController@search", "method" => "GET")) !!}
                         {!! Form::text("q", Request::input("q"), array("class" => "search", "autocomplete" => "off", "placeholder" => "Search for Studies...", "data-suggesturl"=> action("SearchController@suggest"))) !!}
-
+                        
                         @if (isset($hits->aggregations))
                             @foreach ($hits->aggregations as $key => $aggregation)
                                 @if (Input::get($key))
                                     {!! Form::hidden($key, Input::get($key)) !!}
                                 @endif
-                            @endforeach
-                        @endif
+                            @endforeach                
+                        @endif                        
+                    </div>                
+                    <div class="small-4 columns">
+                        <button type="submit" class="button">
+                                <i class="fi-magnifying-glass"></i>
+                        </button>
+                        {!! Form::close() !!}
                     </div>
                 </div>
-                <div class="small-6 columns">
-                    {!! Form::submit("Search", array("class" => "button")) !!}
-                    {!! Form::close() !!}
-                </div>    
             </div> 
             <div class="row">
                 <div class="small-12 columns">
