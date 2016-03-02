@@ -29,7 +29,10 @@
                   <strong>Data collection end date:</strong> <span>Still ongoing</span>
                 @endif
             </p>
-
+            <p>
+                <strong>Archive identifier: </strong><span>{{ $study["_id"] }}</span>
+                <br>
+            </p>
             @if (array_key_exists("creator", $study["_source"]))
             <h3>Principal investigator</h3>
 
@@ -44,16 +47,27 @@
                 @endforeach
             </ul>
             @endif
+            
+
 
             <p>
-                <strong>Archive identifier: </strong><span>{{ $study["_id"] }}</span>
-                <br>
-            </p>
-
+            
+            @if (array_key_exists("universe", $study["_source"]))
+            <h3>Universe</h3>
+            <ul>
+                @foreach ($study["_source"]["universe"] as $universe)
+                @if (array_key_exists("en", $universe))
+                <li>{{ Utils::getEn($study["_source"]["universe"]) }}</li>
+                @endif
+                @endforeach
+            </ul>
+            @endif
+            
             @if (array_key_exists("abstract", $study["_source"]))
             <h3>Abstract</h3>
 
             <p class="abstract" >{{ Utils::getEn($study["_source"]["abstract"]) }}</p>
+            
             @endif
 
             @if (array_key_exists("purpose", $study["_source"]))
