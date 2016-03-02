@@ -22,21 +22,29 @@
                 <div class="small-6 columns">
                     {!! Form::submit("Search", array("class" => "button")) !!}
                     {!! Form::close() !!}
-
+                </div>    
+            </div> 
+            <div class="row">
+                <div class="small-12 columns">
+                    <ul class="aggregations">
                     @foreach ($aggregations as $key => $aggregation)
                         @if (Input::has($key))
                             @foreach (Utils::getArgumentValues($key) as $value)
                                 @if (Utils::keyValueActive($key, $value))
-                                    <a href="{{ route("search", Utils::removeKeyValue($key, $value)) }}" class="label label-info">
-                                        <span class="text-info">{{ ucfirst($key) }}:</span> {{ $value }}
-                                        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-                                    </a>
+                                    <li class="aggregation">
+                                        <a href="{{ route("search", Utils::removeKeyValue($key, $value)) }}" class="label label-info">
+                                            <span class="text-info">{{ ucfirst($key) }}:</span> {{ $value }}
+                                            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                                        </a>
+                                    </li>
                                 @endif
                             @endforeach
                         @endif
                     @endforeach
-                </div>    
-            </div> 
+                    </ul>
+                </div>
+            </div>
+            
             <h2>Filter Search Results by</h2>
 
             <ul class="small-block-grid-1 medium-block-grid-8">

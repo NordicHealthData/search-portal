@@ -517,3 +517,7 @@ a:visited:hover {
 .abstract{
     margin-bottom: 0px;
 }
+
+.aggregations {
+    list-style: none;
+}
