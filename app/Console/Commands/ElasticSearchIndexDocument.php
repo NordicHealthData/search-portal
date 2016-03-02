@@ -9,6 +9,7 @@ use Utils;
 
 class ElasticSearchIndexDocument extends Command {
 
+    protected $indexIsCreated = true;
     protected $signature = 'es:ingest-documents {path=null}';
     protected $description = 'Ingest json documents to Elasticsearch for indexing';
 
@@ -33,6 +34,15 @@ class ElasticSearchIndexDocument extends Command {
         }
         $this->info(PHP_EOL.'Using directory path for ingest: '.$path.PHP_EOL);
 
+        // create index
+        $index = env('ES_STUDY_UNIT_INDEX');
+        $type = env('ES_STUDY_INDEX_TYPE');
+
+        $this->indexIsCreated = ElasticSearch::isIndexCreated($index);
+        if(!$this->indexIsCreated) {
+            ElasticSearch::createIndexFromJsonFile();
+        }
+
         $errors = array();
         $files = array_diff(scandir($path), array('..', '.'));
         foreach($files as $file) {
@@ -52,9 +62,6 @@ class ElasticSearchIndexDocument extends Command {
             }
             
             $body = HarminizationHelper::harmonizeDocument($body);
-            
-            $index = env('ES_STUDY_UNIT_INDEX');
-            $type = env('ES_STUDY_INDEX_TYPE');
 
             $this->comment('Importing: '.$path.$file);
             $result = ElasticSearch::indexDocument($id, $index, $type, $body);
