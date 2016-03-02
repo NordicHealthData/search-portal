@@ -5,19 +5,34 @@
     <div class="small-10 columns">
             <h1 class="title" >{{ Utils::getEn($study["_source"]["title"]) }}</h1>
 
-            <p><strong>ID:</strong> <span>{{ $study["_id"] }}</span><br /></p>
-            
+            <p>
+                <strong>Archive identifier:</strong><span>{{ $study["_id"] }}</span>
+                <br>
+            </p>
+
+                @if ($study["_source"]["landingpage"])
+                    <p>
+                    <strong>Link to the archive hosting the research data: <a href="{{ $study["_source"]["landingpage"] }}">{{ $study["_source"]["landingpage"] }}</a></strong>
+                    <br>
+                    If you have any questions regarding this data set please refer your questions to the archive responsible for the study.
+                    </p>
+                @endif
+
+
+            </p>
+
             <p>
                 @if (array_key_exists("startdate", $study["_source"]))
-                <strong>Start date:</strong> <span>{{ $study["_source"]["startdate"] }}</span><br />
+                <strong>Data collection start date:</strong> <span>{{ $study["_source"]["startdate"] }}</span><br>
                 @endif
                 @if (array_key_exists("enddate", $study["_source"]))
-                <strong>End date:</strong> <span>{{ $study["_source"]["enddate"] }}</span><br />
+                <strong>Data collection end date:</strong> <span>{{ $study["_source"]["enddate"] }}</span>
+                <br>
                 @endif
             </p>
-            
+
             @if (array_key_exists("creator", $study["_source"]))
-            <h3>Creator</h3>
+            <h3>Principal investigator</h3>
 
             <ul>
                 @foreach ($study["_source"]["creator"] as $creator)
@@ -29,7 +44,7 @@
                 @endif
                 @endforeach
             </ul>
-            @endif    
+            @endif
 
             @if (array_key_exists("abstract", $study["_source"]))
             <h3>Abstract</h3>
@@ -45,9 +60,6 @@
 
     </div>
     <div  class="small-2 columns sidebar">
-        @if ($study["_source"]["landingpage"])
-            <h3><a class="linkbutton" href="{{ $study["_source"]["landingpage"] }}">Go to Study</a></h3>
-        @endif
 
         @if (array_key_exists("subject", $study["_source"]))
         <div id = "subject">
@@ -75,7 +87,7 @@
             </ul>
         </div>
         @endif
-    </div>        
+    </div>
     <!-- /small-12.columns -->
 </div>
 <!-- /row -->
