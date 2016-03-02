@@ -94,6 +94,17 @@
             </ul>
         </div>
         @endif
+        
+        @if (count($study['related'] < 0))
+        <div id="related">
+            <h3 class = "related">Related studies</h3>
+            <ul class = "relatedul">
+                @foreach ($study["related"] as $related)
+                <li><a href="{{ action('StudyController@view', ['id' => $related["_id"]]) }}">{{ Utils::getEn($related["_source"]["title"]) }}</a></li>
+                @endforeach
+            </ul>
+        </div>
+        @endif
     </div>
     <!-- /small-12.columns -->
 </div>

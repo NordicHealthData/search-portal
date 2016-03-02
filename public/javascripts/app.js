@@ -70,6 +70,18 @@ $(document).ready(function() {
       }
   });
   
+    $(".relatedul").hide();
+  
+  $(".related").click(function(){
+      var display = $(this).siblings("ul").css("display");
+      
+      if(display == "block"){
+          $(this).siblings("ul").slideUp(); 
+      }else{
+         $(this).siblings("ul").slideDown(); 
+      }
+  });
+  
   //collapse long text
   $(".abstract").readmore();
 });
