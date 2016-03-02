@@ -1,0 +1,707 @@
+{
+  "index": "study",
+  "body": {
+    "settings": {
+      "number_of_shards": 5,
+      "number_of_replicas": 1
+    },
+    "mappings": {
+      "studytype": {
+        "_source": {
+          "enabled": true
+        },
+        "properties": {
+          "abstract": {
+            "properties": {
+              "da": {
+                "type": "string",
+                "analyzer": "danish",
+                "fields": {
+                  "raw": {
+                    "type": "string",
+                    "index": "not_analyzed"
+                  }
+                }
+              },
+              "en": {
+                "type": "string",
+                "analyzer": "english",
+                "fields": {
+                  "raw": {
+                    "type": "string",
+                    "index": "not_analyzed"
+                  }
+                }
+              },
+              "sv": {
+                "type": "string",
+                "analyzer": "swedish",
+                "fields": {
+                  "raw": {
+                    "type": "string",
+                    "index": "not_analyzed"
+                  }
+                }
+              },
+              "no": {
+                "type": "string",
+                "analyzer": "norwegian",
+                "fields": {
+                  "raw": {
+                    "type": "string",
+                    "index": "not_analyzed"
+                  }
+                }
+              },
+              "fi": {
+                "type": "string",
+                "fields": {
+                  "raw": {
+                    "type": "string",
+                    "index": "not_analyzed"
+                  }
+                }
+              }
+            }
+          },
+          "analysisunit": {
+            "type": "string",
+            "fields": {
+              "raw": {
+                "type": "string",
+                "index": "not_analyzed"
+              }
+            }
+          },
+          "country": {
+            "type": "string",
+            "fields": {
+              "raw": {
+                "type": "string",
+                "index": "not_analyzed"
+              }
+            }
+          },
+          "creator": {
+            "properties": {
+              "da": {
+                "type": "string",
+                "analyzer": "danish",
+                "fields": {
+                  "raw": {
+                    "type": "string",
+                    "index": "not_analyzed"
+                  }
+                }
+              },
+              "en": {
+                "type": "string",
+                "analyzer": "english",
+                "fields": {
+                  "raw": {
+                    "type": "string",
+                    "index": "not_analyzed"
+                  }
+                }
+              },
+              "sv": {
+                "type": "string",
+                "analyzer": "swedish",
+                "fields": {
+                  "raw": {
+                    "type": "string",
+                    "index": "not_analyzed"
+                  }
+                }
+              },
+              "no": {
+                "type": "string",
+                "analyzer": "norwegian",
+                "fields": {
+                  "raw": {
+                    "type": "string",
+                    "index": "not_analyzed"
+                  }
+                }
+              },
+              "fi": {
+                "type": "string",
+                "fields": {
+                  "raw": {
+                    "type": "string",
+                    "index": "not_analyzed"
+                  }
+                }
+              }
+            }
+          },
+          "datakind": {
+            "properties": {
+              "da": {
+                "type": "string",
+                "analyzer": "danish",
+                "fields": {
+                  "raw": {
+                    "type": "string",
+                    "index": "not_analyzed"
+                  }
+                }
+              },
+              "en": {
+                "type": "string",
+                "analyzer": "english",
+                "fields": {
+                  "raw": {
+                    "type": "string",
+                    "index": "not_analyzed"
+                  }
+                }
+              },
+              "sv": {
+                "type": "string",
+                "analyzer": "swedish",
+                "fields": {
+                  "raw": {
+                    "type": "string",
+                    "index": "not_analyzed"
+                  }
+                }
+              },
+              "no": {
+                "type": "string",
+                "analyzer": "norwegian",
+                "fields": {
+                  "raw": {
+                    "type": "string",
+                    "index": "not_analyzed"
+                  }
+                }
+              },
+              "fi": {
+                "type": "string",
+                "fields": {
+                  "raw": {
+                    "type": "string",
+                    "index": "not_analyzed"
+                  }
+                }
+              }
+            }
+          },
+          "doi": {
+            "type": "string"
+          },
+          "enddate": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "keyword": {
+            "properties": {
+              "da": {
+                "type": "string",
+                "analyzer": "danish",
+                "fields": {
+                  "raw": {
+                    "type": "string",
+                    "index": "not_analyzed"
+                  }
+                }
+              },
+              "en": {
+                "type": "string",
+                "analyzer": "english",
+                "fields": {
+                  "raw": {
+                    "type": "string",
+                    "index": "not_analyzed"
+                  }
+                }
+              },
+              "sv": {
+                "type": "string",
+                "analyzer": "swedish",
+                "fields": {
+                  "raw": {
+                    "type": "string",
+                    "index": "not_analyzed"
+                  }
+                }
+              },
+              "no": {
+                "type": "string",
+                "analyzer": "norwegian",
+                "fields": {
+                  "raw": {
+                    "type": "string",
+                    "index": "not_analyzed"
+                  }
+                }
+              },
+              "fi": {
+                "type": "string",
+                "fields": {
+                  "raw": {
+                    "type": "string",
+                    "index": "not_analyzed"
+                  }
+                }
+              }
+            }
+          },
+          "kindofdata": {
+            "type": "string"
+          },
+          "modeofcollection": {
+            "properties": {
+              "da": {
+                "type": "string",
+                "analyzer": "danish",
+                "fields": {
+                  "raw": {
+                    "type": "string",
+                    "index": "not_analyzed"
+                  }
+                }
+              },
+              "en": {
+                "type": "string",
+                "analyzer": "english",
+                "fields": {
+                  "raw": {
+                    "type": "string",
+                    "index": "not_analyzed"
+                  }
+                }
+              },
+              "sv": {
+                "type": "string",
+                "analyzer": "swedish",
+                "fields": {
+                  "raw": {
+                    "type": "string",
+                    "index": "not_analyzed"
+                  }
+                }
+              },
+              "no": {
+                "type": "string",
+                "analyzer": "norwegian",
+                "fields": {
+                  "raw": {
+                    "type": "string",
+                    "index": "not_analyzed"
+                  }
+                }
+              },
+              "fi": {
+                "type": "string",
+                "fields": {
+                  "raw": {
+                    "type": "string",
+                    "index": "not_analyzed"
+                  }
+                }
+              }
+            }
+          },
+          "repository": {
+            "type": "string"
+          },
+          "startdate": {
+            "type": "string"
+          },
+          "subject": {
+            "properties": {
+              "da": {
+                "type": "string",
+                "analyzer": "danish",
+                "fields": {
+                  "raw": {
+                    "type": "string",
+                    "index": "not_analyzed"
+                  }
+                }
+              },
+              "en": {
+                "type": "string",
+                "analyzer": "english",
+                "fields": {
+                  "raw": {
+                    "type": "string",
+                    "index": "not_analyzed"
+                  }
+                }
+              },
+              "sv": {
+                "type": "string",
+                "analyzer": "swedish",
+                "fields": {
+                  "raw": {
+                    "type": "string",
+                    "index": "not_analyzed"
+                  }
+                }
+              },
+              "no": {
+                "type": "string",
+                "analyzer": "norwegian",
+                "fields": {
+                  "raw": {
+                    "type": "string",
+                    "index": "not_analyzed"
+                  }
+                }
+              },
+              "fi": {
+                "type": "string",
+                "fields": {
+                  "raw": {
+                    "type": "string",
+                    "index": "not_analyzed"
+                  }
+                }
+              }
+            }
+          },
+          "timemethod": {
+            "properties": {
+              "da": {
+                "type": "string",
+                "analyzer": "danish",
+                "fields": {
+                  "raw": {
+                    "type": "string",
+                    "index": "not_analyzed"
+                  }
+                }
+              },
+              "en": {
+                "type": "string",
+                "analyzer": "english",
+                "fields": {
+                  "raw": {
+                    "type": "string",
+                    "index": "not_analyzed"
+                  }
+                }
+              },
+              "sv": {
+                "type": "string",
+                "analyzer": "swedish",
+                "fields": {
+                  "raw": {
+                    "type": "string",
+                    "index": "not_analyzed"
+                  }
+                }
+              },
+              "no": {
+                "type": "string",
+                "analyzer": "norwegian",
+                "fields": {
+                  "raw": {
+                    "type": "string",
+                    "index": "not_analyzed"
+                  }
+                }
+              },
+              "fi": {
+                "type": "string",
+                "fields": {
+                  "raw": {
+                    "type": "string",
+                    "index": "not_analyzed"
+                  }
+                }
+              }
+            }
+          },
+          "title": {
+            "properties": {
+              "da": {
+                "type": "string",
+                "analyzer": "danish",
+                "fields": {
+                  "raw": {
+                    "type": "string",
+                    "index": "not_analyzed"
+                  }
+                }
+              },
+              "en": {
+                "type": "string",
+                "analyzer": "english",
+                "fields": {
+                  "raw": {
+                    "type": "string",
+                    "index": "not_analyzed"
+                  }
+                }
+              },
+              "sv": {
+                "type": "string",
+                "analyzer": "swedish",
+                "fields": {
+                  "raw": {
+                    "type": "string",
+                    "index": "not_analyzed"
+                  }
+                }
+              },
+              "no": {
+                "type": "string",
+                "analyzer": "norwegian",
+                "fields": {
+                  "raw": {
+                    "type": "string",
+                    "index": "not_analyzed"
+                  }
+                }
+              },
+              "fi": {
+                "type": "string",
+                "fields": {
+                  "raw": {
+                    "type": "string",
+                    "index": "not_analyzed"
+                  }
+                }
+              }
+            }
+          },
+          "universe": {
+            "properties": {
+              "da": {
+                "type": "string",
+                "analyzer": "danish",
+                "fields": {
+                  "raw": {
+                    "type": "string",
+                    "index": "not_analyzed"
+                  }
+                }
+              },
+              "en": {
+                "type": "string",
+                "analyzer": "english",
+                "fields": {
+                  "raw": {
+                    "type": "string",
+                    "index": "not_analyzed"
+                  }
+                }
+              },
+              "sv": {
+                "type": "string",
+                "analyzer": "swedish",
+                "fields": {
+                  "raw": {
+                    "type": "string",
+                    "index": "not_analyzed"
+                  }
+                }
+              },
+              "no": {
+                "type": "string",
+                "analyzer": "norwegian",
+                "fields": {
+                  "raw": {
+                    "type": "string",
+                    "index": "not_analyzed"
+                  }
+                }
+              },
+              "fi": {
+                "type": "string",
+                "fields": {
+                  "raw": {
+                    "type": "string",
+                    "index": "not_analyzed"
+                  }
+                }
+              }
+            }
+          },
+          "variable": {
+            "properties": {
+              "categories": {
+                "properties": {
+                  "da": {
+                    "type": "string",
+                    "analyzer": "danish",
+                    "fields": {
+                      "raw": {
+                        "type": "string",
+                        "index": "not_analyzed"
+                      }
+                    }
+                  },
+                  "en": {
+                    "type": "string",
+                    "analyzer": "english",
+                    "fields": {
+                      "raw": {
+                        "type": "string",
+                        "index": "not_analyzed"
+                      }
+                    }
+                  },
+                  "sv": {
+                    "type": "string",
+                    "analyzer": "swedish",
+                    "fields": {
+                      "raw": {
+                        "type": "string",
+                        "index": "not_analyzed"
+                      }
+                    }
+                  },
+                  "no": {
+                    "type": "string",
+                    "analyzer": "norwegian",
+                    "fields": {
+                      "raw": {
+                        "type": "string",
+                        "index": "not_analyzed"
+                      }
+                    }
+                  },
+                  "fi": {
+                    "type": "string",
+                    "fields": {
+                      "raw": {
+                        "type": "string",
+                        "index": "not_analyzed"
+                      }
+                    }
+                  }
+                }
+              },
+              "id": {
+                "type": "string"
+              },
+              "label": {
+                "properties": {
+                  "da": {
+                    "type": "string",
+                    "analyzer": "danish",
+                    "fields": {
+                      "raw": {
+                        "type": "string",
+                        "index": "not_analyzed"
+                      }
+                    }
+                  },
+                  "en": {
+                    "type": "string",
+                    "analyzer": "english",
+                    "fields": {
+                      "raw": {
+                        "type": "string",
+                        "index": "not_analyzed"
+                      }
+                    }
+                  },
+                  "sv": {
+                    "type": "string",
+                    "analyzer": "swedish",
+                    "fields": {
+                      "raw": {
+                        "type": "string",
+                        "index": "not_analyzed"
+                      }
+                    }
+                  },
+                  "no": {
+                    "type": "string",
+                    "analyzer": "norwegian",
+                    "fields": {
+                      "raw": {
+                        "type": "string",
+                        "index": "not_analyzed"
+                      }
+                    }
+                  },
+                  "fi": {
+                    "type": "string",
+                    "fields": {
+                      "raw": {
+                        "type": "string",
+                        "index": "not_analyzed"
+                      }
+                    }
+                  }
+                }
+              },
+              "question": {
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "label": {
+                    "properties": {
+                      "da": {
+                        "type": "string",
+                        "analyzer": "danish",
+                        "fields": {
+                          "raw": {
+                            "type": "string",
+                            "index": "not_analyzed"
+                          }
+                        }
+                      },
+                      "en": {
+                        "type": "string",
+                        "analyzer": "english",
+                        "fields": {
+                          "raw": {
+                            "type": "string",
+                            "index": "not_analyzed"
+                          }
+                        }
+                      },
+                      "sv": {
+                        "type": "string",
+                        "analyzer": "swedish",
+                        "fields": {
+                          "raw": {
+                            "type": "string",
+                            "index": "not_analyzed"
+                          }
+                        }
+                      },
+                      "no": {
+                        "type": "string",
+                        "analyzer": "norwegian",
+                        "fields": {
+                          "raw": {
+                            "type": "string",
+                            "index": "not_analyzed"
+                          }
+                        }
+                      },
+                      "fi": {
+                        "type": "string",
+                        "fields": {
+                          "raw": {
+                            "type": "string",
+                            "index": "not_analyzed"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "representation": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
