@@ -237,7 +237,7 @@ a:visited:hover {
 }
 /*search bar*/
 #content .searchbar{
-    width: 650px;
+    // width: 650px;
     margin-left: 5px;
 }
 #content .button{
@@ -523,6 +523,7 @@ a:visited:hover {
 
 .aggregations {
     list-style: none;
+    margin-left: -10px;
 }
 
 .aggregation {
