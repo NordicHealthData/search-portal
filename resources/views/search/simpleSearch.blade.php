@@ -26,7 +26,7 @@
             </div> 
             <div class="row">
                 <div class="small-12 columns">
-                    <ul class="aggregations">
+                    <ul class="aggregations small-4 columns">
                     @foreach ($aggregations as $key => $aggregation)
                         @if (Input::has($key))
                             @foreach (Utils::getArgumentValues($key) as $value)
@@ -34,7 +34,9 @@
                                     <li class="aggregation">
                                         <a href="{{ route("search", Utils::removeKeyValue($key, $value)) }}" class="label label-info">
                                             <span class="text-info">{{ ucfirst($key) }}:</span> {{ $value }}
-                                            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                                            <span class="badge">
+                                                <i class="fi-x"></i>
+                                            </span>
                                         </a>
                                     </li>
                                 @endif
@@ -84,7 +86,7 @@
                 @endforeach
             </ul>
 
-            <p class="total"><strong>Total:</strong> <span class="badge">{{ $hits->total() }}</span></p>
+            <p class="total"><strong>Total:</strong> <span>{{ $hits->total() }}</span></p>
 
             <ul class="small-block-grid-1 medium-block-grid-1">
                 @foreach($hits as $hit)

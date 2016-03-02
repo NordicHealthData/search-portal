@@ -521,3 +521,33 @@ a:visited:hover {
 .aggregations {
     list-style: none;
 }
+
+.aggregation {
+    background-color: #50C04C;
+    color: #fff;
+    padding: 5px 10px;
+    border: 1px solid #fff;
+    border-radius: 4px;
+    margin-bottom: 3px;
+    display: block;
+}
+
+.aggregation .label {
+    color: #fff;
+}
+
+.badge {
+    color: #50C04C;
+    background-color: #fff;
+    float: right;
+    display: inline-block;
+    min-width: 10px;
+    padding: 3px 7px;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 1;
+    vertical-align: middle;
+    white-space: nowrap;
+    text-align: center;
+    border-radius: 10px;
+}
