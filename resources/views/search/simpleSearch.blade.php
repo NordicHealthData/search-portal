@@ -6,18 +6,18 @@
             <div class="row">
                 <div class="searchbar">
                     <h1>Search Health Data</h1>
-                    <div class="small-8 columns">                                           
+                    <div class="small-8 columns">
                         {!! Form::open(array("action" => "SearchController@search", "method" => "GET")) !!}
                         {!! Form::text("q", Request::input("q"), array("class" => "search", "autocomplete" => "off", "placeholder" => "Search for Studies...", "data-suggesturl"=> action("SearchController@suggest"))) !!}
-                        
+
                         @if (isset($hits->aggregations))
                             @foreach ($hits->aggregations as $key => $aggregation)
                                 @if (Input::get($key))
                                     {!! Form::hidden($key, Input::get($key)) !!}
                                 @endif
-                            @endforeach                
-                        @endif                        
-                    </div>                
+                            @endforeach
+                        @endif
+                    </div>
                     <div class="small-4 columns">
                         <button type="submit" class="button">
                                 <i class="fi-magnifying-glass"></i>
@@ -25,7 +25,7 @@
                         {!! Form::close() !!}
                     </div>
                 </div>
-            </div> 
+            </div>
             <div class="row">
                 <div class="small-12 columns">
                     <ul class="aggregations small-4 columns">
@@ -48,56 +48,68 @@
                     </ul>
                 </div>
             </div>
-            
-            <h2>Filter Search Results by</h2>
 
-            <ul class="small-block-grid-1 medium-block-grid-8">
-                @foreach ($aggregations as $key => $aggregation)
-                    @if (count($hits->aggregations[$key]["buckets"]) > 0 || Input::has($key))
-                        <li class = "filter">
-                            <h2>{{ $aggregations_title[$key] }}</h2>
+            <p>
+                Your search returned a total number of <strong>{{ $hits->total() }} studies.</strong>
+            </p>
 
-                            <ul class="filters">
-                                @if (Input::has($key))
-                                    @foreach (Utils::getArgumentValues($key) as $value)
-                                        @if (Utils::keyValueActive($key, $value))
+            <div class="row">
+
+                <div class="medium-4 columns">
+                    <p><strong>Filter search result by</strong></p>
+
+                    <ul>
+                        @foreach ($aggregations as $key => $aggregation)
+                            @if (count($hits->aggregations[$key]["buckets"]) > 0 || Input::has($key))
+                                <strong>{{ $aggregations_title[$key] }}</strong>
+
+                                <ul class="filters">
+                                    @if (Input::has($key))
+                                        @foreach (Utils::getArgumentValues($key) as $value)
+                                            @if (Utils::keyValueActive($key, $value))
+                                                <li>
+                                                    <a href="{{ route("search", Utils::removeKeyValue($key, $value)) }}" class="active">
+                                                        <span class="label">X</span>
+                                                        {{ $value }}
+                                                    </a>
+                                                </li>
+                                            @endif
+                                        @endforeach
+                                    @endif
+
+                                    @foreach ($hits->aggregations[$key]["buckets"] as $bucket)
+                                        @if (Utils::keyValueActive($key, $bucket["key"]) == false)
                                             <li>
-                                                <a href="{{ route("search", Utils::removeKeyValue($key, $value)) }}" class="active">
-                                                    <span class="label">X</span>
-                                                    {{ $value }}
+                                                <a href="{{ route("search", Utils::addKeyValue($key, $bucket["key"])) }}">
+                                                    <span class="label">{{ $bucket["doc_count"] }}</span>
+                                                    {{ $bucket["key"] }}
                                                 </a>
                                             </li>
                                         @endif
                                     @endforeach
-                                @endif
+                                </ul>
+                                <br>
+                                <!-- /filters -->
+                            @endif
+                        @endforeach
+                    </ul>
 
-                                @foreach ($hits->aggregations[$key]["buckets"] as $bucket)
-                                    @if (Utils::keyValueActive($key, $bucket["key"]) == false)
-                                        <li>
-                                            <a href="{{ route("search", Utils::addKeyValue($key, $bucket["key"])) }}">
-                                                <span class="label">{{ $bucket["doc_count"] }}</span>
-                                                {{ $bucket["key"] }}
-                                            </a>
-                                        </li>
-                                    @endif
-                                @endforeach
-                            </ul>
-                            <!-- /filters -->
-                        </li>
-                    @endif
-                @endforeach
-            </ul>
+                </div>
 
-            <p class="total"><strong>Total:</strong> <span>{{ $hits->total() }}</span></p>
+                <div class="medium-8 columns">
+                    @foreach($hits as $hit)
+                        @include("study._study")
+                        <br>
+                    @endforeach
 
-            <ul class="small-block-grid-1 medium-block-grid-1">
-                @foreach($hits as $hit)
-                    @include("study._study")
-                @endforeach
-            </ul>
-            <!-- /small-block-grid-1.medium-block-grid-3 -->
+                    {!! $hits->appends(Input::all())->render() !!}
 
-            {!! $hits->appends(Input::all())->render() !!}
+                    <br>
+
+                </div>
+
+            </div>
+
         </div>
     </div>
 @endsection
