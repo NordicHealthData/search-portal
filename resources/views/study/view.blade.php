@@ -15,11 +15,18 @@
 
             <p>
                 @if (array_key_exists("startdate", $study["_source"]))
-                <strong>Data collection start date:</strong> <span>{{ $study["_source"]["startdate"] }}</span><br>
+                  <strong>Data collection start date:</strong> <span>{{ $study["_source"]["startdate"] }}</span><br />
                 @endif
+                
                 @if (array_key_exists("enddate", $study["_source"]))
-                <strong>Data collection end date:</strong> <span>{{ $study["_source"]["enddate"] }}</span>
-                <br>
+                  <strong>Data collection end date:</strong>
+                  @if ($study["_source"]['enddate']=='')
+                     <span>Still ongoing</span>
+                  @else
+                    <span>{{ $study["_source"]["enddate"] }}</span>
+                  @endif                
+                @else
+                  <strong>Data collection end date:</strong> <span>Still ongoing</span>
                 @endif
             </p>
 
