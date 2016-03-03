@@ -20,14 +20,15 @@ body {
 
 a:link,
 a:visited {
-    color: #187D00;
+    // color: #187D00;
+    color: #0F790C;
     outline: none;
     text-decoration: none;
 }
 
 a:hover,
 a:visited:hover {
-    color: #81ec62;
+    color: #2D3ABD;
     text-decoration: underline;
 }
 
@@ -418,7 +419,7 @@ a:visited:hover {
 
 #content .pagination {
     list-style: none;
-    margin: 0 0 25px 23%;
+    margin: 0 0 25px 20px;
 }
 #content .pagination a{
     color: #272635;
@@ -426,7 +427,7 @@ a:visited:hover {
 
 #content .pagination li {
     float: left;
-    margin: 0 0 0 15px;
+    margin: 0 0 0 5px;
     border: 2px solid #272635;
     padding: 3px 8px 0px 8px;
     border-radius: 5px;
