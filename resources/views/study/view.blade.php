@@ -3,18 +3,9 @@
 @section("content")
 
 <div id="study" class="row">
+    <h1 class="title" >{{ Utils::getEn($study["_source"]["title"]) }}</h1>
     <div class="small-8 columns">
-            <h1 class="title" >{{ Utils::getEn($study["_source"]["title"]) }}</h1>
-
-            @if ($study["_source"]["landingpage"])
-            <p>
-                <a class="landingpage" href="{{ $study["_source"]["landingpage"] }}" title="If you have any questions regarding this data set please refer your questions to the archive responsible for the study.">
-                    <i class="fi-web"></i>
-                    Access resource at host archive
-                </a>
-            </p>
-            @endif
-
+            
             <p>
                 @if (array_key_exists("startdate", $study["_source"]))
                   <strong>Data collection start date:</strong> <span>{{ $study["_source"]["startdate"] }}</span><br />
@@ -84,6 +75,15 @@
     </div>
     <div  class="small-4 columns">
 
+        @if ($study["_source"]["landingpage"])
+        <p>
+            <a class="landingpage" href="{{ $study["_source"]["landingpage"] }}" title="If you have any questions regarding this data set please refer your questions to the archive responsible for the study.">
+                <i class="fi-web"></i>
+                Access resource at host archive
+            </a>
+        </p>
+        @endif
+        
         @if (count($study['related'] < 0))
         <div>
             <strong>Related studies</strong>
