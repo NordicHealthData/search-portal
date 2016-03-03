@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Console\Commands;
+use App\Helpers\Translate\TranslateContract;
+use App\Helpers\Translate\TranslateHelper;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Config;
 use App\Providers\ElasticSearch;
@@ -27,7 +29,7 @@ class ElasticSearchIndexDocument extends Command {
      *
      * @return mixed
      */
-    public function handle() {
+    public function handle(TranslateContract $translator) {
         $path = $this->argument('path');
         if(!isset($path) || !file_exists($path)) {
             $path = env('XSLT_OUT_PATH');
@@ -62,6 +64,11 @@ class ElasticSearchIndexDocument extends Command {
             }
             
             $body = HarminizationHelper::harmonizeDocument($body);
+
+            if (env('TRANSLATE_ON_INGEST') == 1) {
+                $translatorHelper = new TranslateHelper();
+                $body = $translatorHelper->translate($body, $translator);
+            }
 
             $this->comment('Importing: '.$path.$file);
             $result = ElasticSearch::indexDocument($id, $index, $type, $body);

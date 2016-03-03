@@ -52,7 +52,9 @@ return [
         'samplingprocedure' => ['terms' => ['field' => 'samplingprocedure.en.raw']],
         'collection' => ['terms' => ['field' => 'collection.raw']],
         'group' => ['terms' => ['field' => 'group']],
-        'variable' => ['terms' => ['field' => 'variable.label.da']],
+        'variable' => ['terms' => ['field' => 'variable.label.en.raw']],
+        'question' => ['terms' => ['field' => 'variable.question.label.en.raw']],
+        'concept' => ['terms' => ['field' => 'variable.concept.label.en.raw']],
     ],
     
     'elastic_search_aggregations_title' => [
@@ -66,6 +68,9 @@ return [
         'timemethod' => 'Study design',
         'collection' => 'Collection',
         'group' => 'Group',
+        'variable' => 'Variables',
+        'question' => 'Questions',
+        'concept' => 'Concepts'
     ],
 	
     /*
