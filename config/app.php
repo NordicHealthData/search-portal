@@ -43,13 +43,13 @@ return [
     /* Aggregations used for filtering in the search */
     'elastic_search_aggregations' => [
         'repository' => ['terms' => ['field' => 'repository']],
+        'timemethod' => ['terms' => ['field' => 'timemethod.en.raw']],
         'subject' => ['terms' => ['field' => 'subject.en.raw']],
         'keyword' => ['terms' => ['field' => 'keyword.en.raw']],
         'kindofdata' => ['terms' => ['field' => 'kindofdata.raw']],
         'country' => ['terms' => ['field' => 'country.raw']],
         'modeofcollection' => ['terms' => ['field' => 'modeofcollection.en.raw']],
         'samplingprocedure' => ['terms' => ['field' => 'samplingprocedure.en.raw']],
-        'timemethod' => ['terms' => ['field' => 'timemethod.en.raw']],
         'collection' => ['terms' => ['field' => 'collection.raw']],
         'group' => ['terms' => ['field' => 'group']],
         'variable' => ['terms' => ['field' => 'variable.label.da']],
