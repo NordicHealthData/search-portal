@@ -231,7 +231,8 @@ a:visited:hover {
     font-weight: 300; /* Light */
 }
 
-#content .block {
+#content .block,
+#collaboration{
     background-color: #fff;
     margin-top: 15px;
     padding: 25px 0;

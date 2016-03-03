@@ -59,5 +59,4 @@
     </div>
     <!-- /row -->
 
-    @include("shared._in_collaboration")
 @endsection
