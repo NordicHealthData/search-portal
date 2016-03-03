@@ -40,7 +40,7 @@
                     <span>{{ $study["_source"]["enddate"] }}</span>
                   @endif
                 @else
-                  <h3>Data collection end date:</h3> <span>Still ongoing</span>
+                <strong>Data collection end date:</strong> <span>Still ongoing</span>
                 @endif
             </p>
             
