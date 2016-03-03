@@ -3,7 +3,7 @@
 @section("content")
 
 <div id="study" class="row">
-    <div class="small-8 columns">
+    <div class="medium-8 columns">
             <h1 class="title" >{{ Utils::getEn($study["_source"]["title"]) }}</h1>
 
             @if ($study["_source"]["landingpage"])
@@ -82,7 +82,7 @@
 
 
     </div>
-    <div  class="small-4 columns">
+    <div  class="medium-4 columns">
 
         @if (array_key_exists("subject", $study["_source"]))
         <div>
