@@ -11,13 +11,13 @@
             <p>{{ str_limit(Utils::getEn($hit["_source"]["abstract"]), 150) }}</p>
         @endif
         @if(array_key_exists("highlight", $hit))
-            @foreach($hit["highlight"] as $label => $highlight)
             <p>
+            @foreach($hit["highlight"] as $label => $highlight)
                 @foreach(array_keys($highlight) as $key)
-                <strong>{{ $label }}</strong>: {!!$highlight[$key]!!}
+                <strong>{{ explode(".", $label)[0] }}</strong>: {!!$highlight[$key]!!}
                 @endforeach
-            </p>
             @endforeach
+            </p>
         @endif
         
     </div>
