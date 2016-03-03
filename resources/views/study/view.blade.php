@@ -6,26 +6,6 @@
     <h1 class="title" >{{ Utils::getEn($study["_source"]["title"]) }}</h1>
     <div class="medium-8 columns">
             
-            <p>
-                @if (array_key_exists("startdate", $study["_source"]))
-                  <strong>Data collection start date:</strong> <span>{{ $study["_source"]["startdate"] }}</span><br />
-                @endif
-
-                @if (array_key_exists("enddate", $study["_source"]))
-                  <strong>Data collection end date:</strong>
-                  @if ($study["_source"]['enddate']=='')
-                     <span>Still ongoing</span>
-                  @else
-                    <span>{{ $study["_source"]["enddate"] }}</span>
-                  @endif
-                @else
-                  <strong>Data collection end date:</strong> <span>Still ongoing</span>
-                @endif
-            </p>
-            <p>
-                <strong>Archive identifier: </strong><span>{{ $study["_id"] }}</span>
-                <br>
-            </p>
             @if (array_key_exists("creator", $study["_source"]))
             <h3>Principal investigator</h3>
 
@@ -40,6 +20,45 @@
                 @endforeach
             </ul>
             @endif
+        
+            <p>
+                @if (array_key_exists("startdate", $study["_source"]))
+                  <h3>Data collection start date:</h3> <span>{{ $study["_source"]["startdate"] }}</span><br />
+                @endif
+
+                @if (array_key_exists("enddate", $study["_source"]))
+                  <h3>Data collection end date:</h3>
+                  @if ($study["_source"]['enddate']=='')
+                     <span>Still ongoing</span>
+                  @else
+                    <span>{{ $study["_source"]["enddate"] }}</span>
+                  @endif
+                @else
+                  <h3>Data collection end date:</h3> <span>Still ongoing</span>
+                @endif
+            </p>
+            
+            <h3>Archive identifier: </h3><span>{{ $study["_id"] }}</span>
+            <br/>
+            
+            
+            
+            @if (array_key_exists("analysisunit", $study["_source"]))
+              <h3>Unit of analysis:</h3> <span>{{ $study["_source"]["analysisunit"] }}</span>
+              <br />
+            @endif
+            
+            @if (array_key_exists("kindofdata", $study["_source"]))
+              <h3>Kind of data:</h3> <span>{{ $study["_source"]["kindofdata"] }}</span>
+              <br />
+            @endif
+            
+            @if (array_key_exists("country", $study["_source"]))
+              <h3>Country:</h3> <span>{{ $study["_source"]["country"] }}</span>
+              <br />
+            @endif
+            
+
 
 
 
