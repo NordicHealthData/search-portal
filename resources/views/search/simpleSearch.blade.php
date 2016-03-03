@@ -93,19 +93,18 @@
         </div>
 
         <div class="medium-8 columns">
-
+            
             <p>
                 Your search returned a total number of <strong>{{ $hits->total() }} studies.</strong>
             </p>
 
+            
             @foreach($hits as $hit)
                 @include("study._study")
-                <br>
             @endforeach
+           
 
             {!! $hits->appends(Input::all())->render() !!}
-
-            <br>
 
         </div>
 
