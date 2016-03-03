@@ -581,6 +581,10 @@ a:visited:hover {
     margin-right: 5px;
 }
 
+#study a {
+    font-size: 14px;
+}
+
 .sidebar-item {
     display: inline-block;
 }
