@@ -269,12 +269,9 @@ a:visited:hover {
 }
 #content .card .header {
     background-color: #272635;
-    border-left: 2px solid #272635;
-    border-top: 2px solid #272635;
-    border-right: 2px solid #272635;
     clear: both;
     color: #fff;
-    line-height: 1.3rem;
+    line-height: 1rem;
     padding: 15px;
 }
 
@@ -284,7 +281,7 @@ a:visited:hover {
 }
 
 #content .card .header .label {
-    font-size: 20px;
+    font-size: 16px;
     display: block;
     font-weight: 500;
 }

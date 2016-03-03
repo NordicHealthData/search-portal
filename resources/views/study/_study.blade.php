@@ -7,17 +7,19 @@
     </header>
 
     <div class="content">
-        @if(array_key_exists("highlight", $hit))
-        @foreach($hit["highlight"] as $label => $highlight)
-        <p>
-            @foreach(array_keys($highlight) as $key)
-            <strong>{{ $label }}</strong>: {!!$highlight[$key]!!}
-            @endforeach
-        </p>
-        @endforeach
-        @elseif (array_key_exists("abstract", $hit["_source"]))
-        {{ str_limit(Utils::getEn($hit["_source"]["abstract"]), 150) }}
+        @if (array_key_exists("abstract", $hit["_source"]))
+            <p>{{ str_limit(Utils::getEn($hit["_source"]["abstract"]), 150) }}</p>
         @endif
+        @if(array_key_exists("highlight", $hit))
+            @foreach($hit["highlight"] as $label => $highlight)
+            <p>
+                @foreach(array_keys($highlight) as $key)
+                <strong>{{ $label }}</strong>: {!!$highlight[$key]!!}
+                @endforeach
+            </p>
+            @endforeach
+        @endif
+        
     </div>
     <!-- /content -->
 </div>
