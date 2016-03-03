@@ -3,9 +3,13 @@
 @section("content")
 
 <div id="study" class="row">
-    <h1 class="title" >{{ Utils::getEn($study["_source"]["title"]) }}</h1>
+
+    <div class="small-12 columns">
+        <h1 class="title" >{{ Utils::getEn($study["_source"]["title"]) }}</h1>
+    </div>
+
     <div class="medium-8 columns">
-            
+
             @if (array_key_exists("creator", $study["_source"]))
             <h3>Principal investigator</h3>
 
@@ -116,7 +120,7 @@
             </p>
         </div>
         @endif
-        
+
         @if (array_key_exists("subject", $study["_source"]))
         <div>
             <strong>Subjects</strong>
