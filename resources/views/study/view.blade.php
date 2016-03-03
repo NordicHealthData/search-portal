@@ -48,6 +48,12 @@
             <strong>Archive identifier: </strong><span>{{ $study["_id"] }}</span>            
             </p>
             
+            @if (array_key_exists("doi", $study["_source"]))
+            <p>
+            <strong>DOI:</strong> <span>{{ $study["_source"]["doi"] }}</span>
+            </p>
+            @endif
+            
             @if (array_key_exists("analysisunit", $study["_source"]))
             <p>
             <strong>Unit of analysis:</strong> <span>{{ $study["_source"]["analysisunit"] }}</span>
@@ -57,6 +63,12 @@
             @if (array_key_exists("kindofdata", $study["_source"]))
             <p>
                 <strong>Kind of data:</strong> <span>{{ $study["_source"]["kindofdata"] }}</span>
+            </p>
+            @endif
+            
+            @if (array_key_exists("modeofcollection", $study["_source"]))
+            <p>
+                <strong>Mode of collection:</strong> <span>{{ $study["_source"]["modeofcollection"] }}</span>
             </p>
             @endif
             
