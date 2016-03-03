@@ -90,7 +90,7 @@
             <p>
                 @foreach ($study["related"] as $related)
                 <span class="sidebar-item">
-                    <i class="fi-page"></i><a href="{{ action('StudyController@view', ['id' => $related["_id"]]) }}">{{ Utils::getEn($related["_source"]["title"]) }}</a>
+                    <i class="fi-page-filled"></i><a href="{{ action('StudyController@view', ['id' => $related["_id"]]) }}">{{ Utils::getEn($related["_source"]["title"]) }}</a>
                 </span>
                 <br/>
                 @endforeach
