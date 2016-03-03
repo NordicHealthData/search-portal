@@ -73,14 +73,20 @@
             </p>
             @endif
 
-            @if (array_key_exists("kindofdata", $study["_source"]))
+            @if (isset($study["_source"]["kindofdata"]))
             <p>
                 <strong>Kind of data:</strong>
-                <ul>
-                @foreach ($study["_source"]["kindofdata"] as $kindofdata)
-                    <li>{{ $kindofdata }}</li>
-                @endforeach
-                </ul>
+
+
+                @if(is_array($study["_source"]["kindofdata"]))
+                    <ul>
+                    @foreach ($study["_source"]["kindofdata"] as $kindofdata)
+                        <li>{{ $kindofdata }}</li>
+                    @endforeach
+                    </ul>
+                @else
+                    {{ $study["_source"]["kindofdata"] }}
+                @endif
             </p>
             @endif
 
