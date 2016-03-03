@@ -45,25 +45,19 @@
             </ul>
             @endif
 
-
-
-            <p>
-
-            @if (array_key_exists("universe", $study["_source"]))
-            <h3>Universe</h3>
-            <ul>
-                @foreach ($study["_source"]["universe"] as $universe)
-                @if (array_key_exists("en", $universe))
-                <li>{{ Utils::getEn($study["_source"]["universe"]) }}</li>
-                @endif
-                @endforeach
-            </ul>
+            @if (isset($study["_source"]["universe"]))
+                <h3>Universe</h3>
+                <ul>
+                    @foreach ($study["_source"]["universe"] as $universe)
+                        <li>{{ Utils::getEn($universe) }}</li>
+                    @endforeach
+                </ul>
             @endif
 
             @if (array_key_exists("abstract", $study["_source"]))
             <h3>Abstract</h3>
 
-            <p class="abstract" >{{ Utils::getEn($study["_source"]["abstract"]) }}</p>
+            <p>{{ Utils::getEn($study["_source"]["abstract"]) }}</p>
 
             @endif
 
