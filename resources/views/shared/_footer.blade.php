@@ -1,3 +1,5 @@
+@include("shared._in_collaboration")
+
 <script src="{{ asset("/javascripts/jquery.js") }}"></script>
 <script src="{{ asset("/javascripts/readmore.min.js") }}"></script>
 <script src="{{ asset("/javascripts/bootstrap-typeahead.js") }}"></script>

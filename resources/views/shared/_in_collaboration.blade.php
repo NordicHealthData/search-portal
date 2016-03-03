@@ -1,4 +1,4 @@
-<div class="block">
+<div id="collaboration" class="block">
     <div class="row">
         <div class="small-12 columns text-center">
             <h3>In collaboration between</h3>

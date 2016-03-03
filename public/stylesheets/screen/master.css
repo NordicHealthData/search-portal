@@ -231,7 +231,8 @@ a:visited:hover {
     font-weight: 300; /* Light */
 }
 
-#content .block {
+#content .block,
+#collaboration{
     background-color: #fff;
     margin-top: 15px;
     padding: 25px 0;
@@ -531,6 +532,10 @@ a:visited:hover {
     font-size: 10px;
     color: #0F790C;
     margin-right: 5px;
+}
+
+#study a {
+    font-size: 14px;
 }
 
 .sidebar-item {

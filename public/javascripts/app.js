@@ -84,5 +84,6 @@ $(document).ready(function() {
   
   //collapse long text
   $(".abstract").readmore();
+  $(".purpose").readmore();
 });
 
