@@ -54,6 +54,19 @@
             </p>
             @endif
             
+            @if (array_key_exists("timemethod", $study["_source"]))
+            <p>
+                <strong>Study design:</strong>
+                <ul>
+                    @foreach ($study["_source"]["timemethod"] as $timemethod)                    
+                    @if (array_key_exists("en", $timemethod))
+                    <li>{{ Utils::getEn($study["_source"]["timemethod"]) }}</li>
+                    @endif
+                    @endforeach
+                </ul>
+            </p>
+            @endif
+            
             @if (array_key_exists("analysisunit", $study["_source"]))
             <p>
             <strong>Unit of analysis:</strong> <span>{{ $study["_source"]["analysisunit"] }}</span>
@@ -68,13 +81,13 @@
             
             @if (array_key_exists("modeofcollection", $study["_source"]))
             <p>
-                <strong>Mode of collection:</strong> <span>{{ $study["_source"]["modeofcollection"] }}</span>
+                <strong>Data collection method:</strong> <span>{{ $study["_source"]["modeofcollection"] }}</span>
             </p>
             @endif
             
             @if (array_key_exists("country", $study["_source"]))
             <p>
-                <strong>Country:</strong> <span>{{ $study["_source"]["country"] }}</span>
+                <strong>Geographic coverage:</strong> <span>{{ $study["_source"]["country"] }}</span>
             </p>  
             @endif
             
