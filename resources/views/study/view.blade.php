@@ -3,7 +3,6 @@
 @section("content")
 
 <div id="study" class="row">
-
     <h1 class="title" >{{ Utils::getEn($study["_source"]["title"]) }}</h1>
     <div class="medium-8 columns">
             
@@ -84,7 +83,7 @@
             </a>
         </p>
         @endif
-        
+
         @if (count($study['related'] < 0))
         <div>
             <strong>Related studies</strong>
