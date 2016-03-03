@@ -11,27 +11,29 @@
     <div class="medium-8 columns">
 
             @if (array_key_exists("creator", $study["_source"]))
-            <h3>Principal investigator</h3>
+            <p>
+                <strong>Principal investigator</strong>
 
-            <ul>
-                @foreach ($study["_source"]["creator"] as $creator)
-                @if (array_key_exists("en", $creator))
-                <li>{{ $creator["en"] }}</li>
-                @endif
-                @if (array_key_exists("undefLang", $creator))
-                <li>{{ $creator["undefLang"] }}</li>
-                @endif
-                @endforeach
-            </ul>
+                <ul>
+                    @foreach ($study["_source"]["creator"] as $creator)
+                    @if (array_key_exists("en", $creator))
+                    <li>{{ $creator["en"] }}</li>
+                    @endif
+                    @if (array_key_exists("undefLang", $creator))
+                    <li>{{ $creator["undefLang"] }}</li>
+                    @endif
+                    @endforeach
+                </ul>
+            </p>
             @endif
         
             <p>
                 @if (array_key_exists("startdate", $study["_source"]))
-                  <h3>Data collection start date:</h3> <span>{{ $study["_source"]["startdate"] }}</span><br />
+                  <strong>Data collection start date:</strong> <span>{{ $study["_source"]["startdate"] }}</span><br />
                 @endif
 
                 @if (array_key_exists("enddate", $study["_source"]))
-                  <h3>Data collection end date:</h3>
+                  <strong>Data collection end date:</strong>
                   @if ($study["_source"]['enddate']=='')
                      <span>Still ongoing</span>
                   @else
@@ -42,58 +44,54 @@
                 @endif
             </p>
             
-            <h3>Archive identifier: </h3><span>{{ $study["_id"] }}</span>
-            <br/>
-            
-            
+            <p>
+            <strong>Archive identifier: </strong><span>{{ $study["_id"] }}</span>            
+            </p>
             
             @if (array_key_exists("analysisunit", $study["_source"]))
-              <h3>Unit of analysis:</h3> <span>{{ $study["_source"]["analysisunit"] }}</span>
-              <br />
+            <p>
+            <strong>Unit of analysis:</strong> <span>{{ $study["_source"]["analysisunit"] }}</span>
+            </p>
             @endif
             
             @if (array_key_exists("kindofdata", $study["_source"]))
-              <h3>Kind of data:</h3> <span>{{ $study["_source"]["kindofdata"] }}</span>
-              <br />
+            <p>
+                <strong>Kind of data:</strong> <span>{{ $study["_source"]["kindofdata"] }}</span>
+            </p>
             @endif
             
             @if (array_key_exists("country", $study["_source"]))
-              <h3>Country:</h3> <span>{{ $study["_source"]["country"] }}</span>
-              <br />
+            <p>
+                <strong>Country:</strong> <span>{{ $study["_source"]["country"] }}</span>
+            </p>  
             @endif
             
-
-
-
-
-            <p>
-
             @if (array_key_exists("universe", $study["_source"]))
-            <h3>Universe</h3>
-            <ul>
-                @foreach ($study["_source"]["universe"] as $universe)
-                @if (array_key_exists("en", $universe))
-                <li>{{ Utils::getEn($study["_source"]["universe"]) }}</li>
-                @endif
-                @endforeach
-            </ul>
+            <p>
+                <strong>Universe:</strong>
+                <ul>
+                    @foreach ($study["_source"]["universe"] as $universe)                    
+                    @if (array_key_exists("en", $universe))
+                    <li>{{ Utils::getEn($study["_source"]["universe"]) }}</li>
+                    @endif
+                    @endforeach
+                </ul>
+            </p>
             @endif
 
             @if (array_key_exists("abstract", $study["_source"]))
-            <h3>Abstract</h3>
-
-            <p class="abstract" >{{ Utils::getEn($study["_source"]["abstract"]) }}</p>
-
+            <p class="abstract" >                
+                <strong>Abstract:</strong>
+                {{ Utils::getEn($study["_source"]["abstract"]) }}</p>
+            </p>
             @endif
 
             @if (array_key_exists("purpose", $study["_source"]))
-            <h3>Purpose</h3>
-
-            <p>{{ Utils::getEn($study["_source"]["purpose"]) }}</p>
+            <p class="purpose">
+                <strong>Purpose</strong>
+                {{ Utils::getEn($study["_source"]["purpose"]) }}</p>
+            </p>
             @endif
-
-
-
 
     </div>
     <div  class="medium-4 columns">
