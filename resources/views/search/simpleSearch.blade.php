@@ -5,7 +5,6 @@
         <div class="small-4 columns">
             <div class="row">
                 <div class="searchbar small-12 columns">
-                    <h1>Search Health Data</h1>
                     <div class="small-10 columns">
                         {!! Form::open(array("action" => "SearchController@search", "method" => "GET")) !!}
                         {!! Form::text("q", Request::input("q"), array("class" => "search", "autocomplete" => "off", "placeholder" => "Search for Studies...", "data-suggesturl"=> action("SearchController@suggest"))) !!}
