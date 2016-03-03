@@ -1,16 +1,18 @@
 @extends("layouts.default")
 
 @section("content")
-<div class="row">
+<div id="study" class="row">
+    
+    <h1 class="title" >{{ Utils::getEn($study["_source"]["title"]) }}</h1>
+    
     <div class="small-10 columns">
-            <h1 class="title" >{{ Utils::getEn($study["_source"]["title"]) }}</h1>
-
             @if ($study["_source"]["landingpage"])
-                <p>
-                <strong>Link to the archive hosting the research data: <a href="{{ $study["_source"]["landingpage"] }}">{{ $study["_source"]["landingpage"] }}</a></strong>
-                <br>
-                If you have any questions regarding this data set please refer your questions to the archive responsible for the study.
-                </p>
+            <p>
+                <a class="landingpage" href="{{ $study["_source"]["landingpage"] }}" title="If you have any questions regarding this data set please refer your questions to the archive responsible for the study.">
+                    <i class="fi-link"></i>
+                    Access resource at host archive
+                </a>
+            </p>
             @endif
 
             <p>

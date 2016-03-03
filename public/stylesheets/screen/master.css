@@ -555,3 +555,22 @@ a:visited:hover {
     text-align: center;
     border-radius: 10px;
 }
+
+#study h1 {
+    border-bottom: 2px solid;
+    margin-bottom: 20px;
+}
+
+#study .landingpage {
+    background-color: #187D00;
+    color: #fff;
+    padding: 6px;
+    border: 1px solid #fff;
+    width: 60%;
+    display: inline-block;
+    text-align: center;
+}
+
+#study .landingpage i {
+    font-size: 18px;
+}
