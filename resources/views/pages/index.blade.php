@@ -36,21 +36,21 @@
 
                     <h2>Making Nordic Health Data Visible</h2>
 
-                    <p>The Nordic countries have a solid tradition for gathering high quality survey and administrative data that enable researchers to analyse and understand processes like ageing, socio-economic health differences, health risks and changing welfare service systems. However, locating and accessing the data can be a challenge. We will develop common practices for easier access to data resources across national borders and enhance the visibility of Nordic research in the European context.</p>
+                    <p>This is a project funded by NordForsk. The project period is from autumn 2014 until autumn 2016 and the project is a collaboration between the data archives in Norway, Sweden, Finland and Denmark. The goal is to make a search portal prototype for Nordic health data. For this purpose the portal is covering metadata from the data collections in the four data archives, and builds upon existing DDI documentation.</p>
                 </li>
                 <li>
-                    <img src="{{ asset("/images/content/portal_for_nordic_health_data.png") }}" alt="Portal for Nordic Health Data" />
+                    <img src="{{ asset("/images/content/portal_for_nordic_health_data.png") }}" alt="Search Portal Prototype" />
 
-                    <h2>Portal for Nordic Health Data</h2>
+                    <h2>Search Portal Prototype</h2>
 
-                    <p>The main outcome of this project is a web portal prototype that helps researchers search and access the existing Nordic health research data. The portal will build upon the participating data archives’ existing DDI documentation. In order to provide an enhanced user experience, we will harmonize our documentation practices and, for example, expand our common controlled vocabularies to include concepts relevant for health data.</p>
+                    <p>The purpose of the prototype is to demonstrate mechanisms to search and retrieve metadata for the catalogued datasets. It allows searching in metadata across repositories and studies, presenting the results in a standardised way.</p>
                 </li>
                 <li>
-                    <img src="{{ asset("/images/content/collaboration_with_researchers.png") }}" alt="Collaboration with Researchers" />
+                    <img src="{{ asset("/images/content/collaboration_with_researchers.png") }}" alt="Input" />
 
-                    <h2>Collaboration with Researchers</h2>
+                    <h2>Input</h2>
 
-                    <p>We believe that reseachers know best what they need and an active dialogue with researchers is important to us. We will invite researchers to our meetings to share their experiences about finding and accessing Nordic health data, and to give feedback about the data portal prototype. We will also attend Nordic seminars and conferences to present our services and the project outcomes.</p>
+                    <p>The main user group for a portal like this is researchers. The prototype is based on input from the research community and experiences from other search portals. The work is carried out in dialog with other research infrastructures.</p>
                 </li>
             </ul>
             <!-- /featured-grid.small-block-grid-1.medium-block-grid-3 -->
