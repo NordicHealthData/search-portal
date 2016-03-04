@@ -22,6 +22,11 @@
         "Object": [],
         "Other": []
     },
+    "datakind": {
+        "Psychological data" : ["Psychological test"],
+        "Administrative records":["Administrative records data"],
+        "Biological data":["Measurement data: Biological measurements"],
+    },
     "modeofcollection": {
         "Interview": [],
         "Face-to-face interview": [],
