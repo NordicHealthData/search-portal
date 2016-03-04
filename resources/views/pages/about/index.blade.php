@@ -26,7 +26,7 @@
 
             <ul class="timeline">
                 <li class="next"><span>Next up</span>Autumn 2016 in Bergen: Closing meeting</li>
-                <li class="next"><span>In progress</span>March 2016 in Gothenburg: 2nd hackathon and 5th meeting</li>
+                <li class="history">March 2016 in Gothenburg: 2nd hackathon and 5th meeting</li>
                 <li class="history">October 2015 in Tampere: 4th meeting</li>
                 <li class="history">August 2015 in Bergen: 1st hackathon and 3rd meeting</li>
                 <li class="history">January 2015 in Copenhagen: pre-hackathon  and 2nd meeting</li>
