@@ -14,16 +14,20 @@
             <p>
                 <strong>Principal investigator</strong>
 
-                <ul>
-                    @foreach ($study["_source"]["creator"] as $creator)
-                    @if (array_key_exists("en", $creator))
-                    <li>{{ $creator["en"] }}</li>
+            <ul>
+                @foreach ($study["_source"]["creator"] as $creator)
+                    @if(is_array($study["_source"]["creator"]["en"]))
+                        @if (array_key_exists("en", $creator))
+                        <li>{{ $creator["en"] }}</li>
+                        @endif
+                        @if (array_key_exists("undefLang", $creator))
+                        <li>{{ $creator["undefLang"] }}</li>
+                        @endif
+                    @else
+                        <li>{{ $creator }}</li>
                     @endif
-                    @if (array_key_exists("undefLang", $creator))
-                    <li>{{ $creator["undefLang"] }}</li>
-                    @endif
-                    @endforeach
-                </ul>
+                @endforeach
+            </ul>
             </p>
             @endif
 
@@ -34,6 +38,7 @@
 
                 @if (array_key_exists("enddate", $study["_source"]))
                   <strong>Data collection end date:</strong>
+
                   @if ($study["_source"]['enddate']=='')
                      <span>Still ongoing</span>
                   @else
@@ -76,7 +81,6 @@
             @if (isset($study["_source"]["kindofdata"]))
             <p>
                 <strong>Kind of data:</strong>
-
 
                 @if(is_array($study["_source"]["kindofdata"]))
                     <ul>
@@ -162,9 +166,10 @@
 
             <p>
                 @foreach ($study["_source"]["subject"] as $subject)
-                @if (is_array($subject) && array_key_exists("en", $subject))
+                @if (is_array($subject) && array_key_exists("en", $subject) && !is_array($subject["en"]))
                 <span class="sidebar-item">
-                    <i class="fi-star"></i> <a href="{{ action('SearchController@search', ['subject' => $subject["en"]]) }}">{{ $subject["en"] }}</a>
+                    <i class="fi-star"></i>
+                    <a href="{{ action('SearchController@search', ['subject' => $subject["en"]]) }}">{{ $subject["en"] }}</a>
                 </span>
                 @endif
                 @endforeach
@@ -173,10 +178,11 @@
         @endif
 
         @if (array_key_exists("keyword", $study["_source"]))
-        <div>
+                <div>
             <strong>Keywords</strong>
             <p>
                 @foreach ($study["_source"]["keyword"] as $keyword)
+
                 @if (is_array($keyword) && array_key_exists("en", $keyword))
                 <span class="sidebar-item">
                     <i class="fi-burst"></i><a href="{{ action('SearchController@search', ['keyword' => $keyword["en"]]) }}">{{ $keyword["en"] }}</a>

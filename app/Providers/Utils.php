@@ -180,8 +180,11 @@ class Utils extends ServiceProvider{
             case 'nsd':
                 return 'http://nsddata.nsd.uib.no/webview/?submode=abstract&mode=documentation&study=http://nsddata.nsd.uib.no/obj/fStudy/NSD'.$id;
                 break;
+            case 'pef.hd':
+                return 'https://epidemiologie-france.aviesan.fr';
+                break;
             default:
-                return '';
+                return $agency;
         }
     }
 }

@@ -69,6 +69,8 @@ class XsltHelper{
             return 'ddi_1_2_2';
         }else if(strpos($source,'"http://www.icpsr.umich.edu/DDI/Version2-0.dtd"') !== false){
             return 'ddi_2_0';
+        }else if(strpos($source,'http://www.ddialliance.org/Specification/DDI-Codebook/2.5/XMLSchema/codebook.xsd') !== false) {
+            return 'ddi_2_5';
         }else{
             return false;
         }
