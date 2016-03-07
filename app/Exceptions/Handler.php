@@ -8,6 +8,9 @@ use Symfony\Component\HttpKernel\Exception\HttpException;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 
+use Elasticsearch\Common\Exceptions\NoNodesAvailableException;
+use Illuminate\Support\Facades\Log;
+
 class Handler extends ExceptionHandler
 {
     /**
@@ -42,10 +45,18 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $e)
     {
+        //dd( get_class($e) );
+        
         if ($e instanceof ModelNotFoundException) {
-            $e = new NotFoundHttpException($e->getMessage(), $e);
+            $e = new NotFoundHttpException($e->getMessage(), $e);  
+        } else if( $e instanceof NoNodesAvailableException) {
+          
+          $errorMessage = 'Elasticsearch Database connection failed!';
+          if( app()->environment() == 'local' ) {
+            $errorMessage = $errorMessage. ' ' .$e->getTraceAsString();
+          }
+          return response()->view('errors.500', ['errorMessage' => $errorMessage], 500);
         }
-
         return parent::render($request, $e);
     }
 }
