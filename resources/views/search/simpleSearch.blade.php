@@ -55,7 +55,7 @@
                 <ul class="filters">
                     @foreach ($aggregations as $key => $aggregation)
                         @if (count($hits->aggregations[$key]["buckets"]) > 0 || Input::has($key))
-                            <strong>{{ $aggregations_title[$key] }}</strong>
+                            <strong>{{ trans('search.'.$key) }}</strong>
 
                             <ul class="filters">
                                 @if (Input::has($key))

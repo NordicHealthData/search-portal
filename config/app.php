@@ -56,23 +56,7 @@ return [
         'question' => ['terms' => ['field' => 'variable.question.label.en.raw']],
         'concept' => ['terms' => ['field' => 'variable.concept.label.en.raw']],
     ],
-    
-    'elastic_search_aggregations_title' => [
-        'repository' => 'Repository',
-        'subject' => 'Subject',
-        'keyword' => 'Keyword',
-        'kindofdata' => 'Kind of data',
-        'country' => 'Geographic coverage',
-        'modeofcollection' => 'Data collection method',
-        'samplingprocedure' => 'Sampling procedure',
-        'timemethod' => 'Study design',
-        'collection' => 'Collection',
-        'group' => 'Group',
-        'variable' => 'Variables',
-        'question' => 'Questions',
-        'concept' => 'Concepts'
-    ],
-	
+    	
     /*
     |--------------------------------------------------------------------------
     | Application Timezone
