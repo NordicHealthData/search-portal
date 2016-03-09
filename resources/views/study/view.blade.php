@@ -16,7 +16,7 @@
 
             <ul>
                 @foreach ($study["_source"]["creator"] as $creator)
-                    @if(array_key_existst("en", $study["_source"]["creator"]) && is_array($study["_source"]["creator"]["en"]))
+                    @if(array_key_exists("en", $study["_source"]["creator"]) && is_array($study["_source"]["creator"]["en"]))
                         @if (array_key_exists("en", $creator))
                         <li>{{ $creator["en"] }}</li>
                         @endif
