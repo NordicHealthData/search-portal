@@ -20,19 +20,16 @@ class Utils extends ServiceProvider{
     public static function getEn($array){
         $output = '';
         if(!is_array($array)){
-            $output = $array;
+            return $array;
         }else if(array_key_exists('en', $array)){
             $output = $array['en'];
         }elseif(is_array($array)){
             foreach($array as $key => $value){
-                if(is_numeric($key)){
+                if(is_numeric($key) && array_key_exists('en', $value)){
                     $output = Utils::getEn($value);
                 }elseif($key == 'en'){
                     $output = $value;
                 }
-            }
-            if(empty($output)){
-                $output = reset($array);
             }
         }
         return $output;
@@ -93,7 +90,6 @@ class Utils extends ServiceProvider{
                     $arguments[$key] = implode('|', $values);
                 }
             }
-            
         }
         
         if(array_key_exists('page', $arguments)){

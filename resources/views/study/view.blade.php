@@ -15,18 +15,11 @@
                 <strong>Principal investigator</strong>
 
             <ul>
-                @foreach ($study["_source"]["creator"] as $creator)
-                    @if(array_key_exists("en", $study["_source"]["creator"]) && is_array($study["_source"]["creator"]["en"]))
-                        @if (array_key_exists("en", $creator))
-                        <li>{{ $creator["en"] }}</li>
-                        @endif
-                        @if (array_key_exists("undefLang", $creator))
-                        <li>{{ $creator["undefLang"] }}</li>
-                        @endif
-                    @else
-                        <li>{{ $creator }}</li>
-                    @endif
-                @endforeach
+              @foreach ($study["_source"]["creator"] as $creator)
+                @if(!empty(Utils::getEn($creator)))
+                <li>{{ Utils::getEn($creator) }}</li>
+                @endif
+              @endforeach
             </ul>
             </p>
             @endif
@@ -111,7 +104,7 @@
                 <strong>Universe</strong>
                 <ul>
                     @foreach ($study["_source"]["universe"] as $universe)
-                        @if (count($universe) > 0)
+                        @if (count($universe) > 0 && !empty(Utils::getEn($universe)))
                             <li>{{ Utils::getEn($universe) }}</li>
                         @endif
                     @endforeach
