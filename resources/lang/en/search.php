@@ -14,7 +14,7 @@ return [
 	'repository' => 'Repository',
 	'subject' => 'Subject',
 	'keyword' => 'Keyword',
-	'kindofdata' => 'Kind of data',
+	'kindofdata' => 'Data type',
 	'country' => 'Geographic coverage',
 	'modeofcollection' => 'Data collection method',
 	'samplingprocedure' => 'Sampling procedure',
