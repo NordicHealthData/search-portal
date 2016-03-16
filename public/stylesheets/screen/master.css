@@ -541,17 +541,3 @@ a:visited:hover {
 .sidebar-item {
     display: inline-block;
 }
-
-
-@media only screen {
-    #header .navigation #logo a:link,
-    #header .top-bar .top-bar-section ul li > a {
-        font-size: 20px;
-    }
-
-    #header .top-bar .toggle-topbar.menu-icon a {
-        font-size: 16px;
-    }
-
-}
-
