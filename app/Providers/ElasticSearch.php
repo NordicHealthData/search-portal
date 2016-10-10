@@ -50,7 +50,7 @@ class ElasticSearch extends ServiceProvider{
 
             //self::$client = new \Elasticsearch\Client($params);
             self::$client = ClientBuilder::create()
-                ->setHosts(array (env('ELASTICH_SEARCH_HOST')))
+                ->setHosts(array (env('ELASTICSEARCH_HOST')))
                 ->build();
         }
         return self::$client;
