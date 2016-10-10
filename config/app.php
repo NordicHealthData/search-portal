@@ -38,7 +38,7 @@ return [
     |
     */
 
-    'elastic_search_host' => env('ELASTICH_SEARCH_HOST'),	
+    'elastic_search_host' => env('ELASTICSEARCH_HOST'),
 	
     /* Aggregations used for filtering in the search */
     'elastic_search_aggregations' => [

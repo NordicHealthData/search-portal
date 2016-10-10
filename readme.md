@@ -24,10 +24,10 @@ composer install
 
 __c.__ Copy ```.env.example``` to a new file named ```.env```
 
-__d.__ Edit the configuration file ```.env``` and change ELASTICH_SEARCH_HOST to your Elasticsearch host (default localhost:9200)
+__d.__ Edit the configuration file ```.env``` and change ELASTICSEARCH_HOST to your Elasticsearch host (default localhost:9200)
 
 ```
-ELASTICH_SEARCH_HOST=yourhost:9200
+ELASTICSEARCH_HOST=yourhost:9200
 ```
 
 __e.__ Start Elasticsearch by running a [local instance of Elasticsearch](https://www.elastic.co/products/elasticsearch) or via [Docker](https://github.com/dockerfile/elasticsearch).
