@@ -73,8 +73,8 @@ $json = '{
         }';
 
         $params = [
-            'index' => 'study',
-            'type' => 'studytype',
+            'index' => env('ELASTICSEARCH_STUDY_UNIT_INDEX'),
+            'type' => env('ELASTICSEARCH_STUDY_INDEX_TYPE'),
             'size' => 7,
             'body' => $json
         ];
