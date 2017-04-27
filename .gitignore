@@ -4,6 +4,7 @@
 Homestead.yaml
 Homestead.json
 .env
+.htaccess
 
 .vagrant
 id_rsa
