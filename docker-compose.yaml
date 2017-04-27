@@ -1,0 +1,18 @@
+version: '2'
+services:
+    web:
+        image: nordicheathportal
+        build: .
+        volumes:
+          #mount src to site directory
+          - ./:/var/www/html
+        ports:
+          - 8080:80
+        depends_on:
+          - elasticsearch
+    elasticsearch:
+        image: elasticsearch:5
+        ports:
+          - 9200:9200
+        environment: 
+          - ES_JAVA_OPTS=-Xms1g -Xmx1g
