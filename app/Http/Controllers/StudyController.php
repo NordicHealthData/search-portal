@@ -19,8 +19,8 @@ class StudyController extends Controller {
     public function view($id) {
         $study = ElasticSearch::get(
                                     $id, 
-                                    env('ES_STUDY_UNIT_INDEX'), 
-                                    env('ES_STUDY_INDEX_TYPE')
+                                    env('ELASTICSEARCH_STUDY_UNIT_INDEX'), 
+                                    env('ELASTICSEARCH_STUDY_INDEX_TYPE')
                                 );
         
         $study['related'] = StudyController::thematicallySimilarQuery($study);

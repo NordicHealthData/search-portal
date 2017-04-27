@@ -39,7 +39,9 @@ return [
     */
 
     'elastic_search_host' => env('ELASTICSEARCH_HOST'),
-	
+	'elastic_search_index' =>env('ELASTICSEARCH_STUDY_UNIT_INDEX'),
+	'elastic_search_index' =>env('ELASTICSEARCH_STUDY_UNIT_INDEX'),
+
     /* Aggregations used for filtering in the search */
     'elastic_search_aggregations' => [
         'repository' => ['terms' => ['field' => 'repository']],

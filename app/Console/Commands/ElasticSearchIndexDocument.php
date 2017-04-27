@@ -37,8 +37,8 @@ class ElasticSearchIndexDocument extends Command {
         $this->info(PHP_EOL.'Using directory path for ingest: '.$path.PHP_EOL);
 
         // create index
-        $index = env('ES_STUDY_UNIT_INDEX');
-        $type = env('ES_STUDY_INDEX_TYPE');
+        $index = env('ELASTICSEARCH_STUDY_UNIT_INDEX');
+        $type = env('ELASTICSEARCH_STUDY_INDEX_TYPE');
 
         $this->indexIsCreated = ElasticSearch::isIndexCreated($index);
         if(!$this->indexIsCreated) {
