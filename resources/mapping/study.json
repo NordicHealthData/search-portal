@@ -1,5 +1,5 @@
 {
-  "index": "study",
+  "index": "nordic_health_demo",
   "body": {
     "settings": {
       "number_of_shards": 5,
@@ -14,122 +14,110 @@
           "abstract": {
             "properties": {
               "da": {
-                "type": "string",
+                "type": "text",
                 "analyzer": "danish",
                 "fields": {
                   "raw": {
-                    "type": "string",
-                    "index": "not_analyzed"
+                    "type": "keyword"
                   }
                 }
               },
               "en": {
-                "type": "string",
+                "type": "text",
                 "analyzer": "english",
                 "fields": {
                   "raw": {
-                    "type": "string",
-                    "index": "not_analyzed"
+                    "type": "keyword"
                   }
                 }
               },
               "sv": {
-                "type": "string",
+                "type": "text",
                 "analyzer": "swedish",
                 "fields": {
                   "raw": {
-                    "type": "string",
-                    "index": "not_analyzed"
+                    "type": "keyword"
                   }
                 }
               },
               "no": {
-                "type": "string",
+                "type": "text",
                 "analyzer": "norwegian",
                 "fields": {
                   "raw": {
-                    "type": "string",
-                    "index": "not_analyzed"
+                    "type": "keyword"
                   }
                 }
               },
               "fi": {
-                "type": "string",
+                "type": "text",
                 "fields": {
                   "raw": {
-                    "type": "string",
-                    "index": "not_analyzed"
+                    "type": "keyword"
                   }
                 }
               }
             }
           },
           "analysisunit": {
-            "type": "string",
+            "type": "text",
             "fields": {
               "raw": {
-                "type": "string",
-                "index": "not_analyzed"
+                "type": "keyword"
               }
             }
           },
           "country": {
-            "type": "string",
+            "type": "text",
             "fields": {
               "raw": {
-                "type": "string",
-                "index": "not_analyzed"
+                "type": "keyword"
               }
             }
           },
           "creator": {
             "properties": {
               "da": {
-                "type": "string",
+                "type": "text",
                 "analyzer": "danish",
                 "fields": {
                   "raw": {
-                    "type": "string",
-                    "index": "not_analyzed"
+                    "type": "keyword"
                   }
                 }
               },
               "en": {
-                "type": "string",
+                "type": "text",
                 "analyzer": "english",
                 "fields": {
                   "raw": {
-                    "type": "string",
-                    "index": "not_analyzed"
+                    "type": "keyword"
                   }
                 }
               },
               "sv": {
-                "type": "string",
+                "type": "text",
                 "analyzer": "swedish",
                 "fields": {
                   "raw": {
-                    "type": "string",
-                    "index": "not_analyzed"
+                    "type": "keyword"
                   }
                 }
               },
               "no": {
-                "type": "string",
+                "type": "text",
                 "analyzer": "norwegian",
                 "fields": {
                   "raw": {
-                    "type": "string",
-                    "index": "not_analyzed"
+                    "type": "keyword"
                   }
                 }
               },
               "fi": {
-                "type": "string",
+                "type": "text",
                 "fields": {
                   "raw": {
-                    "type": "string",
-                    "index": "not_analyzed"
+                    "type": "keyword"
                   }
                 }
               }
@@ -138,228 +126,213 @@
           "datakind": {
             "properties": {
               "da": {
-                "type": "string",
+                "type": "text",
                 "analyzer": "danish",
                 "fields": {
                   "raw": {
-                    "type": "string",
-                    "index": "not_analyzed"
+                    "type": "keyword"
                   }
                 }
               },
               "en": {
-                "type": "string",
+                "type": "text",
                 "analyzer": "english",
                 "fields": {
                   "raw": {
-                    "type": "string",
-                    "index": "not_analyzed"
+                    "type": "keyword"
                   }
                 }
               },
               "sv": {
-                "type": "string",
+                "type": "text",
                 "analyzer": "swedish",
                 "fields": {
                   "raw": {
-                    "type": "string",
-                    "index": "not_analyzed"
+                    "type": "keyword"
                   }
                 }
               },
               "no": {
-                "type": "string",
+                "type": "text",
                 "analyzer": "norwegian",
                 "fields": {
                   "raw": {
-                    "type": "string",
-                    "index": "not_analyzed"
+                    "type": "keyword"
                   }
                 }
               },
               "fi": {
-                "type": "string",
+                "type": "text",
                 "fields": {
                   "raw": {
-                    "type": "string",
-                    "index": "not_analyzed"
+                    "type": "keyword"
                   }
                 }
               }
             }
           },
           "doi": {
-            "type": "string"
+            "type": "text"
           },
           "enddate": {
-            "type": "string"
+            "type": "text"
           },
           "id": {
-            "type": "string"
+            "type": "text"
           },
           "keyword": {
             "properties": {
               "da": {
-                "type": "string",
+                "type": "text",
                 "analyzer": "danish",
                 "fields": {
                   "raw": {
-                    "type": "string",
-                    "index": "not_analyzed"
+                    "type": "keyword"
                   }
                 }
               },
               "en": {
-                "type": "string",
+                "type": "text",
                 "analyzer": "english",
                 "fields": {
                   "raw": {
-                    "type": "string",
-                    "index": "not_analyzed"
+                    "type": "keyword"
                   }
                 }
               },
               "sv": {
-                "type": "string",
+                "type": "text",
                 "analyzer": "swedish",
                 "fields": {
                   "raw": {
-                    "type": "string",
-                    "index": "not_analyzed"
+                    "type": "keyword"
                   }
                 }
               },
               "no": {
-                "type": "string",
+                "type": "text",
                 "analyzer": "norwegian",
                 "fields": {
                   "raw": {
-                    "type": "string",
-                    "index": "not_analyzed"
+                    "type": "keyword"
                   }
                 }
               },
               "fi": {
-                "type": "string",
+                "type": "text",
                 "fields": {
                   "raw": {
-                    "type": "string",
-                    "index": "not_analyzed"
+                    "type": "keyword"
                   }
                 }
               }
             }
           },
           "kindofdata": {
-            "type": "string"
+            "type": "text"
           },
           "modeofcollection": {
             "properties": {
               "da": {
-                "type": "string",
+                "type": "text",
                 "analyzer": "danish",
                 "fields": {
                   "raw": {
-                    "type": "string",
-                    "index": "not_analyzed"
+                    "type": "keyword"
                   }
                 }
               },
               "en": {
-                "type": "string",
+                "type": "text",
                 "analyzer": "english",
                 "fields": {
                   "raw": {
-                    "type": "string",
-                    "index": "not_analyzed"
+                    "type": "keyword"
                   }
                 }
               },
               "sv": {
-                "type": "string",
+                "type": "text",
                 "analyzer": "swedish",
                 "fields": {
                   "raw": {
-                    "type": "string",
-                    "index": "not_analyzed"
+                    "type": "keyword"
                   }
                 }
               },
               "no": {
-                "type": "string",
+                "type": "text",
                 "analyzer": "norwegian",
                 "fields": {
                   "raw": {
-                    "type": "string",
-                    "index": "not_analyzed"
+                    "type": "keyword"
                   }
                 }
               },
               "fi": {
-                "type": "string",
+                "type": "text",
                 "fields": {
                   "raw": {
-                    "type": "string",
-                    "index": "not_analyzed"
+                    "type": "keyword"
                   }
                 }
               }
             }
           },
           "repository": {
-            "type": "string"
+            "type": "text",
+            "fields": {
+              "raw": {
+                "type": "keyword"
+              }
+            }            
           },
           "startdate": {
-            "type": "string"
+            "type": "text"
           },
           "subject": {
             "properties": {
               "da": {
-                "type": "string",
+                "type": "text",
                 "analyzer": "danish",
                 "fields": {
                   "raw": {
-                    "type": "string",
-                    "index": "not_analyzed"
+                    "type": "keyword"
                   }
                 }
               },
               "en": {
-                "type": "string",
+                "type": "text",
                 "analyzer": "english",
                 "fields": {
                   "raw": {
-                    "type": "string",
-                    "index": "not_analyzed"
+                    "type": "keyword"
                   }
                 }
               },
               "sv": {
-                "type": "string",
+                "type": "text",
                 "analyzer": "swedish",
                 "fields": {
                   "raw": {
-                    "type": "string",
-                    "index": "not_analyzed"
+                    "type": "keyword"
                   }
                 }
               },
               "no": {
-                "type": "string",
+                "type": "text",
                 "analyzer": "norwegian",
                 "fields": {
                   "raw": {
-                    "type": "string",
-                    "index": "not_analyzed"
+                    "type": "keyword"
                   }
                 }
               },
               "fi": {
-                "type": "string",
+                "type": "text",
                 "fields": {
                   "raw": {
-                    "type": "string",
-                    "index": "not_analyzed"
+                    "type": "keyword"
                   }
                 }
               }
@@ -368,51 +341,46 @@
           "timemethod": {
             "properties": {
               "da": {
-                "type": "string",
+                "type": "text",
                 "analyzer": "danish",
                 "fields": {
                   "raw": {
-                    "type": "string",
-                    "index": "not_analyzed"
+                    "type": "keyword"
                   }
                 }
               },
               "en": {
-                "type": "string",
+                "type": "text",
                 "analyzer": "english",
                 "fields": {
                   "raw": {
-                    "type": "string",
-                    "index": "not_analyzed"
+                    "type": "keyword"
                   }
                 }
               },
               "sv": {
-                "type": "string",
+                "type": "text",
                 "analyzer": "swedish",
                 "fields": {
                   "raw": {
-                    "type": "string",
-                    "index": "not_analyzed"
+                    "type": "keyword"
                   }
                 }
               },
               "no": {
-                "type": "string",
+                "type": "text",
                 "analyzer": "norwegian",
                 "fields": {
                   "raw": {
-                    "type": "string",
-                    "index": "not_analyzed"
+                    "type": "keyword"
                   }
                 }
               },
               "fi": {
-                "type": "string",
+                "type": "text",
                 "fields": {
                   "raw": {
-                    "type": "string",
-                    "index": "not_analyzed"
+                    "type": "keyword"
                   }
                 }
               }
@@ -421,51 +389,46 @@
           "title": {
             "properties": {
               "da": {
-                "type": "string",
+                "type": "text",
                 "analyzer": "danish",
                 "fields": {
                   "raw": {
-                    "type": "string",
-                    "index": "not_analyzed"
+                    "type": "keyword"
                   }
                 }
               },
               "en": {
-                "type": "string",
+                "type": "text",
                 "analyzer": "english",
                 "fields": {
                   "raw": {
-                    "type": "string",
-                    "index": "not_analyzed"
+                    "type": "keyword"
                   }
                 }
               },
               "sv": {
-                "type": "string",
+                "type": "text",
                 "analyzer": "swedish",
                 "fields": {
                   "raw": {
-                    "type": "string",
-                    "index": "not_analyzed"
+                    "type": "keyword"
                   }
                 }
               },
               "no": {
-                "type": "string",
+                "type": "text",
                 "analyzer": "norwegian",
                 "fields": {
                   "raw": {
-                    "type": "string",
-                    "index": "not_analyzed"
+                    "type": "keyword"
                   }
                 }
               },
               "fi": {
-                "type": "string",
+                "type": "text",
                 "fields": {
                   "raw": {
-                    "type": "string",
-                    "index": "not_analyzed"
+                    "type": "keyword"
                   }
                 }
               }
@@ -474,51 +437,46 @@
           "universe": {
             "properties": {
               "da": {
-                "type": "string",
+                "type": "text",
                 "analyzer": "danish",
                 "fields": {
                   "raw": {
-                    "type": "string",
-                    "index": "not_analyzed"
+                    "type": "keyword"
                   }
                 }
               },
               "en": {
-                "type": "string",
+                "type": "text",
                 "analyzer": "english",
                 "fields": {
                   "raw": {
-                    "type": "string",
-                    "index": "not_analyzed"
+                    "type": "keyword"
                   }
                 }
               },
               "sv": {
-                "type": "string",
+                "type": "text",
                 "analyzer": "swedish",
                 "fields": {
                   "raw": {
-                    "type": "string",
-                    "index": "not_analyzed"
+                    "type": "keyword"
                   }
                 }
               },
               "no": {
-                "type": "string",
+                "type": "text",
                 "analyzer": "norwegian",
                 "fields": {
                   "raw": {
-                    "type": "string",
-                    "index": "not_analyzed"
+                    "type": "keyword"
                   }
                 }
               },
               "fi": {
-                "type": "string",
+                "type": "text",
                 "fields": {
                   "raw": {
-                    "type": "string",
-                    "index": "not_analyzed"
+                    "type": "keyword"
                   }
                 }
               }
@@ -529,107 +487,97 @@
               "categories": {
                 "properties": {
                   "da": {
-                    "type": "string",
+                    "type": "text",
                     "analyzer": "danish",
                     "fields": {
                       "raw": {
-                        "type": "string",
-                        "index": "not_analyzed"
+                        "type": "keyword"
                       }
                     }
                   },
                   "en": {
-                    "type": "string",
+                    "type": "text",
                     "analyzer": "english",
                     "fields": {
                       "raw": {
-                        "type": "string",
-                        "index": "not_analyzed"
+                        "type": "keyword"
                       }
                     }
                   },
                   "sv": {
-                    "type": "string",
+                    "type": "text",
                     "analyzer": "swedish",
                     "fields": {
                       "raw": {
-                        "type": "string",
-                        "index": "not_analyzed"
+                        "type": "keyword"
                       }
                     }
                   },
                   "no": {
-                    "type": "string",
+                    "type": "text",
                     "analyzer": "norwegian",
                     "fields": {
                       "raw": {
-                        "type": "string",
-                        "index": "not_analyzed"
+                        "type": "keyword"
                       }
                     }
                   },
                   "fi": {
-                    "type": "string",
+                    "type": "text",
                     "fields": {
                       "raw": {
-                        "type": "string",
-                        "index": "not_analyzed"
+                        "type": "keyword"
                       }
                     }
                   }
                 }
               },
               "id": {
-                "type": "string"
+                "type": "text"
               },
               "label": {
                 "properties": {
                   "da": {
-                    "type": "string",
+                    "type": "text",
                     "analyzer": "danish",
                     "fields": {
                       "raw": {
-                        "type": "string",
-                        "index": "not_analyzed"
+                        "type": "keyword"
                       }
                     }
                   },
                   "en": {
-                    "type": "string",
+                    "type": "text",
                     "analyzer": "english",
                     "fields": {
                       "raw": {
-                        "type": "string",
-                        "index": "not_analyzed"
+                        "type": "keyword"
                       }
                     }
                   },
                   "sv": {
-                    "type": "string",
+                    "type": "text",
                     "analyzer": "swedish",
                     "fields": {
                       "raw": {
-                        "type": "string",
-                        "index": "not_analyzed"
+                        "type": "keyword"
                       }
                     }
                   },
                   "no": {
-                    "type": "string",
+                    "type": "text",
                     "analyzer": "norwegian",
                     "fields": {
                       "raw": {
-                        "type": "string",
-                        "index": "not_analyzed"
+                        "type": "keyword"
                       }
                     }
                   },
                   "fi": {
-                    "type": "string",
+                    "type": "text",
                     "fields": {
                       "raw": {
-                        "type": "string",
-                        "index": "not_analyzed"
+                        "type": "keyword"
                       }
                     }
                   }
@@ -638,56 +586,51 @@
               "question": {
                 "properties": {
                   "id": {
-                    "type": "string"
+                    "type": "text"
                   },
                   "label": {
                     "properties": {
                       "da": {
-                        "type": "string",
+                        "type": "text",
                         "analyzer": "danish",
                         "fields": {
                           "raw": {
-                            "type": "string",
-                            "index": "not_analyzed"
+                            "type": "keyword"
                           }
                         }
                       },
                       "en": {
-                        "type": "string",
+                        "type": "text",
                         "analyzer": "english",
                         "fields": {
                           "raw": {
-                            "type": "string",
-                            "index": "not_analyzed"
+                            "type": "keyword"
                           }
                         }
                       },
                       "sv": {
-                        "type": "string",
+                        "type": "text",
                         "analyzer": "swedish",
                         "fields": {
                           "raw": {
-                            "type": "string",
-                            "index": "not_analyzed"
+                            "type": "keyword"
                           }
                         }
                       },
                       "no": {
-                        "type": "string",
+                        "type": "text",
                         "analyzer": "norwegian",
                         "fields": {
                           "raw": {
-                            "type": "string",
-                            "index": "not_analyzed"
+                            "type": "keyword"
                           }
                         }
                       },
                       "fi": {
-                        "type": "string",
+                        "type": "text",
                         "fields": {
                           "raw": {
-                            "type": "string",
-                            "index": "not_analyzed"
+                            "type": "keyword"
                           }
                         }
                       }
@@ -698,56 +641,51 @@
               "concept": {
                 "properties": {
                   "id": {
-                    "type": "string"
+                    "type": "text"
                   },
                   "label": {
                     "properties": {
                       "da": {
-                        "type": "string",
+                        "type": "text",
                         "analyzer": "danish",
                         "fields": {
                           "raw": {
-                            "type": "string",
-                            "index": "not_analyzed"
+                            "type": "keyword"
                           }
                         }
                       },
                       "en": {
-                        "type": "string",
+                        "type": "text",
                         "analyzer": "english",
                         "fields": {
                           "raw": {
-                            "type": "string",
-                            "index": "not_analyzed"
+                            "type": "keyword"
                           }
                         }
                       },
                       "sv": {
-                        "type": "string",
+                        "type": "text",
                         "analyzer": "swedish",
                         "fields": {
                           "raw": {
-                            "type": "string",
-                            "index": "not_analyzed"
+                            "type": "keyword"
                           }
                         }
                       },
                       "no": {
-                        "type": "string",
+                        "type": "text",
                         "analyzer": "norwegian",
                         "fields": {
                           "raw": {
-                            "type": "string",
-                            "index": "not_analyzed"
+                            "type": "keyword"
                           }
                         }
                       },
                       "fi": {
-                        "type": "string",
+                        "type": "text",
                         "fields": {
                           "raw": {
-                            "type": "string",
-                            "index": "not_analyzed"
+                            "type": "keyword"
                           }
                         }
                       }
@@ -756,7 +694,7 @@
                 }
               },
               "representation": {
-                "type": "string"
+                "type": "text"
               }
             }
           }

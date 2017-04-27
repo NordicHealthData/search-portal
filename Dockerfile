@@ -1,8 +1,16 @@
 FROM php:7.0-apache
-COPY . /var/www/html/
-RUN apt-get update && apt-get install -yq git && apt-get install -y zlib1g-dev && rm -rf /var/lib/apt/lists/* && docker-php-ext-install zip
+
+RUN apt-get update &&\ 
+    apt-get install -yq git &&\ 
+    apt-get install -y zlib1g-dev &&\ 
+    apt-get install -y libxslt-dev &&\ 
+    rm -rf /var/lib/apt/lists/* &&\ 
+    docker-php-ext-install zip &&\ 
+    docker-php-ext-install xsl
 
 RUN echo "short_open_tag = Off" > /usr/local/etc/php/conf.d/short_tags_off.ini
+
+COPY . /var/www/html/
 
 # Register the COMPOSER_HOME environment variable
 ENV COMPOSER_HOME /composer

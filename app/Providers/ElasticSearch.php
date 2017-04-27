@@ -45,12 +45,8 @@ class ElasticSearch extends ServiceProvider{
      */
     public static function getClient() {
         if ( is_null( self::$client ) ){
-            $params = array();
-            $params['hosts'] = array (env('app.elastic_search_host'));
-
-            //self::$client = new \Elasticsearch\Client($params);
             self::$client = ClientBuilder::create()
-                ->setHosts(array (env('ELASTICSEARCH_HOST')))
+                ->setHosts(array(env('ELASTICSEARCH_HOST')))
                 ->build();
         }
         return self::$client;
@@ -59,7 +55,7 @@ class ElasticSearch extends ServiceProvider{
     /**
      * Get document from Elastic Search
      *
-     * @param type $id id of the document (e.g. dataset id)
+     * @param type $id id of the document (e.g. study id)
      * @param type $index index containing the document
      * @param type $type type of document to look for
      * @return Array all the values in _source from Elastic Search

@@ -44,7 +44,7 @@ return [
 
     /* Aggregations used for filtering in the search */
     'elastic_search_aggregations' => [
-        'repository' => ['terms' => ['field' => 'repository']],
+        'repository' => ['terms' => ['field' => 'repository.raw']],
         'timemethod' => ['terms' => ['field' => 'timemethod.en.raw']],
         'subject' => ['terms' => ['field' => 'subject.en.raw']],
         'keyword' => ['terms' => ['field' => 'keyword.en.raw']],

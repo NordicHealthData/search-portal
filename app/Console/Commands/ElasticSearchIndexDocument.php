@@ -42,6 +42,8 @@ class ElasticSearchIndexDocument extends Command {
 
         $this->indexIsCreated = ElasticSearch::isIndexCreated($index);
         if(!$this->indexIsCreated) {
+            $this->comment("Creating index: ".$index);
+            $this->comment("host: ".env('ELASTICSEARCH_HOST'));
             ElasticSearch::createIndexFromJsonFile();
         }
 
